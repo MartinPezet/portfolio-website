@@ -47,6 +47,13 @@ const Navbar = () => {
           <div className='navBarMobMenuContainer scale-up-center'>
             <div className='navBarMobMenuContainerLinks'>
               <Menu />
+              <div className='navBarMobMenuContainerLinksSignIn'>
+                <p>Sign In Coming Soon</p>
+                { /*
+                <p>Sign In</p>
+                <button>Register</button>
+                */ }
+              </div>
             </div>
           </div>
         )}
