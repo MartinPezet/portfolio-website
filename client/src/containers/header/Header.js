@@ -20,11 +20,9 @@ const Header = () => {
           <img src={people} alt="people" />
           <p>Number of users with martinpezet.net (Coming soon)</p>
         </div>
-
-        {/*<div className="headerImage">
-          <img src={mainIMG} alt="Portfolio Filler" />
-  </div>*/}
-
+      </div>
+      <div className="headerImage">
+        <img src={mainIMG} alt="Portfolio Filler" />
       </div>
     </section>
   )
