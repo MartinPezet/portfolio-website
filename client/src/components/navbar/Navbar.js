@@ -37,7 +37,7 @@ const Navbar = () => {
               </text>
           </svg>
         </div>
-        <div className="navBarLinksContainer">
+        <div className="navBarLinksContainer scaleUpCenter">
           <Menu />
         </div>
       </div>
@@ -50,7 +50,7 @@ const Navbar = () => {
           : <RiMenu3Line color='#fff' size={27} onClick={() => setToggleMobMenu(true)} />
         }
         {toggleMobMenu && (
-          <div className='navBarMobMenuContainer scale-up-center'>
+          <div className='navBarMobMenuContainer scaleUpCenter'>
             <div className='navBarMobMenuContainerLinks'>
               <Menu />
               <div className='navBarMobMenuContainerLinksSignIn'>
