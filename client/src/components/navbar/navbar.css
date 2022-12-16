@@ -1,0 +1,140 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 6rem;
+}
+
+.navBarLinks {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navBarLogo {
+    margin-right: 2rem;
+}
+
+.navBarLogo img {
+    width: 62px;
+    height: 16px;
+}
+
+.navBarLinksContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.navBarSignIn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navBarLinksContainer p,
+.navBarSignIn p,
+.navBarMobMenuContainer p {
+    color: #fff;
+    font-family: var(--fontFamily);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px; 
+    text-transform: capitalize;
+
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.navBarSignIn button,
+.navBarMobMenuContainer button {
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    font-family: var(--fontFamily);
+    font-size: 18px;
+    line-height: 25px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    background: #FF4820;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.navBarMobMenu {
+    margin-left: 1rem;
+
+    display: none;
+    position: relative;
+}
+
+.navBarMobMenu svg {
+    cursor: pointer;
+}
+
+.navBarMobMenuContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+
+    text-align: end;
+    background: var(--colorFooter);
+    padding: 2rem;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    margin-top: 1rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
+}
+
+.navBarMobMenuContainer p {
+    margin: 1 rem 0;
+}
+
+.navBarMobMenuContainerLinks p {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navBarMobMenuContainerLinksSignIn {
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+    .navBarLinksContainer {
+        display: none;
+    }
+
+    .navBarMobMenu {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navBar {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navBar {
+        padding: 2rem;
+    }
+
+    .navBarSignIn {
+        display: none;
+    }
+
+    .navBarMenuContainer {
+        top: 20px;
+    }
+
+    .navBarMobMenuContainerLinksSignIn {
+        display: block;
+    }
+}
