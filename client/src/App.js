@@ -2,8 +2,8 @@ import React from 'react'
 
 import './App.css';
 
-import { Footer, Header, Blog, Features, Possibility, WhatGPT } from './containers';
-import { CTA, Brand, Navbar } from './components';
+import { Footer, Header, Blog, Socials } from './containers';
+import { Navbar } from './components';
 
 const App = () => {
   return (
@@ -11,15 +11,9 @@ const App = () => {
       <div className="gradientBG">
         <Navbar />
         <Header />
-
+        <Socials />
+        <Blog />
       </div>
-
-      <Brand />
-      <WhatGPT />
-      <Features />
-      <Possibility />
-      <CTA />
-      <Blog />
       <Footer />
     </section>
   )
