@@ -17,9 +17,18 @@
     margin-right: 2rem;
 }
 
-.navBarLogo img {
-    width: 62px;
-    height: 16px;
+.navBarLogo svg {
+    width: 225px;
+    height: 45px;
+
+    font-family: var(--fontFamily);
+    font-size: 36px;
+}
+
+.logo {
+    font-size: 40; 
+    transform: translate(0 37.422621); 
+    fill: "#fff";
 }
 
 .navBarLinksContainer {
