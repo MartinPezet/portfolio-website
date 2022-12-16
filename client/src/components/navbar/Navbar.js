@@ -1,7 +1,6 @@
 import React from 'react'
 
 import './navbar.css';
-import logo from '../../assets/logo.svg';
 
 // Mobile Nav Dependencies
 import { useState } from 'react';
@@ -9,11 +8,18 @@ import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 
 const Menu = () => (
   <>
-  <p><a href='#home'>Home</a></p>
-  <p><a href='#whatGPT'>What is GPT?</a></p>
-  <p><a href='#possibility'>Open AI</a></p>
-  <p><a href='#features'>Case Studies</a></p>
-  <p><a href='#blog'>Library</a></p>
+    <p><a href='#home'>Home</a></p>
+    <p><a href='#about-me'>About Me</a></p> 
+    <p><a href='#features'>Website Features</a></p> {/* Features of my website */}
+    <p><a href='#projects'>Projects</a></p>
+  </>
+)
+
+const SignIn = () => (
+  <>
+    <p>Sign In Coming Soon</p>
+    {/* <p>Sign In</p>
+    <button>Register</button> */}
   </>
 )
 
@@ -25,18 +31,19 @@ const Navbar = () => {
     <section className="navBar">
       <div className="navBarLinks">
         <div className="navBarLogo">
-          <img src={logo} alt="Logo"/>
+          <svg viewBox="0 0 225 45" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
+              <text dx="0" dy="0" fill="#fff" fontSize="36px" transform="translate(0 37.422621)">
+                  <tspan y="0" fontWeight="700" strokeWidth="0">Martin Pezet</tspan>
+              </text>
+          </svg>
+          {/* <img src={logo} alt="Logo"/> */}
         </div>
         <div className="navBarLinksContainer">
           <Menu />
         </div>
       </div>
       <div className="navBarSignIn">
-        <p>Sign In Coming Soon</p>
-        { /*
-        <p>Sign In</p>
-        <button>Register</button>
-        */ }
+        <SignIn />
       </div>
       <div className="navBarMobMenu">
         {toggleMobMenu
@@ -48,11 +55,7 @@ const Navbar = () => {
             <div className='navBarMobMenuContainerLinks'>
               <Menu />
               <div className='navBarMobMenuContainerLinksSignIn'>
-                <p>Sign In Coming Soon</p>
-                { /*
-                <p>Sign In</p>
-                <button>Register</button>
-                */ }
+                <SignIn />
               </div>
             </div>
           </div>
