@@ -25,12 +25,6 @@
     font-size: 36px;
 }
 
-.logo {
-    font-size: 40; 
-    transform: translate(0 37.422621); 
-    fill: "#fff";
-}
-
 .navBarLinksContainer {
     display: flex;
     flex-direction: row;
