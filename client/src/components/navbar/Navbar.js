@@ -6,26 +6,26 @@ import './navbar.css';
 import { useState } from 'react';
 import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 
-const Menu = () => (
-  <>
-    <p><a href='#home'>Home</a></p>
-    <p><a href='#about-me'>About Me</a></p> 
-    <p><a href='#features'>Website Features</a></p> {/* Features of my website */}
-    <p><a href='#projects'>Projects</a></p>
-  </>
-)
-
-const SignIn = () => (
-  <>
-    <p>Sign In Coming Soon</p>
-    {/* <p>Sign In</p>
-    <button>Register</button> */}
-  </>
-)
-
 const Navbar = () => {
 
   const [toggleMobMenu, setToggleMobMenu] = useState(false);
+
+  const Menu = () => (
+    <>
+      <p><a href='#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
+      <p><a href='#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
+      <p><a href='#features' onClick={() => setToggleMobMenu(false)}>Website Features</a></p> {/* Features of my website */}
+      <p><a href='#projects' onClick={() => setToggleMobMenu(false)}>Projects</a></p>
+    </>
+  )
+
+  const SignIn = () => (
+    <>
+      <p>Sign In Coming Soon</p>
+      {/* <p>Sign In</p>
+      <button>Register</button> */}
+    </>
+  )
 
   return (
     <section className="navBar">
@@ -36,7 +36,6 @@ const Navbar = () => {
                   <tspan y="0" fontWeight="700" strokeWidth="0">Martin Pezet</tspan>
               </text>
           </svg>
-          {/* <img src={logo} alt="Logo"/> */}
         </div>
         <div className="navBarLinksContainer">
           <Menu />
