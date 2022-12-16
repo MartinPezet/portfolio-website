@@ -74,7 +74,7 @@
     cursor: pointer;
 }
 
-.navBarMenuContainer {
+.navBarMobMenuContainer {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -92,8 +92,13 @@
     box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
 }
 
-.navBarMenuContainer p {
+.navBarMobMenuContainer p {
     margin: 1 rem 0;
+}
+
+.navBarMobMenuContainerLinks p {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .navBarMobMenuContainerLinksSignIn {
@@ -107,5 +112,29 @@
 
     .navBarMobMenu {
         display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navBar {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navBar {
+        padding: 2rem;
+    }
+
+    .navBarSignIn {
+        display: none;
+    }
+
+    .navBarMenuContainer {
+        top: 20px;
+    }
+
+    .navBarMobMenuContainerLinksSignIn {
+        display: block;
     }
 }
