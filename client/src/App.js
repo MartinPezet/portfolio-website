@@ -11,12 +11,11 @@ const App = () => {
       <div className="gradientBG">
         <Navbar />
         <Header />
-        <Socials />
-        <About />
-        <SiteFeatures />
-        <Projects />
-
       </div>
+      <Socials />
+      <About />
+      <SiteFeatures />
+      <Projects />
       <Footer />
     </section>
   )
