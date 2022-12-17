@@ -2,7 +2,7 @@ import React from 'react';
 import './header.css';
 
 import people from '../../assets/people.png';
-import mainIMG from '../../assets/ai.png';
+import mainIMG from '../../assets/placeholder.png';
 
 const Header = () => {
   return (
