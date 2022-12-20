@@ -47,7 +47,7 @@ jobs:
         
       - name: Login to DockerHub
         working-directory: ./client
-        run: echo ${{secrets.DOCKERHUB_PASSWORD}} | docker login -u ${{secrets.DOCKERHUB_USERNAME}} # The secrets are a Github actions variable so public code doesn't include passwords and usernames
+        run: echo ${{secrets.DOCKERHUB_PASSWORD}} | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin # The secrets are a Github actions variable so public code doesn't include passwords and usernames
         
       - name: Build Docker Image
         working-directory: ./client
