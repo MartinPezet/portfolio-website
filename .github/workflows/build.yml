@@ -19,24 +19,26 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          
-      - name: Connect to client folder
-        run: cd client
         
       - name: Dependencies
+        working-directory: ./client
         run: npm ci # This is npm clean-install and will install all in package.json
         
       - name: Build
+        working-directory: ./client
         run: npm run build
         
       - name: Save version # Allows to save the version of node modules
+        working-directory: ./client
         id: version
         run: echo ::set-output name=tag::$(echo $(node -p -e "require('./package.json').version"))
         
       - name: Increase version
+        working-directory: ./client
         run: npm version patch
         
       - name: Push new version
+        working-directory: ./client
         run: git push
         
         # The previous section was to build the react app, apply versions and push back to github
@@ -44,11 +46,14 @@ jobs:
         # The next few steps are to create a docker image so a server can run this in a docker container and upgrade images easily
         
       - name: Login to DockerHub
+        working-directory: ./client
         run: echo ${{secrets.DOCKERHUB_PASSWORD}} | docker login -u ${{secrets.DOCKERHUB_USERNAME}} # The secrets are a Github actions variable so public code doesn't include passwords and usernames
         
       - name: Build Docker Image
+        working-directory: ./client
         run: docker build . --file Dockerfile --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.outputs.tag}} # Version is a previously set within the file (id: version)
         
       - name: Push to DockerHub
+        working-directory: ./client
         run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.outputs.tag}}
         
