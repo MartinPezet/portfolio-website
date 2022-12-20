@@ -1,0 +1,54 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: # Manually be able to run it
+  
+jobs:
+  Docker:
+    runs-on: ubuntu-latest # Linux is the cheapest
+    steps:
+      - uses: actions/checkout@v3 # Able to use git functions in container
+      - uses: actions/setup-node@v3 # Adds node to docker allowing npm
+        with:
+          node-version: 14
+      - name: Setup bot user # Increases version on every commit to master/main
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          
+      - name: Connect to client folder
+        run: cd client
+        
+      - name: Dependencies
+        run: npm ci # This is npm clean-install and will install all in package.json
+        
+      - name: Build
+        run: npm run build
+        
+      - name: Save version # Allows to save the version of node modules
+        id: version
+        run: echo ::set-output name=tag::$(echo $(node -p -e "require('./package.json').version"))
+        
+      - name: Increase version
+        run: npm version patch
+        
+      - name: Push new version
+        run: git push
+        
+        # The previous section was to build the react app, apply versions and push back to github
+        
+        # The next few steps are to create a docker image so a server can run this in a docker container and upgrade images easily
+        
+      - name: Login to DockerHub
+        run: echo ${{secrets.DOCKERHUB_PASSWORD}} | docker login -u ${{secrets.DOCKERHUB_USERNAME}} # The secrets are a Github actions variable so public code doesn't include passwords and usernames
+        
+      - name: Build Docker Image
+        run: docker build . --file Dockerfile --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.outputs.tag}} # Version is a previously set within the file (id: version)
+        
+      - name: Push to DockerHub
+        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.outputs.tag}}
+        
