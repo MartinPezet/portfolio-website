@@ -12,6 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3 # Adds node to docker allowing npm
+      with:
+        node-version: 14
+      
+    - name: Install Dependencies
+      working-directory: ./client
+      run: npm ci
+      
     - name: Run Tests
       working-directory: ./client
       run: npm test
