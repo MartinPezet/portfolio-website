@@ -1,0 +1,37 @@
+.about{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    font-family: var(--fontFamily);
+}
+
+.aboutTitle{
+    flex: 1;
+    max-width: 250px;
+}
+
+.aboutTitle h1 {
+    padding: 0.25rem;
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.aboutTitle div {
+    width: 38px;
+    height: 3px;
+    background: var(--gradientBar);
+}
+
+.aboutText{
+    flex: 2;
+    display: flex;
+}
+
+.aboutText p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    color: var(--colorText);
+}
