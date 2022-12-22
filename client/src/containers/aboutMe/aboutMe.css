@@ -1,0 +1,5 @@
+.aboutMe {
+    margin: 0 3rem;
+    padding: 4rem;
+    background-color: var(--colorAbout);
+}
