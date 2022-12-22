@@ -2,8 +2,8 @@ import React from 'react'
 
 import './App.css';
 
-import { Footer, Header, SiteFeatures, Socials, Projects } from './containers';
-import { Navbar, About } from './components';
+import { Footer, Header, SiteFeatures, Socials, Projects, AboutMe } from './containers';
+import { Navbar } from './components';
 
 const App = () => {
   return (
@@ -13,9 +13,9 @@ const App = () => {
         <Header />
       </div>
       <Socials />
-      <About />
-      <SiteFeatures />
+      <AboutMe />
       <Projects />
+      <SiteFeatures />
       <Footer />
     </section>
   )
