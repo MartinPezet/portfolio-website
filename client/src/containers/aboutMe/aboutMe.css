@@ -3,3 +3,9 @@
     padding: 4rem;
     background-color: var(--colorAbout);
 }
+
+.aboutMeContent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
