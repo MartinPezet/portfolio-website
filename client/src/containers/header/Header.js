@@ -2,14 +2,14 @@ import React from 'react';
 import './header.css';
 
 import people from '../../assets/people.png';
-import mainIMG from '../../assets/ai.png';
+import mainIMG from '../../assets/placeholder.png';
 
 const Header = () => {
   return (
     <section className="header sectionPadding" id="home">
       <div className="headerContent">
-        <h1 className="gradientText">Software Engineering - Building something special</h1>
-        <p>This website is to exhibit Martin's personal portfolio and be able to be able to build tools that are easy to use and well designed</p>
+        <h1 className="gradientText">Martin Pezet - Software Engineer</h1>
+        <p>This is a portfolio website for Martin Pezet. You can get around all my different projects by going to the projects section. If you haven't got an account already, I suggest you start your sign up below.</p>
 
         <div className="headerContentInput">
           <input type="email" placeholder="Your Email Address"></input>
