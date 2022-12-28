@@ -34,7 +34,6 @@ jobs:
         run: npm version patch
         
       - name: Push new version
-        working-directory: ./client
         run: git push
         
         # The previous section was to build the react app, apply versions and push back to github
