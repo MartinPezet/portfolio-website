@@ -47,8 +47,12 @@ jobs:
         run: git push --set-upstream origin versionUpgrade
         
       - name: Create Pull Request
-        working-directory: ./client
-        run: git version
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: "versionUpgrade"
+          base: main
+          delete-branch: true
+          
         
         # The previous section was to build the react app, apply versions and push back to github
         
