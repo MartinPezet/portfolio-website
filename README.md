@@ -5,8 +5,10 @@ This is the code for my personal portfolio website.
 ## Notes for Next Session
 
 - For projects you can use a prop for the component whether to have left or right image and use a useState hook to rerender it
+- SSL Certificate for NGINX server
 - Change article component to project
 - Keep Website Features up to date
+- Add Animations to all clickable links
 - Changes to styles needed
 - Sign In Popup needed
 - Number of users needed
