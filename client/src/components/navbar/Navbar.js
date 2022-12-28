@@ -14,7 +14,7 @@ const Navbar = () => {
     <>
       <p><a href='#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
       <p><a href='#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
-      <p><a href='#features' onClick={() => setToggleMobMenu(false)}>Website Features</a></p> {/* Features of my website */}
+      <p><a href='#website-features' onClick={() => setToggleMobMenu(false)}>Website Features</a></p> {/* Features of my website */}
       <p><a href='#projects' onClick={() => setToggleMobMenu(false)}>Projects</a></p>
     </>
   )
