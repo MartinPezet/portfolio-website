@@ -42,7 +42,7 @@ jobs:
         run: git commit ./package.json ./package-lock.json -m "Automated Version Update"
                 
       - name: Push new version
-        run: git push
+        run: git push --set-upstream origin versionUpgrade
         
       - name: Create Pull Request
         working-directory: ./client
