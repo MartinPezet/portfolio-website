@@ -33,7 +33,7 @@ jobs:
       - name: Save version # Allows to save the version of node modules
         working-directory: ./client
         id: version
-        run: echo $(node -p -e "require('./package.json').version") >> $GITHUB_OUTPUT
+        run: echo "tag=echo $(node -p -e "require('./package.json').version")" >> $GITHUB_OUTPUT
         
       - name: Increase version
         working-directory: ./client
