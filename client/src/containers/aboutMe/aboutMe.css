@@ -1,11 +1,11 @@
 .aboutMe {
     margin: 0 3rem;
-    padding: 4rem;
+    padding: 4rem 4rem 1rem;
     background-color: var(--colorAbout);
 }
 
 .aboutMeTitle {
-    margin: 3rem 0rem 1rem;
+    margin: 1rem 0rem 1rem;
     align-items: center;
     justify-content: space-between;
     display: flex;
