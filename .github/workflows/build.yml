@@ -20,6 +20,10 @@ jobs:
         working-directory: ./client
         run: npm ci # This is npm clean-install and will install all in package.json
         
+      - name: Create new branch
+        working-directory: ./client
+        run: git checkout -b versionUpgrade
+        
       - name: Build
         working-directory: ./client
         run: npm run build
@@ -36,9 +40,13 @@ jobs:
       - name: Commit Version Change
         working-directory: ./client
         run: git commit ./package.json ./package-lock.json -m "Automated Version Update"
-        
+                
       - name: Push new version
         run: git push
+        
+      - name: Create Pull Request
+        working-directory: ./client
+        run: git version
         
         # The previous section was to build the react app, apply versions and push back to github
         
