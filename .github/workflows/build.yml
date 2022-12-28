@@ -6,6 +6,8 @@ on:
 jobs:
   Docker:
     runs-on: ubuntu-latest # Linux is the cheapest
+    outputs:
+      tag: ${{ steps.version.outputs.tag }}
     steps:
       - uses: actions/checkout@v3 # Able to use git functions in container
       - uses: actions/setup-node@v3 # Adds node to docker allowing npm
@@ -31,11 +33,7 @@ jobs:
       - name: Save version # Allows to save the version of node modules
         working-directory: ./client
         id: version
-        run: echo ::set-output name=tag::$(echo $(node -p -e "require('./package.json').version"))
-        
-      - name: Check version
-        working-directory: ./client
-        run: echo ${{steps.version.output.tag}}
+        run: echo $(node -p -e "require('./package.json').version") >> $GITHUB_OUTPUT
         
       - name: Increase version
         working-directory: ./client
@@ -62,7 +60,7 @@ jobs:
         
       - name: Build Docker Image
         working-directory: ./client
-        run: docker build . --file Dockerfile --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.output.tag}} # Version is a previously set within the file (id: version)
+        run: docker build . --file Dockerfile --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.outputs.tag}} # Version is a previously set within the file (id: version)
         
       - name: Push to DockerHub
         working-directory: ./client
