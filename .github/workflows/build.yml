@@ -33,6 +33,10 @@ jobs:
         id: version
         run: echo ::set-output name=tag::$(echo $(node -p -e "require('./package.json').version"))
         
+      - name: Check version
+        working-directory: ./client
+        run: echo ${{steps.version.output.tag}}
+        
       - name: Increase version
         working-directory: ./client
         run: npm version patch
