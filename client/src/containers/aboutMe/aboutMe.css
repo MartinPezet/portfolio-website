@@ -41,20 +41,20 @@
     margin-top: 1rem;
 }
 
-
+@media screen and (max-width: 950px)  {
+    .aboutMeContent {
+        flex-direction: column;
+    }
+}
 
 @media screen and (max-width: 850px)  {
     .aboutMeTitle {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .aboutMe .aboutText p {
         line-height: 24px;
-    }
-
-    .aboutMeContent {
-        flex-direction: column;
     }
 }
 
@@ -65,7 +65,7 @@
     }
 
     .aboutMe .aboutTitle h1 {
-        font-size: 22px;
+        font-size: 20px;
         line-height: 32px;
     }
 
