@@ -1,0 +1,15 @@
+services:
+  landingPage:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./deploy:/etc/nginx/conf.d
+      # - ./client/build:/usr/share/nginx/html
+      - ./deploy/certbot/conf:/etc/letsencrypt
+      - ./deploy/certbot/www:/var/www/certbot
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./deploy/certbot/conf:/etc/letsencrypt
+      - ./deploy/certbot/www:/var/www/certbot

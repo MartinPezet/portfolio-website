@@ -37,7 +37,8 @@ const Navbar = () => {
               </text>
           </svg>
         </div>
-        <div className="navBarLinksContainer scaleUpCenter">
+        <div className="navBarLinksContainer"> 
+        {/* Add scaleUpCenter where needed */}
           <Menu />
         </div>
       </div>
