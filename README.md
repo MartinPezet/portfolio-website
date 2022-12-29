@@ -13,11 +13,6 @@ This is the code for my personal portfolio website.
 - Sign In Popup needed
 - Number of users needed
 
-## Issues with current SSL
-
-SSL certs can't be moved from host server and therefore cannot be accessed by the docker container
-Could run the re cert everytime through docker
-
 ## Deployment
 
 This project is going to be deployed using a docker image using nginx for natural load balancing, caching and general web serving ability
