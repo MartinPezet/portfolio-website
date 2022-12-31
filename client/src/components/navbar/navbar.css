@@ -66,7 +66,7 @@
     cursor: pointer;
     outline: none;
 
-    background: #FF4820;
+    background: var(--colorButton);
     border-radius: 5px;
     font-weight: 500;
 }
@@ -100,13 +100,11 @@
     box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
 }
 
-.navBarMobMenuContainer p {
-    margin: 1 rem 0;
-}
-
 .navBarMobMenuContainerLinks p {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
 }
 
 .navBarMobMenuContainerLinksSignIn {

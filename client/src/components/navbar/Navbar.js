@@ -28,7 +28,7 @@ const Navbar = () => {
   )
 
   return (
-    <section className="navBar">
+    <section className="navBar" id="navbar">
       <div className="navBarLinks">
         <div className="navBarLogo">
           <svg viewBox="0 0 225 45" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
@@ -51,7 +51,7 @@ const Navbar = () => {
           : <RiMenu3Line color='#fff' size={27} onClick={() => setToggleMobMenu(true)} />
         }
         {toggleMobMenu && (
-          <div className='navBarMobMenuContainer scaleUpCenter'>
+           <div className='navBarMobMenuContainer scaleUpCenter'> {/* Change scaleUpCenter to scroll from top animation */}
             <div className='navBarMobMenuContainerLinks'>
               <Menu />
               <div className='navBarMobMenuContainerLinksSignIn'>
