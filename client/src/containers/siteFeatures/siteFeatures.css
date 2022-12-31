@@ -38,6 +38,10 @@
     justify-content: flex-start;
 }
 
+.featuresContent .about h1 {
+    margin-right: 1rem;
+}
+
 @media screen and (max-width: 950px) {
     .features {
         flex-direction: column;

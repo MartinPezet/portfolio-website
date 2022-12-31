@@ -7,12 +7,16 @@ const SiteFeatures = () => {
 
   const featuresData = [
     {
-      title:"Single Sign On",
-      text:"Sign In only once on martinpezet.net as all projects are linked with one account and you can access all of your information."
+      title: "Single Sign On",
+      text: "Sign In only once on martinpezet.net as all projects are linked with one account and you can access all of your information."
     },
     {
-      title:"Central Projects",
-      text:"All of my projects under one roof. Just explore and this landing page will always be here for some more cool projects to explore."
+      title: "Central Projects",
+      text: "All of my projects under one roof. Just explore and this landing page will always be here for some more cool projects to explore."
+    },
+    {
+      title: "Learn About Me",
+      text: "This website is the perfect place to get to know what I am like both as a programmer and a person."
     }
   ]
 
