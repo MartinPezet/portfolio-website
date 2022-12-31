@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Article = () => {
+const Project = () => {
   return (
-    <section>Article</section>
+    <section>Single Project</section>
   )
 }
 
-export default Article
+export default Project
