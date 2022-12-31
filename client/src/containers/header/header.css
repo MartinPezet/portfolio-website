@@ -72,7 +72,7 @@
     line-height: 27px;
     color: #fff;
 
-    background: #FF4820;
+    background: var(--colorButton);
     cursor: pointer;
 }
 
