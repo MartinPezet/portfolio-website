@@ -4,26 +4,23 @@ import './project.css'
 
 const Project = ({direction, title, image, imgAlt, text}) => {
 
-  const projectSide = {color: "blue"}
+  let classes = 'project';
 
-  useEffect(() => {
-      if (direction == "left") {
-        // Set css for left
-        let alignment = "left";
-      } else if (direction == "right"){
-        projectSide = {color: "red"}
-      }
-  }, (direction));
+  if (direction.normalize() === 'left'.normalize()) {
+    classes += ' left';
+  } else if (direction.normalize() === 'right'.normalize()) {
+    classes += ' right';
+  }
 
   return (
-    <section className="project">
-      <div style={projectSide}>
-        {title}
+    <section className={classes}>
+      <div className="projectTitle gradientText">
+        <p>{title}</p>
       </div>
-      <div>
+      <div className="projectImage">
         <img src={image} alt={imgAlt}/>
       </div>
-      <div>
+      <div className="projectText">
         <p>{text}</p>
       </div>
     </section>
