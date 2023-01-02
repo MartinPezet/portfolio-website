@@ -15,13 +15,14 @@ const Footer = () => {
           <div className="footerContentMore">
             <h2>More to do</h2>
             <a href='#projects'>Visit my projects</a>
-            <a href='#downloadCV'>Request a CV</a>
+            <a href='#downloadCV'>Request a CV (CS)</a>
           </div>
         </div>
         <div className="footerContentContainer2">
           <div className="footerContentContact">
             <h2>Contact Me</h2>
-            <a href='#email-me'>Email (coming soon)</a>
+            <a href='#email-me'>Email (CS)</a>
+            <a href='https://www.linkedin.com/in/martin-pezet-36306a181/'>LinkedIn message</a>
           </div>
           <div className="footerContentBackToTop">
             <h2>Back to top</h2>
