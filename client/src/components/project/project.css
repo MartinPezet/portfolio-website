@@ -43,13 +43,19 @@
 
 .projectTitle {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    flex-direction: column;
 
     font-size: 40px;
     font-weight: 600;
     line-height: 48px;
     padding: 1rem;
+}
+
+.projectTitle div {
+    width: 50px;
+    height: 5px;
+    background: var(--gradientBar);
+    margin-bottom: 0.5rem;
 }
 
 .projectImage {

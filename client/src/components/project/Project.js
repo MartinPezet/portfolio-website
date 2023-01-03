@@ -15,6 +15,7 @@ const Project = ({direction, title, image, imgAlt, text}) => {
   return (
     <section className={classes}>
       <div className="projectTitle">
+        <div />
         <p>{title}</p>
       </div>
       <div className="projectImage">
