@@ -12,6 +12,8 @@ This is the code for my personal portfolio website.
 - Sign In Popup needed
 - Number of users needed
 
+- Adaption for large screens
+
 ## Deployment
 
 This project is going to be deployed using a docker image using nginx for natural load balancing, caching and general web serving ability

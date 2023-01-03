@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import './project.css'
 
@@ -7,14 +7,14 @@ const Project = ({direction, title, image, imgAlt, text}) => {
   let classes = 'project';
 
   if (direction.normalize() === 'left'.normalize()) {
-    classes += ' left';
+    classes += ' left leftBackground';
   } else if (direction.normalize() === 'right'.normalize()) {
-    classes += ' right';
+    classes += ' right rightBackground';
   }
 
   return (
     <section className={classes}>
-      <div className="projectTitle gradientText">
+      <div className="projectTitle">
         <p>{title}</p>
       </div>
       <div className="projectImage">

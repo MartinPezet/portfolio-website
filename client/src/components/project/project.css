@@ -2,7 +2,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    margin: 2rem 0;
+    margin: 2rem 0 4rem;
     
     background-color: var(--colorAbout);
     font-family: var(--fontFamily);
@@ -12,27 +12,43 @@
 .left {
     justify-content: flex-start;
     align-items: flex-start;
-    margin-right: 15%;
-    padding-left: 15%;
-    padding-right: 5%;
+    align-self: flex-start;
+    margin-right: 5%;
+    padding-left: 10%;
+    padding-right: 2%;
 
     border-radius: 0 3rem 3rem 0;
 }
 
 .right {
     justify-content: flex-end;
-    align-items: flex-end;
-    margin-left: 15%;
-    padding-right: 15%;
-    padding-left: 5%;
+    align-items: flex-start;
+    align-self: flex-start;
+    margin-left: 5%;
+    padding-right: 10%;
+    padding-left: 2%;
 
     border-radius: 3rem 0 0 3rem;
 }
 
+.leftBackground {
+    background: rgb(4,12,24);
+    background: linear-gradient(90deg, rgba(4,12,24,1) 0%, rgba(3,22,46,1) 20%, rgba(0,40,83,1) 96%);
+}
+
+.rightBackground {
+    background: rgb(0,40,83);
+    background: linear-gradient(90deg, rgba(0,40,83,1) 0%, rgba(3,22,46,1) 76%, rgba(4,12,24,1) 96%);
+}
+
 .projectTitle {
-    font-size: 36px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    font-size: 40px;
     font-weight: 600;
-    line-height: 44px;
+    line-height: 48px;
     padding: 1rem;
 }
 
@@ -50,4 +66,12 @@
 
     font-size: 24px;
     line-height: 36px;
+
+    padding: 1rem 0 2rem;
+}
+
+@media screen and (max-width: 650px){
+    .projectImage {
+        padding: 1rem 0;
+    }
 }
