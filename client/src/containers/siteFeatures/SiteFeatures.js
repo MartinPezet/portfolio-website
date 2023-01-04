@@ -32,7 +32,7 @@ const SiteFeatures = () => {
     <section className="features" id="website-features">
       <div className="featuresTitle">
         <h1 className="gradientText">Website Features</h1>
-        <p>Features on martinpezet.net</p>
+        <p>Features on <a href="https://martinpezet.net">martinpezet.net</a></p>
       </div>
       <div className="featuresContent">
         {featuresData.map((item, index) => (
