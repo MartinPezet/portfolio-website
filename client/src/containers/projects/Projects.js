@@ -9,7 +9,7 @@ import placeholder from '../../assets/projectsComingSoon.png';
 
 const Projects = () => {
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <div className="projectsTitle">
         <p className="gradientText">Hosted Projects</p>
       </div>
