@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Popup } from '../';
 
 import './navbar.css';
 
@@ -9,6 +10,7 @@ import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 const Navbar = () => {
 
   const [toggleMobMenu, setToggleMobMenu] = useState(false);
+  const [toggleSignUp, setToggleSignUp] = useState(false);
 
   const Menu = () => (
     <>
@@ -21,14 +23,18 @@ const Navbar = () => {
 
   const SignIn = () => (
     <>
-      <p>Sign In Coming Soon</p>
-      {/* <p>Sign In</p>
-      <button>Register</button> */}
+      <p>Sign In</p>
+      <button onClick={() => setToggleSignUp(true)}>Register</button>
     </>
   )
 
   return (
     <section className="navBar" id="navbar">
+
+      <Popup isOpened={toggleSignUp} onClose={() => setToggleSignUp(false)}>
+        <h1>Sign Up</h1>
+      </Popup>
+
       <div className="navBarLinks">
         <div className="navBarLogo">
           <svg viewBox="0 0 225 45" shapeRendering="geometricPrecision" textRendering="geometricPrecision">

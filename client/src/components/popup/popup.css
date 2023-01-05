@@ -1,0 +1,29 @@
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupContent {
+    background-color: #043a70;
+    padding: 2rem;
+    max-width: 200px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.popupClose {
+    cursor: pointer;
+    text-align: center;
+}
