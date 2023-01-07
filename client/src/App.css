@@ -48,6 +48,14 @@ a {
     margin: 4rem 6rem;
 }
 
+.scaleOnHover {
+    transition: transform .2s;
+}
+
+.scaleOnHover:hover {
+    transform: scale(1.2);
+}
+
 
 /* Created using amazing tool Animista */
 .scale-up-center {
