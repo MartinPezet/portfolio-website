@@ -15,7 +15,6 @@
 .popupContent {
     background-color: #043a70;
     padding: 2rem;
-    max-width: 200px;
 
     display: flex;
     justify-content: flex-end;
