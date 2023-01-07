@@ -12,9 +12,8 @@
     align-items: center;
 }
 
-.popupContent {
-    background-color: #043a70;
-    padding: 2rem;
+.popupContainer {
+    background-color: var(--colorPopUp);
 
     display: flex;
     justify-content: flex-end;
@@ -22,7 +21,49 @@
     flex-direction: column;
 }
 
+.popupContent {
+    padding: 1rem 4rem 4rem;
+}
+
 .popupClose {
     cursor: pointer;
     text-align: center;
+
+    margin: 0.75rem 0.75rem 0 0;
+}
+
+/* Pop Up Content */
+
+.popUpTitle h1 {
+    font-family: var(--fontFamily);
+    font-size: 32px;
+    color: var(--colorText);
+
+    margin: 0 0 0.5rem 0.5rem;
+}
+
+.popUpInput input {
+    padding: 0.75rem;
+    margin: 1rem 0;
+
+    font-family: var(--fontFamily);
+    font-size: 16px;
+    font-weight: 600;
+
+    background-color: var(--colorAbout);
+    border: 0px;
+    color: var(--colorText);
+}
+
+.popUpInput input:autofill,
+.popUpInput input:webkit-autofill {
+    background-color: var(--colorAbout);
+    color: var(--colorText);
+    border: 0px;
+}
+
+
+
+.popUpInput input::placeholder {
+    color: var(--colorText);
 }
