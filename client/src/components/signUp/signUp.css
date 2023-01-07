@@ -1,0 +1,6 @@
+.signUp, 
+.signUpFormContent, 
+.signUpForm {
+    display: flex;
+    flex-direction: column;
+}
