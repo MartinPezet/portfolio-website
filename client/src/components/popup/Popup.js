@@ -12,11 +12,13 @@ const Popup = ({ isOpened, onClose, children }) => {
 
   return (
     <div className="popupOverlay" onClick={overlayClick}> 
-        <div className="popupContent">
-            <div className="popupClose" onClick={() => onClose()}>
+        <div className="popupContainer">
+            <div className="popupClose scaleOnHover" onClick={() => onClose()}>
                 <RiCloseLine color='#fff' size={27} />
             </div>
-            {children}
+            <div className="popupContent">
+                {children}
+            </div>
         </div>
     </div>
   )
