@@ -1,5 +1,5 @@
 import React from 'react';
-import { Popup } from '../';
+import { Popup, SignUp, SignIn } from '../';
 
 import './navbar.css';
 
@@ -11,6 +11,7 @@ const Navbar = () => {
 
   const [toggleMobMenu, setToggleMobMenu] = useState(false);
   const [toggleSignUp, setToggleSignUp] = useState(false);
+  const [toggleSignIn, setToggleSignIn] = useState(false);
 
   const Menu = () => (
     <>
@@ -21,9 +22,9 @@ const Navbar = () => {
     </>
   )
 
-  const SignIn = () => (
+  const SignInNav = () => (
     <>
-      <p>Sign In</p>
+      <p onClick={() => setToggleSignIn(true)}>Sign In</p>
       <button onClick={() => setToggleSignUp(true)}>Register</button>
     </>
   )
@@ -32,7 +33,11 @@ const Navbar = () => {
     <section className="navBar" id="navbar">
 
       <Popup isOpened={toggleSignUp} onClose={() => setToggleSignUp(false)}>
-        <h1>Sign Up</h1>
+        <SignUp />
+      </Popup>
+
+      <Popup isOpened={toggleSignIn} onClose={() => setToggleSignIn(false)}>
+        <SignIn />
       </Popup>
 
       <div className="navBarLinks">
@@ -49,7 +54,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navBarSignIn">
-        <SignIn />
+        <SignInNav />
       </div>
       <div className="navBarMobMenu">
         {toggleMobMenu
@@ -61,7 +66,7 @@ const Navbar = () => {
             <div className='navBarMobMenuContainerLinks'>
               <Menu />
               <div className='navBarMobMenuContainerLinksSignIn'>
-                <SignIn />
+                <SignInNav />
               </div>
             </div>
           </div>
