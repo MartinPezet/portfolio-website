@@ -57,6 +57,7 @@
 
 .navBarSignIn button,
 .navBarMobMenuContainer button {
+    margin: 0 1rem;
     padding: 0.75rem 1.5rem;
     color: #fff;
     font-family: var(--fontFamily);

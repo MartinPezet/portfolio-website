@@ -15,17 +15,17 @@ const Navbar = () => {
 
   const Menu = () => (
     <>
-      <p><a href='#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
-      <p><a href='#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
-      <p><a href='#website-features' onClick={() => setToggleMobMenu(false)}>Website Features</a></p> {/* Features of my website */}
-      <p><a href='#projects' onClick={() => setToggleMobMenu(false)}>Projects</a></p>
+      <p className="scaleOnHover"><a href='#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
+      <p className="scaleOnHover"><a href='#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
+      <p className="scaleOnHover"><a href='#website-features' onClick={() => setToggleMobMenu(false)}>Website Features</a></p> {/* Features of my website */}
+      <p className="scaleOnHover"><a href='#projects' onClick={() => setToggleMobMenu(false)}>Projects</a></p>
     </>
   )
 
   const SignInNav = () => (
     <>
-      <p onClick={() => setToggleSignIn(true)}>Sign In</p>
-      <button onClick={() => setToggleSignUp(true)}>Register</button>
+      <p className="scaleOnHover" onClick={() => setToggleSignIn(true)}>Sign In</p>
+      <button className="scaleOnHover" onClick={() => setToggleSignUp(true)}>Register</button>
     </>
   )
 
