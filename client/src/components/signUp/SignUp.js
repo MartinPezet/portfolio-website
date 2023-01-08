@@ -6,18 +6,18 @@ const SignUp = () => {
   return (
     <section className="signUp">
 
-        <div className="signUpTitle popUpTitle">
+        <div className="signUpTitle popupTitle">
             <h1 className="gradientText">Register</h1>
         </div>
         
         <form className="signUpForm">
-            <div className="signUpFormContent popUpInput">
+            <div className="signUpFormContent popupInput">
                 <input type="email" placeholder="Email" autoComplete='email' />
                 <input type="password" id="pwd" placeholder="Password" />
                 <input type="password" id="confirmPwd" placeholder="Retype Password" />
             </div>
-            <div className="signUpFormSubmit">
-                <input type="submit" value="Submit" />
+            <div className="signUpFormSubmit popupSubmit">
+                <button className="scaleOnHover">Register</button>
             </div>
         </form>
 

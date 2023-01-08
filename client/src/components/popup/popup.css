@@ -34,7 +34,7 @@
 
 /* Pop Up Content */
 
-.popUpTitle h1 {
+.popupTitle h1 {
     font-family: var(--fontFamily);
     font-size: 32px;
     color: var(--colorText);
@@ -42,7 +42,7 @@
     margin: 0 0 0.5rem 0.5rem;
 }
 
-.popUpInput input {
+.popupInput input {
     padding: 0.75rem;
     margin: 1rem 0;
 
@@ -53,26 +53,40 @@
     min-width: 400px;
 }
 
-.popUpInput input:autofill,
-.popUpInput input:-webkit-autofill,
-.popUpInput input:autofill:focus,
-.popUpInput input:-webkit-autofill:focus,
-.popUpInput input:autofill:active,
-.popUpInput input:-webkit-autofill:active {
+.popupInput input:autofill,
+.popupInput input:-webkit-autofill,
+.popupInput input:autofill:focus,
+.popupInput input:-webkit-autofill:focus,
+.popupInput input:autofill:active,
+.popupInput input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0px 100px var(--colorAbout) inset;
     -webkit-text-fill-color: var(--colorText);
 }
 
-.popUpInput * {
+.popupInput input::placeholder {
+    color: var(--colorText);
+}
+
+.popupInput * {
     font-family: var(--fontFamily);
     font-size: 18px;
     font-weight: 600;
 }
 
-.popUpInput *:focus {
+.popupInput *:focus {
     outline: none;
 }
 
-.popUpInput input::placeholder {
-    color: var(--colorText);
+.popupSubmit button {
+    padding: 0.75rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    background: var(--colorButton);
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
 }
