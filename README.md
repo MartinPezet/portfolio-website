@@ -2,6 +2,12 @@
 
 This is the code for my personal portfolio website.
 
+## Known Bugs
+
+- Background scrolling when modal (popup) is visible
+- Mobmenu ontop of overlay background when modal (popup) is visible
+- Small view modal overlay not covering whole screen
+
 ## Notes for Next Session
 
 - Keep Website Features up to date
