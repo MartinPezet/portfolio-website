@@ -36,15 +36,16 @@
 
 .popupTitle h1 {
     font-family: var(--fontFamily);
-    font-size: 32px;
+    font-size: 36px;
+    line-height: 44px;
     color: var(--colorText);
 
-    margin: 0 0 0.5rem 0.5rem;
+    margin: 1rem 0 0.75rem 0.75rem;
 }
 
 .popupInput input {
     padding: 0.75rem;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
 
     background-color: var(--colorAbout);
     border: 0px;
@@ -78,6 +79,7 @@
 }
 
 .popupSubmit button {
+    margin: 1.5rem 1.5rem 0;
     padding: 0.75rem;
     border: none;
     cursor: pointer;
@@ -89,4 +91,35 @@
     font-size: 16px;
     font-weight: 500;
     color: #fff;
+}
+
+@media screen and (max-width:650px) {
+    .popupContent {
+        padding: 0rem 3rem 3rem;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .popupInput input {
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .popupOverlay {    
+        display: flex;
+    }
+
+    .popupContainer {      
+    
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+    .popupClose {
+   
+        margin: 0.75rem 1.25rem 0 0;
+    }
 }
