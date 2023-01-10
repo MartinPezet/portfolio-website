@@ -1,3 +1,4 @@
 client/node_modules
 client/build
 signInServer/node_modules
+signInServer/.env
