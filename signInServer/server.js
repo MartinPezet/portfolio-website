@@ -1,11 +1,13 @@
 var express = require('express');
-const UserController = require('./Controllers/User.Controller');
+const UserController = require('./controllers/User.controller');
 var dotenv = require('dotenv').config();
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+require('./initDB')();
 
 app.get("/", (req, res, next) => {
     res.json({message: 'Test worked'});
