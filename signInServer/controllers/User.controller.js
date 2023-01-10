@@ -10,5 +10,15 @@ module.exports = {
         } catch (error) {
             console.log(error.message);
         }
+    },
+
+    createUser: async (req, res, next) => {
+        try {
+            const user = new User(req.body);
+            const result = await user.save();
+            res.send(result);
+        } catch (error) {
+            console.log(error.message);
+        }   
     }
 };

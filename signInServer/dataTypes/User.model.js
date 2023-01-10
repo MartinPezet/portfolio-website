@@ -16,7 +16,7 @@ const userSchema = new Schema({
         required: true
     },
     permissionLevel: {
-        type: Int32,
+        type: Number,
         required: true
     }
 

@@ -15,6 +15,8 @@ app.get("/", (req, res, next) => {
 
 app.get("/users", UserController.getAllUsers);
 
+app.post("/users", UserController.createUser);
+
 const PORT = process.env.PORT;
 
 app.listen(PORT, console.log("Server listening port", PORT));
