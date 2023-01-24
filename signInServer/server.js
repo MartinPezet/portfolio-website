@@ -17,6 +17,13 @@ app.get("/users", UserController.getAllUsers);
 
 app.post("/users", UserController.createUser);
 
+app.get("/users/:id", UserController.findUserById);
+
+app.get("/users/username/:userName", UserController.findUserByUsername);
+
+
+
+
 const PORT = process.env.PORT;
 
 app.listen(PORT, console.log("Server listening port", PORT));
