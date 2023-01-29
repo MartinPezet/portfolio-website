@@ -15,12 +15,14 @@ module.exports = {
 
     createUser: async (req, res, next) => {
         try {
+            // ADD THIS!!!!!! - Check if user already exists
+
             const user = new User(req.body);
             const result = await user.save();
             res.send(result);
         } catch (error) {
             console.log(error.message);
-        }   
+        }
     },
 
     findUserById: async (req, res, next) => {
@@ -57,5 +59,12 @@ module.exports = {
             }
             next(error);
         };
+    },
+
+    findUserByEmail: async (req, res, next) => { // Finish this function
+
+        res.send("Working")
     }
+
+    // Get Number of Users
 };

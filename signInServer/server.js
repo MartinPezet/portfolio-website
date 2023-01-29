@@ -21,6 +21,8 @@ app.get("/users/:id", UserController.findUserById);
 
 app.get("/users/username/:userName", UserController.findUserByUsername);
 
+// Is user currently logged in?
+
 
 
 
