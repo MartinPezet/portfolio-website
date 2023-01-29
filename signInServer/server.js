@@ -1,5 +1,4 @@
 var express = require('express');
-const UserController = require('./controllers/User.controller');
 var dotenv = require('dotenv').config();
 
 const app = express();
@@ -9,19 +8,23 @@ app.use(express.urlencoded({ extended: true }));
 
 require('./initDB')();
 
-app.get("/", (req, res, next) => {
+// Shows where deprecations are within the application
+process.on('warning', (warning) => {
+    console.log(warning.stack);
+});
+
+// Connection Test
+app.get("/test/", (req, res, next) => {
     res.json({message: 'Test worked'});
 });
 
-app.get("/users", UserController.getAllUsers);
+// User Route
+const UserRoute = require('./routes/User.route');
+app.use("/users", UserRoute);
 
-app.post("/users", UserController.createUser);
-
-app.get("/users/:id", UserController.findUserById);
-
-app.get("/users/username/:userName", UserController.findUserByUsername);
-
-// Is user currently logged in?
+// Auth Route
+const OAuthRoute = require('./routes/OAuth.route');
+app.use("/oauth", OAuthRoute);
 
 
 

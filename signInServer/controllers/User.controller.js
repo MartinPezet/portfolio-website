@@ -2,6 +2,8 @@ const createError = require('http-errors');
 const mongoose = require("mongoose");
 const User = require("../dataTypes/User.model");
 
+mongoose.set('strictQuery', false);
+
 module.exports = {
     getAllUsers: async (req, res, next) => {
         try {
