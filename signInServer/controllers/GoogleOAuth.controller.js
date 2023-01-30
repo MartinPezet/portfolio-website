@@ -1,4 +1,4 @@
-const fetch = import('node-fetch');
+const axios = require('axios');
 
 module.exports = {
     getGoogleOAuthURL: async (req, res, next) => {
@@ -19,15 +19,15 @@ module.exports = {
 
         const queryStrings = new URLSearchParams(options);
 
-        console.log(queryStrings);
-
         res.redirect(`${baseURL}?${queryStrings}`);
         
     },
 
 
 
-    getGoogleOAuthTokens: async (req, res, next) => {
+    //Helper functions for Google OAuth
+
+    getGoogleOAuthTokens: async ({code:code}) => {
         const url = "https://oauth2.googleapis.com/token";
 
         const values = {
@@ -39,17 +39,35 @@ module.exports = {
         };
 
         try {
-            const res = await fetch(url, {
-                method: "POST",
-                body: JSON.stringify(values),
+            const res = await axios.post(url, values, {
                 headers: {
                     "content-type": "application/x-www-form-urlencoded"
                 }
-            })
+            });
 
             return res.data;
         } catch (err) {
-            logger.error(err, "Failed to get Google OAuth tokens");
+            console.log("Failed to get Google OAuth tokens");
+            throw new Error(err);
+        }
+    },
+
+    getGoogleUserFromAccessToken: async (access_token, id_token) => {
+        try {
+            //console.log(access_token.access_token);
+            
+            const baseUrl = "https://www.googleapis.com/oauth2/v3/userinfo";
+            const url = `${baseUrl}?alt=json&access_token=${access_token.access_token}`;
+            const user = await axios.get(url, {
+                headers: {
+                    Authorization: `Bearer ${id_token.id_token}`
+
+                }
+            });
+            return user.data;
+
+        } catch (err) {
+            console.log("Failed to get Google user");
             throw new Error(err);
         }
     },
