@@ -22,6 +22,11 @@ This is the code for my personal portfolio website.
 - Added App logo to Google API Consent Screen when completed
 - Change Google API Domains when deploying
 
+### Other OAuth providers to include
+- Facebook
+- Github
+- Microsoft Azure
+
 ## Deployment
 
 This project is going to be deployed using a docker image using nginx for natural load balancing, caching and general web serving ability
