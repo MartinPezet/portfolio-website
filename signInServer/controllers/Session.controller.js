@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 
 module.exports = {
     googleOAuthHandler: async (req, res) =>{
@@ -39,5 +40,14 @@ module.exports = {
         }
 
         res.redirect('/');
-    }
+    },
+
+    getAllSessions: async (req, res) =>{
+        try {
+            const sessionModel = mongoose.model("session", new mongoose.Schema({}));
+            const allSessions = sessionModel.find({}, { __v:0 });
+            //console.log(allSessions);
+            res.send("Worked");
+        }catch (err) {console.log(err);}
+    },
 };
