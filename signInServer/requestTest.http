@@ -16,7 +16,6 @@ Content-Type: application/json
 {
   "userName": "MartinPezet",
   "email": "mpezet@ntlworld.com",
-  "password": "password",
   "permissionLevel": 1
 }
 
