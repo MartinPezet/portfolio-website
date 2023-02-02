@@ -1,4 +1,8 @@
-GET http://localhost:3001/users
+GET http://localhost:3001/users/
+
+###
+
+GET http://localhost:3001/users/delete/
 
 ###
 
@@ -6,7 +10,7 @@ GET http://localhost:3001/users/63d0080a2ab5c2e712ed6947
 
 ###
 
-GET http://localhost:3001/users/username/MartinPezet
+GET http://localhost:3001/users/username/Martin
 
 ###
 

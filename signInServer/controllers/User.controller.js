@@ -36,7 +36,16 @@ module.exports = {
         }
     },
 
-
+    deleteUser: async (req, res) => {
+        res.json({message:"Test"});
+        try {
+            console.log(req.params.id);
+            const result = awaitUser.deleteOne({_id: req.params.id});
+            res.send("Test");
+        } catch (error) {
+            console.log(error);
+        }
+    },
 
 
 
@@ -71,7 +80,7 @@ module.exports = {
     findUserByUsername: async (req, res, next) => {
         const userName = req.params.userName;
         try {
-            const user = await User.find({ userName:userName });
+            const user = await User.find({ displayName:userName });
             if (!user) {
                 throw createError(404, 'User does not exist.');
             }
