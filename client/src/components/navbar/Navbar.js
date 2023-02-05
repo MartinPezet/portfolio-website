@@ -1,5 +1,6 @@
 import React from 'react';
-import { Popup, SignUp, SignIn } from '../';
+// import { Popup, SignUp, SignIn } from '../';
+import { Link } from 'react-router-dom';
 
 import './navbar.css';
 
@@ -10,8 +11,8 @@ import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 const Navbar = () => {
 
   const [toggleMobMenu, setToggleMobMenu] = useState(false);
-  const [toggleSignUp, setToggleSignUp] = useState(false);
-  const [toggleSignIn, setToggleSignIn] = useState(false);
+  // const [toggleSignUp, setToggleSignUp] = useState(false);
+  // const [toggleSignIn, setToggleSignIn] = useState(false);
 
   const Menu = () => (
     <>
@@ -24,13 +25,17 @@ const Navbar = () => {
 
   const SignInNav = () => (
     <>
-      <p className="scaleOnHover" onClick={() => setToggleSignIn(true)}>Sign In</p>
-      <button className="scaleOnHover" onClick={() => setToggleSignUp(true)}>Register</button>
+      <p className="scaleOnHover">Sign in</p>
+      <button className="scaleOnHover">Register</button>
+      {/* <Link href='/sign-in'>Sign In</Link> */}
     </>
   )
 
   return (
     <section className="navBar" id="navbar">
+
+{/*       
+      MODAL SIGN IN AND SIGN UP
 
       <Popup isOpened={toggleSignUp} onClose={() => setToggleSignUp(false)}>
         <SignUp />
@@ -38,7 +43,7 @@ const Navbar = () => {
 
       <Popup isOpened={toggleSignIn} onClose={() => setToggleSignIn(false)}>
         <SignIn />
-      </Popup>
+      </Popup> */}
 
       <div className="navBarLinks">
         <div className="navBarLogo">

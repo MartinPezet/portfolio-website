@@ -1,23 +1,22 @@
 import React from 'react'
 
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import { Footer, Header, SiteFeatures, Socials, Projects, AboutMe } from './containers';
-import { Navbar } from './components';
+import Home from './pages/Home/Home';
+import SignInPage from './pages/SignInPage/SignInPage';
+
+import './App.css';
 
 const App = () => {
   return (
-    <section className='App'>
-      <div className="gradientBG">
-        <Navbar />
-        <Header />
-      </div>
-      <Socials />
-      <AboutMe />
-      <SiteFeatures />
-      <Projects />
-      <Footer />
-    </section>
+    <Router>
+      <section className='App'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route exact path='/sign-in' element={<SignInPage />} />
+        </Routes>
+      </section>
+    </Router>
   )
 }
 
