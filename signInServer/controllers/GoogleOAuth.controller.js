@@ -19,6 +19,7 @@ module.exports = {
 
         const queryStrings = new URLSearchParams(options);
 
+        res.header("Access-Control-Allow-Origin", "*");
         res.redirect(`${baseURL}?${queryStrings}`);
         
     },

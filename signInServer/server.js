@@ -5,9 +5,11 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
 const app = express();
+const cors = require('cors');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 require('./initDB')();
 
@@ -35,7 +37,7 @@ app.get("/test/", (req, res, next) => {
 });
 
 const SessionController = require('./controllers/Session.controller');
-app.get("/admin/sessions", SessionController.getAllSessions);
+app.get("/admin/sessions", SessionController.getAllSessions); 
 
 app.get("/logout", SessionController.sessionLogout);
 
