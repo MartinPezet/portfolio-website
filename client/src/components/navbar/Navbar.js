@@ -16,10 +16,10 @@ const Navbar = () => {
 
   const Menu = () => (
     <>
-      <p className="scaleOnHover"><a href='#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
-      <p className="scaleOnHover"><a href='#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
-      <p className="scaleOnHover"><a href='#website-features' onClick={() => setToggleMobMenu(false)}>Website Features</a></p> {/* Features of my website */}
-      <p className="scaleOnHover"><a href='#projects' onClick={() => setToggleMobMenu(false)}>Projects</a></p>
+      <p className="scaleOnHover"><a href='/#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
+      <p className="scaleOnHover"><a href='/#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
+      <p className="scaleOnHover"><a href='/#website-features' onClick={() => setToggleMobMenu(false)}>Website Features</a></p> {/* Features of my website */}
+      <p className="scaleOnHover"><a href='/#projects' onClick={() => setToggleMobMenu(false)}>Projects</a></p>
     </>
   )
 
