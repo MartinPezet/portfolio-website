@@ -41,16 +41,16 @@ module.exports = {
                         const res = UserController.updateUser({body}, {id:dbUser.id});
                         console.log(res);
                     } else {
-                        console.log("User is up to date");
+                        console.log("User is up to date: " + body.displayName);
                     }
                 } else {
                     // If user doesn't exist
                     const res = UserController.createUser({body:body});
-                    console.log("New user created");
+                    console.log("New user created: " + body.displayName);
                 }
 
             } else {
-                res.send("No Google User");
+                res.send("No Google User: " + body.displayName);
             }
 
             // Redirect to client
