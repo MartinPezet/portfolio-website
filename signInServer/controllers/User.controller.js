@@ -47,7 +47,7 @@ module.exports = {
         }
     },
 
-
+// Private functions
 
     getAllUsers: async (req, res, next) => {
         try {
