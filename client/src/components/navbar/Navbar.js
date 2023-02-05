@@ -25,9 +25,8 @@ const Navbar = () => {
 
   const SignInNav = () => (
     <>
-      <p className="scaleOnHover">Sign in</p>
+      <p className="scaleOnHover"><Link to='/sign-in'>Sign In</Link></p>
       <button className="scaleOnHover">Register</button>
-      {/* <Link href='/sign-in'>Sign In</Link> */}
     </>
   )
 
