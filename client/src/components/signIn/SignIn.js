@@ -5,17 +5,16 @@ import './signIn.css';
 
 const SignIn = () => {
 
-  const GoogleOauth = () => {
+  const [userInfo, setUserInfo] = React.useState('');
+
+  const GetUser = () => {
     console.log("Test")
-
-    // Actually redirect to nodejs server not ann axios call
   
-    axios.get('http://localhost:3001/oauth/google').then(res => {
+    axios.get('http://localhost:3001/get-session-user').then(res => {
       console.log(res);
-
+      setUserInfo(res);
     }).catch(err => {
       console.log(err);
-      
     })
   };
 
@@ -25,7 +24,7 @@ const SignIn = () => {
             <h1 className="gradientText">Sign In</h1>
         </div>
 
-        <button onClick={GoogleOauth()}>Google</button>
+        <a href="http://localhost:3001/oauth/google">Google</a>
         
         <form className="signInForm">
             <div className="signInFormContent popupInput">
@@ -39,6 +38,11 @@ const SignIn = () => {
                 <button className="scaleOnHover">Sign In</button>
             </div>
           </form>
+
+
+          <button onClick={GetUser}>Get User Info</button>
+          <p>{userInfo}</p>
+          
     </section>
   )
 }

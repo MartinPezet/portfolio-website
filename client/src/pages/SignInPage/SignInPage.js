@@ -6,7 +6,7 @@ const SignInPage = () => {
     <section>
         <Navbar />
         <div>
-        <SignIn />
+        <SignIn />        
         </div>
     </section>
   )
