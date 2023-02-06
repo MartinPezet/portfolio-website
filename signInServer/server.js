@@ -39,6 +39,8 @@ app.get("/test/", (req, res, next) => {
 const SessionController = require('./controllers/Session.controller');
 app.get("/admin/sessions", SessionController.getAllSessions); 
 
+app.get("get-session-user", SessionController.getCurrentSession);
+
 app.get("/logout", SessionController.sessionLogout);
 
 //TEMP Error redirect

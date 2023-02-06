@@ -62,6 +62,10 @@ module.exports = {
         }
     },
 
+    getCurrentSession: async (req, res) => {
+        res.json(req.session.user);
+    },
+
     sessionLogout: async (req, res) =>{
         if(req.session){
             req.session.destroy();
