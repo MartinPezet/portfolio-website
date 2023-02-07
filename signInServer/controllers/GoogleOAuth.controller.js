@@ -20,7 +20,7 @@ module.exports = {
         const queryStrings = new URLSearchParams(options);
 
         res.header("Access-Control-Allow-Origin", "*");
-        res.redirect(`${baseURL}?${queryStrings}`);
+        res.send(`${baseURL}?${queryStrings}`);
         
     },
 
@@ -40,6 +40,7 @@ module.exports = {
         };
 
         try {
+            console.log(code);
             const res = await axios.post(url, values, {
                 headers: {
                     "content-type": "application/x-www-form-urlencoded"
@@ -49,6 +50,7 @@ module.exports = {
             return res.data;
         } catch (err) {
             console.log("Failed to get Google OAuth tokens");
+            console.log(err.response);
             throw new Error(err);
         }
     },
@@ -62,7 +64,6 @@ module.exports = {
             const user = await axios.get(url, {
                 headers: {
                     Authorization: `Bearer ${id_token.id_token}`
-
                 }
             });
             return user.data;

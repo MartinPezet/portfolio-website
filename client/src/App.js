@@ -2,8 +2,7 @@ import React from 'react'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Home from './pages/Home/Home';
-import SignInPage from './pages/SignInPage/SignInPage';
+import { Callback, Home, SignInPage } from './pages';
 
 import './App.css';
 
@@ -13,7 +12,8 @@ const App = () => {
       <section className='App'>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route exact path='/sign-in' element={<SignInPage />} />
+          <Route exact path='/oauth/google' element={<SignInPage />} />
+          <Route path='/oauth/google/callback' element={<Callback />} />
         </Routes>
       </section>
     </Router>

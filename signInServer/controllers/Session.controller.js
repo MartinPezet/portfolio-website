@@ -7,6 +7,7 @@ module.exports = {
         try {
             // Get the code from the query string
             const code = req.query.code;
+            console.log(code);
 
             //Get token with code (api call)
             const tokens = await require('./GoogleOAuth.controller').getGoogleOAuthTokens({code:code});
@@ -55,7 +56,7 @@ module.exports = {
 
             // Redirect to client
             // res.send(req.session);
-            res.redirect('/oauth');
+            res.redirect('http://localhost:3000');
         } catch(err){
             console.log(err);
             res.redirect('/error');
