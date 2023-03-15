@@ -14,6 +14,10 @@ const Navbar = () => {
   // const [toggleSignUp, setToggleSignUp] = useState(false);
   // const [toggleSignIn, setToggleSignIn] = useState(false);
 
+  const Logout = () => {
+    window.open('http://localhost:3001/oauth/logout', '_self');
+  }
+
   const Menu = () => (
     <>
       <p className="scaleOnHover"><a href='/#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
@@ -27,6 +31,7 @@ const Navbar = () => {
     <>
       <p className="scaleOnHover"><Link to='/oauth/google'>Sign In</Link></p>
       <button className="scaleOnHover">Register</button>
+      <button onClick={Logout}>Logout</button>
     </>
   )
 
