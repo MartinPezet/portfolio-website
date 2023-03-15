@@ -50,5 +50,5 @@ passport.serializeUser(function(user, callback) {
 });
 
 passport.deserializeUser(function(user, callback) {
-  callback(null, obj);
+  callback(null, user);
 });
