@@ -11,10 +11,6 @@ passport.use(new GoogleStrategy({
     // console.log(profile);
     const googleUser = profile._json
     if (googleUser) {
-      //create Session
-      // req.session.authenticated = true;
-      // req.session.user = googleUser;
-
       //Update user in DB
       const body = {
           authType: "google",
@@ -49,6 +45,7 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.serializeUser(function(user, callback) {
+  // can initialize session here
   callback(null, user);
 });
 
