@@ -2,7 +2,7 @@ import React from 'react'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import { Callback, Home, SignInPage } from './pages';
+import { Home, SignInPage } from './pages';
 
 import './App.css';
 
