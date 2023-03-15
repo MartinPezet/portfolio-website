@@ -13,7 +13,6 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route exact path='/oauth/google' element={<SignInPage />} />
-          <Route path='/oauth/google/callback' element={<Callback />} />
         </Routes>
       </section>
     </Router>
