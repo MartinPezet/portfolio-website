@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 import './signIn.css';
 
@@ -7,41 +6,54 @@ const SignIn = () => {
 
   const [userInfo, setUserInfo] = React.useState('');
 
+  const config = {
+    method: "GET",
+    credentials: "include",
+    headers: {
+      Accept: 'application/json',
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": true
+    }
+  };
+
+  const google = () => {
+    window.open('http://localhost:3001/oauth/google', '_self');
+  };
+
   const GetUser = () => {
-    console.log("Test")
-  
-    axios.get('http://localhost:3001/get-session-user').then(res => {
-      console.log(res);
-      setUserInfo(res);
-    }).catch(err => {
-      console.log(err);
-    })
+    console.log("Working");
+    fetch('http://localhost:3001/oauth/login/success', config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
+      if (res.status === 200) return res.json()
+    }).then(resObj => {
+      setUserInfo(resObj.user.name.givenName)
+      console.log(resObj.user.name)
+    }).catch(err => console.log(err)
+    );
   };
 
   return (
     <section>
       <div className="signInTitle popupTitle">
-            <h1 className="gradientText">Sign In</h1>
+        <h1 className="gradientText">Sign In</h1>
+      </div>
+
+      <button onClick={google}>Google</button>
+
+      <form className="signInForm">
+        <div className="signInFormContent popupInput">
+          <input type="email" placeholder="Email" autoComplete='email' />
+          <input type="password" id="pwd" placeholder="Password" />
         </div>
+        <div className="signInRegisterLink">
+          <p>Don't have an account already? Register link</p>
+        </div>
+        <div className="signInFormSubmit popupSubmit">
+          <button className="scaleOnHover">Sign In</button>
+        </div>
+      </form>
 
-        <a href="https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fgoogle%2Fcallback&client_id=72317049297-sjq8gu9391e7t2qevnu88fds73q76d0f.apps.googleusercontent.com&access_type=offline&response_type=code&prompt=consent&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email">Google</a>
-        
-        <form className="signInForm">
-            <div className="signInFormContent popupInput">
-                <input type="email" placeholder="Email" autoComplete='email' />
-                <input type="password" id="pwd" placeholder="Password" />
-            </div>
-            <div className="signInRegisterLink">
-              <p>Don't have an account already? Register link</p>
-            </div>
-            <div className="signInFormSubmit popupSubmit">
-                <button className="scaleOnHover">Sign In</button>
-            </div>
-          </form>
-
-
-          <button onClick={GetUser}>Get User Info</button>
-          <p>{userInfo}</p>
+      <button onClick={GetUser}>Get User Info</button>
+      <p>{userInfo}</p>
           
     </section>
   )
