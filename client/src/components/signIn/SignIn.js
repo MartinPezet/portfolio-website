@@ -21,7 +21,6 @@ const SignIn = () => {
   };
 
   const GetUser = () => {
-    console.log("Working");
     fetch('http://localhost:3001/oauth/login/success', config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
       if (res.status === 200) return res.json()
     }).then(resObj => {
