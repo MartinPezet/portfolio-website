@@ -3,15 +3,24 @@ const dotenv = require('dotenv').config(); // For using the environment variable
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const passport = require('passport');
+const passportSetup = require('./config/passport');
 
 const app = express();
 const cors = require('cors');
+const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors(
+    {
+        origin: 'http://localhost:3000',
+        methods: 'GET,PUT,POST,DELETE',
+        credentials: true
+    }
+));
 
-require('./initDB')();
+require('./config/initDB')();
 
 // Session Initialisation
 app.use(session({
@@ -30,18 +39,18 @@ process.on('warning', (warning) => {
     console.log(warning.stack);
 });
 
+// Passport Init
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+// ------------------------------- ROUTES ------------------------------- //
+
 // Connection Test
 app.get("/test/", (req, res, next) => {
     console.log(req.sessionID);
     res.json({message: 'Test worked', session: req.session});
 });
-
-const SessionController = require('./controllers/Session.controller');
-app.get("/admin/sessions", SessionController.getAllSessions); 
-
-app.get("/get-session-user", SessionController.getCurrentSession);
-
-app.get("/logout", SessionController.sessionLogout);
 
 //TEMP Error redirect
 app.get("/error/", (req, res, next) => {
@@ -57,8 +66,6 @@ const OAuthRoute = require('./routes/OAuth.route');
 app.use("/oauth", OAuthRoute);
 
 
-
-
-const PORT = process.env.PORT;
+// ------------------------------- START SERVER ------------------------------- //
 
 app.listen(PORT, console.log("Server listening port", PORT));

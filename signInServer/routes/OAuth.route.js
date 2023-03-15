@@ -1,16 +1,37 @@
 const express = require('express');
 const router = express.Router();
 
-const GoogleController = require('../controllers/GoogleOAuth.controller');
-const SessionController = require('../controllers/Session.controller');
+const passport = require('passport');
 
+router.get('/google', passport.authenticate("google", {scope:["profile", "email"]}))
 
-router.get('/', function(req, res, next) {
-    res.json({"message": "Hello OAuth"});
+router.get('/google/callback', passport.authenticate("google", {
+    successRedirect: "http://localhost:3000/",
+    failureRedirect: "/login/failed",
+}));
+
+router.get('/login/failed', (req, res) => {
+    res.status(401).json({
+        success: false,
+        message: "Failed"
+    });
 });
 
-router.get('/google', GoogleController.getGoogleOAuthURL);
+router.get('/login/success', (req, res) => {
+    if (req.user) {
+        res.status(200).json({
+            success: true,
+            message: "Logged In",
+            user: req.user
+        });
+    }
+});
 
-router.get('/google/callback', SessionController.googleOAuthHandler);
+router.get('/logout', (req, res) => {
+    req.logOut(function(err) {
+        if (err) return next(err)
+        res.redirect('http://localhost:3000/');
+    });
+});
 
 module.exports = router;
