@@ -4,6 +4,8 @@ This is the code for my personal portfolio website.
 
 ## Known Bugs
 
+- Can't access any session information outside of the success end point
+
 ## Notes for Next Session
 
 - Keep Website Features up to date
