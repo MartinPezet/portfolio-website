@@ -2,9 +2,10 @@ const express = require('express');
 const dotenv = require('dotenv').config(); // For using the environment variables
 
 const session = require('express-session');
-const MongoStore = require('connect-mongo');
+const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const passportSetup = require('./config/passport');
+const MongoStore = require('connect-mongo');
 
 const app = express();
 const cors = require('cors');
@@ -19,13 +20,14 @@ app.use(cors(
         credentials: true
     }
 ));
+app.use(cookieParser());
 
 require('./config/initDB')();
 
 // Session Initialisation
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hours
+    cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hours // Don't add secure tag otherwise it will break sessions
     saveUninitialized: false,
     resave: true,
     store: MongoStore.create({ 
@@ -48,8 +50,10 @@ app.use(passport.session());
 
 // Connection Test
 app.get("/test/", (req, res, next) => {
-    console.log(req.sessionID);
-    res.json({message: 'Test worked', session: req.session});
+    console.log("Connection Test");
+    console.log(req.session);
+    // res.json({message: 'Test worked', session: req.session});
+    res.send({session: req.session})
 });
 
 //TEMP Error redirect
@@ -63,7 +67,7 @@ app.use("/users", UserRoute);
 
 // Auth Route
 const OAuthRoute = require('./routes/OAuth.route');
-app.use("/oauth", OAuthRoute);
+app.use("/auth", OAuthRoute);
 
 
 // ------------------------------- START SERVER ------------------------------- //
