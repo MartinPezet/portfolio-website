@@ -5,20 +5,22 @@ const User = require("../dataTypes/User.model");
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_OAUTH_CLIENT_ID,
     clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET,
-    callbackURL: "/oauth/google/callback"
+    callbackURL: "/auth/google/callback"
   },
-  async function(accessToken, refreshToken, profile, callback) {
+  async function(accessToken, refreshToken, profile, done) {
     // console.log(profile);
     const googleUser = profile._json
+    let body = {}
     if (googleUser) {
       //Update user in DB
-      const body = {
-          authType: "google",
-          displayName: googleUser.given_name,
-          name: googleUser.name,
-          email: googleUser.email,
-          permissionLevel: 1,
-          pictureLink: googleUser.picture
+      body = {
+        authType: "google",
+        displayName: googleUser.given_name,
+        name: googleUser.name,
+        email: googleUser.email,
+        permissionLevel: 1,
+        pictureLink: googleUser.picture,
+        googleId: googleUser.sub
       }
 
       const UserController = require("../controllers/User.controller");
@@ -30,7 +32,6 @@ passport.use(new GoogleStrategy({
               body.permissionLevel = dbUser.permissionLevel;
               // Update user in db
               const res = UserController.updateUser({body}, {id:dbUser.id});
-              console.log(res);
           } else {
               console.log("User is up to date: " + body.displayName);
           }
@@ -40,15 +41,16 @@ passport.use(new GoogleStrategy({
           console.log("New user created: " + body.displayName);
       }
     }
-    callback(null, profile);
+    done(null, body);
   }
 ));
 
-passport.serializeUser(function(user, callback) {
-  // can initialize session here
-  callback(null, user);
+passport.serializeUser(function(user, done) {
+  console.log("Serializing user: ", user.displayName);
+  done(null, user);
 });
 
-passport.deserializeUser(function(user, callback) {
-  callback(null, user);
+passport.deserializeUser(function(id, done) {
+  console.log("Deserialise");
+  done(null, id);
 });
