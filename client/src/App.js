@@ -12,7 +12,7 @@ const App = () => {
       <section className='App'>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route exact path='/oauth/google' element={<SignInPage />} />
+          <Route exact path='/sign-in' element={<SignInPage />} />
         </Routes>
       </section>
     </Router>
