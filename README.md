@@ -4,7 +4,7 @@ This is the code for my personal portfolio website.
 
 ## Known Bugs
 
-- Can't access any session information outside of the success end point
+- #4 Can't access any session information outside of the success end point
 
 ## Notes for Next Session
 
