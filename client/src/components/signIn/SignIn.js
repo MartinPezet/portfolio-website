@@ -17,17 +17,16 @@ const SignIn = () => {
   };
 
   const google = () => {
-    window.open('http://localhost:3001/oauth/google', '_self');
+    window.open('http://localhost:3001/auth/google', '_self');
   };
 
   const GetUser = () => {
-    fetch('http://localhost:3001/oauth/login/success', config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
+    fetch('http://localhost:3001/auth/login/success', config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
       if (res.status === 200) return res.json()
     }).then(resObj => {
-      setUserInfo(resObj.user.name.givenName)
-      console.log(resObj.user.name)
-    }).catch(err => console.log(err)
-    );
+      setUserInfo(resObj.user.name)
+      console.log(resObj)
+    }).catch(err => console.log(err));
   };
 
   return (
