@@ -26,6 +26,10 @@ const userSchema = new Schema({
     pictureLink: {
         type: String,
         required: false
+    },
+    googleId: {
+        type: Number,
+        required: true
     }
 
 });
