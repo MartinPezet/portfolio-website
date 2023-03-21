@@ -2,8 +2,8 @@ import {createContext, useState} from 'react';
 
 const UserContext = createContext({});
 
-export const UserProvider = ({ children }) => {
-    const [ auth, setAuth ] = useState({});
+const UserProvider = ({ children }) => {
+    const [ user, setUser ] = useState({});
 
     // User Structure
     // Display Name
@@ -12,10 +12,12 @@ export const UserProvider = ({ children }) => {
     // POSSIBLY Length of session/session expiry date and time
 
     return(
-        <UserContext.Provider value={{ auth, setAuth }}>
+        <UserContext.Provider value={{ user, setUser }}>
             { children }
         </UserContext.Provider>
     )
 };
 
-export default UserContext;
+export default UserProvider;
+
+export const UserCon = UserContext;

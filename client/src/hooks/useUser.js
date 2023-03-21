@@ -1,10 +1,10 @@
 // Allows us to use Auth from AuthContext
 
 import { useContext } from "react";
-import AuthContext from "../context/AuthProvider";
+import { UserCon } from "../context/UserProvider";
 
 const useUser = () => {
-    return useContext(AuthContext);
+    return useContext(UserCon);
 }
 
 export default useUser;
