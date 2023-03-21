@@ -39,7 +39,7 @@ const SignIn = () => {
 
         <div className="signInButtonContainer">
           <button className="google signInButton scaleOnHover" onClick={google}>
-            <img className='googleImg' src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            <img className='googleImg' alt="Google Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
             oogle
           </button>
           <button className="signInButton scaleOnHover">MORE COMING ...</button>
