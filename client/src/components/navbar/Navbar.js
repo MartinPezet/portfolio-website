@@ -29,9 +29,8 @@ const Navbar = () => {
 
   const SignInNav = () => (
     <>
-      <p className="scaleOnHover"><Link to='/sign-in'>Sign In</Link></p>
-      <button className="scaleOnHover">Register</button>
-      <button onClick={Logout}>Logout</button>
+      <button className="scaleOnHover"><Link to='/sign-in'>Sign In</Link></button>
+      <button className="scaleOnHover" onClick={Logout}>Logout</button>
     </>
   )
 
