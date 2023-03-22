@@ -23,21 +23,26 @@ const App = () => {
   };
 
   const GetUser = () => {
-    fetch('http://localhost:3001/auth/login/success', config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
-      if (res.status === 200) return res.json()
-    }).then(resObj => {
-      if (resObj.success) {
-        const newUser = {
-          displayName: resObj.user.displayName,
-          name: resObj.user.name,
-          email: resObj.user.email,
-          pictureLink: resObj.user.pictureLink
+    try {
+      fetch('http://localhost:3001/auth/login/success', config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
+        if (res.status === 200) return res.json()
+      }).then(resObj => {
+        if (resObj.success) {
+          const newUser = {
+            displayName: resObj.user.displayName,
+            name: resObj.user.name,
+            email: resObj.user.email,
+            pictureLink: resObj.user.pictureLink
+          }
+          setUser(newUser)
+        } else {
+          console.log(resObj.message);
         }
-        setUser(newUser)
-      } else {
-        console.error(resObj.message);
-      }
-    }).catch(err => console.log(err));
+    }).catch(err => {throw err});
+    } catch (e) {
+      console.log(e);
+    }
+    
   };
 
   useEffect(() => {
