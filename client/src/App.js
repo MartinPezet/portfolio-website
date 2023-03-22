@@ -24,7 +24,7 @@ const App = () => {
 
   const GetUser = () => {
     try {
-      if (!process.env?.REACT_APP_SSO_API_BASE_URI) throw new Error("Env not loaded")
+      if (!process.env?.REACT_APP_SSO_API_BASE_URI) throw new Error("Env not loaded");
       fetch((process.env.REACT_APP_SSO_API_BASE_URI + '/auth/login/success'), config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
         if (res.status === 200) return res.json()
       }).then(resObj => {
