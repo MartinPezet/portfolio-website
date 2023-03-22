@@ -62,8 +62,8 @@ app.get("/error/", (req, res, next) => {
 });
 
 // User Route
-const UserRoute = require('./routes/User.route');
-app.use("/users", UserRoute);
+// const UserRoute = require('./routes/User.route');
+// app.use("/users", UserRoute);
 
 // Auth Route
 const OAuthRoute = require('./routes/OAuth.route');
