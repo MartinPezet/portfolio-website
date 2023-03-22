@@ -1,4 +1,4 @@
-name: Build
+name: Build LandingPage
 
 on:
   workflow_dispatch: # Manually be able to run it
