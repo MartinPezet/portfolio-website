@@ -3,10 +3,12 @@ const router = express.Router();
 
 const passport = require('passport');
 
+const FRONTEND_BASE_URI = process.env.FRONTEND_BASE_URI
+
 router.get('/google', passport.authenticate("google", {scope:["profile", "email"]}))
 
 router.get('/google/callback', passport.authenticate("google", {
-    successRedirect: "http://localhost:3000/",
+    successRedirect: FRONTEND_BASE_URI,
     failureRedirect: "/login/failed", // Can replace this with frontend URL and use the below fine
     // failureMesaage: "Authentication failed"
 }));
@@ -37,7 +39,7 @@ router.get('/login/success', (req, res) => {
 router.get('/logout', (req, res) => {
     req.logOut(function(err) {
         if (err) return next(err)
-        res.redirect('http://localhost:3000/');
+        res.redirect(FRONTEND_BASE_URI);
     });
 });
 
