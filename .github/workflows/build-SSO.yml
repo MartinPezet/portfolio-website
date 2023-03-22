@@ -34,7 +34,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          branch: "versionUpgrade"
+          branch: "versionUpgradeSSO"
           base: main
           delete-branch: true
           title: Version Upgrade (REMINDER TO DELETE BRANCH)
