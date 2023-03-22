@@ -50,9 +50,9 @@ jobs:
         
       - name: Push Tagged Version to DockerHub
         working-directory: ./signInServer
-        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.outputs.tag}}
+        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-single-sign-on:${{steps.version.outputs.tag}}
         
       - name: Push Latest Version to DockerHub
         working-directory: ./signInServer
-        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:latest
+        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-single-sign-on:latest
         
