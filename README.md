@@ -7,7 +7,6 @@ This is the code for my personal portfolio website.
 - Keep Website Features up to date
 - Add Animations to all clickable links
 - Changes to styles needed
-- Sign In Popup needed
 - Number of users needed
 
 - Adaption for large screens
