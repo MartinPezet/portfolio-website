@@ -17,7 +17,12 @@ const Navbar = () => {
 
   const Logout = () => {
     // setUser({});
-    window.open('http://localhost:3001/auth/logout', '_self');
+    try {
+      if (!process.env?.REACT_APP_SSO_API_BASE_URI) throw new Error("Env not loaded")
+      window.open((process.env.REACT_APP_SSO_API_BASE_URI + '/auth/logout'), '_self');
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   const Menu = () => (
