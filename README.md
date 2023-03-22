@@ -9,13 +9,8 @@ This is the code for my personal portfolio website.
 ## Notes for Next Session
 
 - Keep Website Features up to date
-- Add Animations to all clickable links
 - Changes to styles needed
-- Sign In Popup needed
 - Number of users needed
-- Restyle sign-in/sign-up pages
-- Add sessions for node server
-- Add global auth state
 
 - Adaption for large screens
 
