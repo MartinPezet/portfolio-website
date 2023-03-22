@@ -1,11 +1,15 @@
-name: Build
+name: Build LandingPage
 
 on:
   workflow_dispatch: # Manually be able to run it
   
+env:
+ REACT_APP_SSO_API_BASE_URI: ${{ secrets.REACT_APP_SSO_API_BASE_URI }}
+  
 jobs:
   Docker:
     runs-on: ubuntu-latest # Linux is the cheapest
+    environment: PROD
     outputs:
       tag: ${{ steps.version.outputs.tag }}
     steps:
