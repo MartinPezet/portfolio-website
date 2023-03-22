@@ -1,6 +1,7 @@
 import React from 'react';
 // import { Popup, SignUp, SignIn } from '../';
 import { Link } from 'react-router-dom';
+import useUser from '../../hooks/useUser';
 
 import './navbar.css';
 
@@ -11,10 +12,11 @@ import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 const Navbar = () => {
 
   const [toggleMobMenu, setToggleMobMenu] = useState(false);
-  // const [toggleSignUp, setToggleSignUp] = useState(false);
-  // const [toggleSignIn, setToggleSignIn] = useState(false);
+
+  const { user } = useUser();
 
   const Logout = () => {
+    // setUser({});
     window.open('http://localhost:3001/auth/logout', '_self');
   }
 
@@ -27,26 +29,34 @@ const Navbar = () => {
     </>
   )
 
+  const isAuth = () => {
+    if (Object.keys(user)?.length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   const SignInNav = () => (
     <>
-      <button className="scaleOnHover"><Link to='/sign-in'>Sign In</Link></button>
-      <button className="scaleOnHover" onClick={Logout}>Logout</button>
+      {isAuth() ? 
+      <button className="scaleOnHover">
+        <Link to='/sign-in'>
+          Sign In
+        </Link>
+      </button> 
+      :
+      <div className="navbarSignedIn">
+        <p>Hi {user.displayName}</p>
+        <button className="scaleOnHover" onClick={Logout}>
+          Logout
+        </button>
+      </div>}
     </>
   )
 
   return (
     <section className="navBar" id="navbar">
-
-{/*       
-      MODAL SIGN IN AND SIGN UP
-
-      <Popup isOpened={toggleSignUp} onClose={() => setToggleSignUp(false)}>
-        <SignUp />
-      </Popup>
-
-      <Popup isOpened={toggleSignIn} onClose={() => setToggleSignIn(false)}>
-        <SignIn />
-      </Popup> */}
 
       <div className="navBarLinks">
         <div className="navBarLogo">
@@ -56,7 +66,7 @@ const Navbar = () => {
               </text>
           </svg>
         </div>
-        <div className="navBarLinksContainer"> 
+        <div className="navBarLinksContainer">
         {/* Add scaleUpCenter where needed */}
           <Menu />
         </div>
