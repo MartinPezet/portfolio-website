@@ -1,0 +1,62 @@
+name: Build SSO
+
+on:
+  workflow_dispatch: # Manually be able to run it
+  
+jobs:
+  Docker:
+    runs-on: ubuntu-latest # Linux is the cheapest
+    outputs:
+      tag: ${{ steps.version.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v3 # Able to use git functions in container
+      - uses: actions/setup-node@v3 # Adds node to docker allowing npm
+        with:
+          node-version: 14
+      - name: Setup bot user # Increases version on every commit to master/main
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: Dependencies
+        working-directory: ./signInServer
+        run: npm ci # This is npm clean-install and will install all in package.json
+        
+      - name: Save version # Allows to save the version of node modules
+        working-directory: ./signInServer
+        id: version
+        run: echo "tag=$(node -p -e "require('./package.json').version")" >> $GITHUB_OUTPUT
+        
+      - name: Increase version
+        working-directory: ./signInServer
+        run: npm version patch
+        
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: "versionUpgrade"
+          base: main
+          delete-branch: true
+          title: Version Upgrade (REMINDER TO DELETE BRANCH)
+          
+        
+        # The previous section was to build the react app, apply versions and push back to github
+        
+        # The next few steps are to create a docker image so a server can run this in a docker container and upgrade images easily
+        
+      - name: Login to DockerHub
+        working-directory: ./signInServer
+        run: echo ${{secrets.DOCKERHUB_PASSWORD}} | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin # The secrets are a Github actions variable so public code doesn't include passwords and usernames
+        
+      - name: Build Docker Image
+        working-directory: ./signInServer
+        run: docker build . --file Dockerfile --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-single-sign-on:latest --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-single-sign-on:${{steps.version.outputs.tag}} # Version is a previously set within the file (id: version)
+        
+      - name: Push Tagged Version to DockerHub
+        working-directory: ./signInServer
+        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-single-sign-on:${{steps.version.outputs.tag}}
+        
+      - name: Push Latest Version to DockerHub
+        working-directory: ./signInServer
+        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-single-sign-on:latest
+        

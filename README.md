@@ -2,14 +2,26 @@
 
 This is the code for my personal portfolio website.
 
+## Known Bugs
+
+- #4 Can't access any session information outside of the success end point
+
 ## Notes for Next Session
 
 - Keep Website Features up to date
-- Add Animations to all clickable links
 - Changes to styles needed
 - Number of users needed
 
 - Adaption for large screens
+
+### Google API Configuration
+- Added App logo to Google API Consent Screen when completed
+- Change Google API Domains when deploying
+
+### Other OAuth providers to include
+- Facebook
+- Github
+- Microsoft Azure
 
 ## Deployment
 

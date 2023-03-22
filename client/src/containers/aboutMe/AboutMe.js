@@ -12,7 +12,7 @@ const AboutMe = () => {
       </div>
       <div className="aboutMeTitle">
         <h1 className="gradientText">Martin's Background</h1>
-        <a className="gradientText" href="#downloadCV">Request CV</a>
+        <a className="gradientText scaleOnHover" href="#downloadCV">Request CV</a>
       </div>
       <div className="aboutMeContent">
         <About title="Education" text="Having now studied Computer Science at GCSE, A-Level and degree level and have built many different applications in many different languages throughout my journey. I also studied Business and Mathematics at A-Level and just graduated with a First Class degree in Computer Science. To find out more then please request a download for my CV above." />

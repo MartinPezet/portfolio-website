@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+// import { Popup, SignUp, SignIn } from '../';
+import { Link } from 'react-router-dom';
+import useUser from '../../hooks/useUser';
 
 import './navbar.css';
 
@@ -10,25 +13,56 @@ const Navbar = () => {
 
   const [toggleMobMenu, setToggleMobMenu] = useState(false);
 
+  const { user } = useUser();
+
+  const Logout = () => {
+    // setUser({});
+    try {
+      if (!process.env?.REACT_APP_SSO_API_BASE_URI) throw new Error("Env not loaded")
+      window.open((process.env.REACT_APP_SSO_API_BASE_URI + '/auth/logout'), '_self');
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   const Menu = () => (
     <>
-      <p><a href='#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
-      <p><a href='#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
-      <p><a href='#website-features' onClick={() => setToggleMobMenu(false)}>Website Features</a></p> {/* Features of my website */}
-      <p><a href='#projects' onClick={() => setToggleMobMenu(false)}>Projects</a></p>
+      <p className="scaleOnHover"><a href='/#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
+      <p className="scaleOnHover"><a href='/#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
+      <p className="scaleOnHover"><a href='/#website-features' onClick={() => setToggleMobMenu(false)}>Website Features</a></p> {/* Features of my website */}
+      <p className="scaleOnHover"><a href='/#projects' onClick={() => setToggleMobMenu(false)}>Projects</a></p>
     </>
   )
 
-  const SignIn = () => (
+  const isAuth = () => {
+    if (Object.keys(user)?.length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  const SignInNav = () => (
     <>
-      <p>Sign In Coming Soon</p>
-      {/* <p>Sign In</p>
-      <button>Register</button> */}
+      {isAuth() ? 
+      <button className="scaleOnHover">
+        <Link to='/sign-in'>
+          Sign In
+        </Link>
+      </button> 
+      :
+      <div className="navbarSignedIn">
+        <p>Hi {user.displayName}</p>
+        <button className="scaleOnHover" onClick={Logout}>
+          Logout
+        </button>
+      </div>}
     </>
   )
 
   return (
     <section className="navBar" id="navbar">
+
       <div className="navBarLinks">
         <div className="navBarLogo">
           <svg viewBox="0 0 225 45" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
@@ -37,13 +71,13 @@ const Navbar = () => {
               </text>
           </svg>
         </div>
-        <div className="navBarLinksContainer"> 
+        <div className="navBarLinksContainer">
         {/* Add scaleUpCenter where needed */}
           <Menu />
         </div>
       </div>
       <div className="navBarSignIn">
-        <SignIn />
+        <SignInNav />
       </div>
       <div className="navBarMobMenu">
         {toggleMobMenu
@@ -55,7 +89,7 @@ const Navbar = () => {
             <div className='navBarMobMenuContainerLinks'>
               <Menu />
               <div className='navBarMobMenuContainerLinksSignIn'>
-                <SignIn />
+                <SignInNav />
               </div>
             </div>
           </div>

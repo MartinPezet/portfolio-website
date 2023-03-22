@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.signInContainer {
+    margin: 2rem 35%;
+    padding: 4rem 6rem;
+    border-radius: 2rem;
+
+    background-color: var(--colorAbout);
+    font-family: var(--fontFamily);
+}
+
+.signInTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin-bottom: 1rem;
+}
+
+.signInTitle > h1 {
+    font-size: 4rem;
+}
+
+.signInTitle > p {
+    font-size: 1.25rem;
+    padding-top: 1rem;
+    color: var(--colorText);
+}
+
+.signInButtonContainer {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInButton {
+    margin: 1.5rem 0;
+    width: 80%;
+    padding: 1rem 0;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+
+    color: #8E8E8E;
+    font-size: 2rem;
+}
+
+.signInButton:hover {
+    cursor: pointer;
+}
+
+.googleImg {
+    width: 23px;
+    /* margin-right: 1rem; */
+    filter: grayscale(100%);
+}
+
+.google {
+    background-color: #de5246;
+    font-family: "Roboto";
+}
+
+.google:active {
+    background-color: #444;
+}
+
+@media screen and (max-width: 1450px) {
+    .signInContainer {
+        margin: 2rem 20%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .signInContainer {
+        margin: 2rem 15%;
+        padding: 4rem 3rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .signInContainer {
+        margin: 2rem 10%;
+    }
+
+    .signInTitle > h1 {
+        font-size: 3rem;
+    }
+
+    .signInButton {
+        font-size: 1.5rem;
+    }
+
+    .googleImg {
+        width: 19px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .signInContainer {
+        margin: 2rem 2%;
+    }
+}
+
+
+/* FOR POSSIBLE FUTURE SIGN IN
+
+.signInFormContent, 
+.signInForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.signInRegisterLink {
+    font-family: var(--fontFamily);
+    font-size: 12px;
+    color: var(--colorText);
+    padding: 0.5rem 1rem;
+}
+
+.signInFormSubmit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */

@@ -14,19 +14,19 @@ const Footer = () => {
           </div>
           <div className="footerContentMore">
             <h2>More to do</h2>
-            <a href='#projects'>Visit my projects</a>
-            <a href='#downloadCV'>Request a CV (CS)</a>
+            <a className="scaleOnHover" href='#projects'>Visit my projects</a>
+            <a className="scaleOnHover" href='#downloadCV'>Request a CV (CS)</a>
           </div>
         </div>
         <div className="footerContentContainer2">
           <div className="footerContentContact">
             <h2>Contact Me</h2>
-            <a href='#email-me'>Email (CS)</a>
-            <a href='https://www.linkedin.com/in/martin-pezet-36306a181/'>LinkedIn message</a>
+            <a className="scaleOnHover" href='#email-me'>Email (CS)</a>
+            <a className="scaleOnHover" href='https://www.linkedin.com/in/martin-pezet-36306a181/'>LinkedIn message</a>
           </div>
           <div className="footerContentBackToTop">
             <h2>Back to top</h2>
-            <a href='#navbar'>{<RiArrowUpLine />}</a>
+            <a className="scaleOnHover" href='#navbar'>{<RiArrowUpLine />}</a>
           </div>
         </div>
       </div>

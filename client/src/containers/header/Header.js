@@ -13,7 +13,7 @@ const Header = () => {
 
         <div className="headerContentInput">
           <input type="email" placeholder="Your Email Address"></input>
-          <button type="button">Get Started</button>
+          <button type="button" className="scaleOnHover">Get Started</button>
         </div>
 
         <div className="headerContentPeople">

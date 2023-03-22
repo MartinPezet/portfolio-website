@@ -1,0 +1,125 @@
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupContainer {
+    background-color: var(--colorPopUp);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.popupContent {
+    padding: 1rem 5rem 5rem;
+}
+
+.popupClose {
+    cursor: pointer;
+    text-align: center;
+
+    margin: 0.75rem 0.75rem 0 0;
+}
+
+/* Pop Up Content */
+
+.popupTitle h1 {
+    font-family: var(--fontFamily);
+    font-size: 36px;
+    line-height: 44px;
+    color: var(--colorText);
+
+    margin: 1rem 0 0.75rem 0.75rem;
+}
+
+.popupInput input {
+    padding: 0.75rem;
+    margin: 1.5rem 0;
+
+    background-color: var(--colorAbout);
+    border: 0px;
+    color: var(--colorText);
+
+    min-width: 400px;
+}
+
+.popupInput input:autofill,
+.popupInput input:-webkit-autofill,
+.popupInput input:autofill:focus,
+.popupInput input:-webkit-autofill:focus,
+.popupInput input:autofill:active,
+.popupInput input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 100px var(--colorAbout) inset;
+    -webkit-text-fill-color: var(--colorText);
+}
+
+.popupInput input::placeholder {
+    color: var(--colorText);
+}
+
+.popupInput * {
+    font-family: var(--fontFamily);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.popupInput *:focus {
+    outline: none;
+}
+
+.popupSubmit button {
+    margin: 1.5rem 1.5rem 0;
+    padding: 0.75rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    background: var(--colorButton);
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+@media screen and (max-width:650px) {
+    .popupContent {
+        padding: 0rem 3rem 3rem;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .popupInput input {
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .popupOverlay {    
+        display: flex;
+    }
+
+    .popupContainer {      
+    
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+    .popupClose {
+   
+        margin: 0.75rem 1.25rem 0 0;
+    }
+}
