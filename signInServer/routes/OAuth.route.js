@@ -29,7 +29,7 @@ router.get('/login/success', (req, res) => {
             user: req.user
         });
     } else {
-        console.log("No req.user", req.user);
+        console.log("No req.user");
         res.status(401).json({
             message: "Not logged in"
         });
