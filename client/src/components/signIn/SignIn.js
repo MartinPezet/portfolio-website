@@ -4,29 +4,8 @@ import './signIn.css';
 
 const SignIn = () => {
 
-  const [userInfo, setUserInfo] = React.useState('');
-
-  const config = {
-    method: "GET",
-    credentials: "include",
-    headers: {
-      Accept: 'application/json',
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": true
-    }
-  };
-
   const google = () => {
     window.open('http://localhost:3001/auth/google', '_self');
-  };
-
-  const GetUser = () => {
-    fetch('http://localhost:3001/auth/login/success', config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
-      if (res.status === 200) return res.json()
-    }).then(resObj => {
-      setUserInfo(resObj.user.name)
-      console.log(resObj)
-    }).catch(err => console.log(err));
   };
 
   return (
@@ -59,9 +38,6 @@ const SignIn = () => {
             <button className="scaleOnHover">Sign In</button>
           </div>
         </form> */}
-
-        <button onClick={GetUser}>Get User Info</button>
-        <p>{userInfo}</p>
       </div>
     </section>
   )
