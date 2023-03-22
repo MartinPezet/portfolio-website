@@ -24,10 +24,11 @@ const App = () => {
 
   const GetUser = () => {
     try {
-      fetch('http://localhost:3001/auth/login/success', config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
+      if (!process.env?.REACT_APP_SSO_API_BASE_URI) throw new Error("Env not loaded")
+      fetch((process.env.REACT_APP_SSO_API_BASE_URI + '/auth/login/success'), config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
         if (res.status === 200) return res.json()
       }).then(resObj => {
-        if (resObj.success) {
+        if (resObj?.success) {
           const newUser = {
             displayName: resObj.user.displayName,
             name: resObj.user.name,
@@ -36,7 +37,7 @@ const App = () => {
           }
           setUser(newUser)
         } else {
-          console.log(resObj.message);
+          if (resObj?.message) console.log(resObj.message);
         }
     }).catch(err => {throw err});
     } catch (e) {
