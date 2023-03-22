@@ -55,6 +55,16 @@
     cursor: pointer;
 }
 
+.navbarSignedIn {
+    flex-direction: row;
+    display: flex;
+    align-items:  center;
+}
+
+.navbarSignedIn > p {
+    cursor: default;
+}
+
 .navBarSignIn button,
 .navBarMobMenuContainer button {
     margin: 0 1rem;
@@ -128,13 +138,17 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 620px) {
     .navBar {
         padding: 2rem;
     }
 
     .navBarSignIn {
         display: none;
+    }
+
+    .navbarSignedIn {
+        flex-direction: column;
     }
 
     .navBarMenuContainer {
