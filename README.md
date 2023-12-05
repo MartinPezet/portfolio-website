@@ -8,13 +8,14 @@ This is the code for my personal portfolio website.
 
 ## Notes for Next Session
 
-- Keep Website Features up to date
+- Upgrade to typescript
 - Changes to styles needed
 - Number of users needed
 
 - Adaption for large screens
 
 ### Google API Configuration
+
 - Added App logo to Google API Consent Screen when completed
 - Change Google API Domains when deploying
 
