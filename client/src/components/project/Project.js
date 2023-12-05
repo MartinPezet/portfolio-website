@@ -53,7 +53,7 @@ const Project = ({title, date, img, imgAlt, text}) => {
         </div>
       </div>
         <button className="projectButton scaleOnHover">
-          <Link to="blog/name">
+          <Link>
             Click me to read more
           </Link>
         </button>
