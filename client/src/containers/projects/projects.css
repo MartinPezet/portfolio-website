@@ -4,86 +4,70 @@
 }
 
 .projectsTitle {
-    background: rgb(3,22,46);
-    background: linear-gradient(90deg, rgba(3,22,46,1) 0%, rgba(0,40,83,1) 50%, rgba(3,22,46,1) 100%);
-    padding: 2rem 0;
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.projectsTitle p {
+    margin: 0 10%;
     font-family: var(--fontFamily);
-    font-size: 56px;
+    font-size: 32px;
     font-weight: 600;
     line-height: 70px;
+    width: fit-content;
 }
 
 .projectsContent {
     display: flex;
     flex-direction: row;
+
+    margin: 3rem 10rem 5rem;
+}
+
+.mostRecentProject {
+    flex: 0.75;
+    margin-right: 2rem;
+}
+
+.mostRecentProject .projectImage img {
+    height: 100%;
+}
+
+.otherProjects {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
 }
 
 @media screen and (max-width: 1450px){
     .projectsContent {
-        flex-direction: column;
+        margin: 3rem 6rem 5rem;
+    }
+}
+
+@media screen and (max-width: 1320px){
+    .projectsContent {
+        flex-direction: column;   
     }
 
-    .projectsContent .left {
-        margin-right: 15%;
-        padding-left: 15%;
-        padding-right: 5%;
+    .mostRecentProject {
+        margin-right: 0;
+        margin-bottom: 2rem;
     }
+}
 
-    .projectsContent .right {
-        margin-left: 15%;
-        padding-right: 15%;
-        padding-left: 5%;
+@media screen and (max-width: 900px){
+    .projectsContent {
+        margin: 3rem 4rem 5rem;
     }
 }
 
 @media screen and (max-width: 750px){
-    .projectsContent .projectText {
-        font-size: 20px;
-        line-height: 36px;
+    .otherProjects {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
-@media screen and (max-width: 550px){
-    .projectsContent .project {
-        margin-bottom: 2rem;
-    }
-    .projectsContent .left {
-        margin-right: 5%;
-    }
-
-    .projectsContent .right {
-        margin-left: 5%;
-    }
-
-    .projectsContent .projectTitle {
-        font-size: 34px;
-    }
-
-    .projectsContent .projectText {
-        font-size: 18px;
-        line-height: 32px;
-    }
-
-    .projects {
-        margin-bottom: 2rem;
-    }
-
-    .projectsTitle {
-        margin-bottom: 3rem;
+@media screen and (max-width: 500px){
+    .projectsContent {
+        margin: 2rem 2rem 3rem;
     }
 }
 
-@media screen and (max-width: 550px){
-    .projectsContent .left {
-        padding-left: 10%;
-    }
-
-    .projectsContent .right {
-        padding-left: 10%;
-    }
-}
