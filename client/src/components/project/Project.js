@@ -1,30 +1,63 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './project.css'
 
-const Project = ({direction, title, image, imgAlt, text}) => {
+import placeholder from '../../assets/projectsComingSoon.png';
 
-  let classes = 'project';
+const Project = ({title, date, img, imgAlt, text}) => {
 
-  if (direction.normalize() === 'left'.normalize()) {
-    classes += ' left leftBackground';
-  } else if (direction.normalize() === 'right'.normalize()) {
-    classes += ' right rightBackground';
+  if (img === undefined) {
+    img = placeholder;
+  }
+
+  if (imgAlt === undefined) {
+    if (img === undefined) {
+      imgAlt = "This project is coming soon" 
+    } else {
+      imgAlt = "No Image provided"
+    }
+  }
+
+  if (text === undefined) {
+    text = "More about this project coming soon..."
+  }
+
+  function printDate(d) {
+
+    const yyyy = d.getFullYear();
+    let mm = d.getMonth() + 1; // Months start at 0!
+    let dd = d.getDate();
+
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+
+    return dd + '/' + mm + '/' + yyyy;
   }
 
   return (
-    <section className={classes}>
-      <div className="projectTitle">
-        <div />
-        <p>{title}</p>
+    <article className="project">
+      <div className="projectContainer">
+        <button className="projectImage">
+          <Link to="blog/name">
+            <img src={img} alt={imgAlt}/>
+          </Link>
+        </button>
+        <div className="projectContent">
+          <div className="projectTitle">
+            <div />
+            <p className="title">{title}</p>
+          </div>
+          <p className="date">{date === undefined ? "Update imminent" : "Last Update: " + printDate(date)}</p>
+          <p className="projectText">{text}</p>
+        </div>
       </div>
-      <div className="projectImage">
-        <img src={image} alt={imgAlt}/>
-      </div>
-      <div className="projectText">
-        <p>{text}</p>
-      </div>
-    </section>
+        <button className="projectButton scaleOnHover">
+          <Link to="blog/name">
+            Click me to read more
+          </Link>
+        </button>
+    </article>
   )
 }
 
