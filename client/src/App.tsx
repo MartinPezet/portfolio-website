@@ -8,17 +8,17 @@ import { Home, SignInPage } from './pages';
 
 import './App.css';
 
-const App = () => {
+const App: React.FC = () => {
 
   const { user, setUser } = useUser();
 
-  const config = {
+  const config : RequestInit = {
     method: "GET",
     credentials: "include",
     headers: {
       Accept: 'application/json',
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": true
+      "Access-Control-Allow-Origin": true.toString()
     }
   };
 
@@ -58,7 +58,7 @@ const App = () => {
       <section className='App'>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route exact path='/sign-in' element={<SignInPage />} />   
+          <Route path='/sign-in' element={<SignInPage />} />   
         </Routes>
       </section>
     </Router>
