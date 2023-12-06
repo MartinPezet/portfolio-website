@@ -3,7 +3,7 @@ import React from 'react';
 import { Footer, Header, SiteFeatures, Socials, Projects, AboutMe } from '../../containers';
 import { Navbar } from '../../components';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <section>
       <div className="gradientBG">
