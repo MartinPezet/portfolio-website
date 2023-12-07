@@ -1,12 +1,21 @@
-import React, { useEffect } from 'react'
-
-import useUser from './hooks/useUser';
-
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import { Home, SignInPage } from './pages';
 
+import { Home, SignInPage } from './pages';
 import './App.css';
+import useUser from './hooks/useUser';
+
+// interface ApiResponse {
+//   success: boolean;
+//   user: {
+//     displayName: string;
+//     name: string;
+//     email: string;
+//     pictureLink: string;
+//   };
+//   message?: string;
+// }
 
 const App: React.FC = () => {
 
@@ -22,25 +31,27 @@ const App: React.FC = () => {
     }
   };
 
-  const GetUser = () => {
+  const GetUser = async () => {
     try {
       if (!process.env?.REACT_APP_SSO_API_BASE_URI) throw new Error("Env not loaded");
+
       fetch((process.env.REACT_APP_SSO_API_BASE_URI + '/auth/login/success'), config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
         if (res.status === 200) return res.json()
         else if (res.status === 401) return res.json();
       }).then(resObj => {
         if (resObj?.success) {
+          // Filters out other received data from SSO server
           const newUser = {
             displayName: resObj.user.displayName,
             name: resObj.user.name,
             email: resObj.user.email,
             pictureLink: resObj.user.pictureLink
           }
-          setUser(newUser)
+          setUser(newUser);
         } else {
           if (resObj?.message) console.log(resObj.message);
         }
-    }).catch(err => {throw err});
+      }).catch(err => {throw err});
     } catch (e) {
       console.log(e);
     }
