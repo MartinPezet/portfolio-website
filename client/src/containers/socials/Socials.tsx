@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './socials.css';
-import {linkedin, github} from './imports';
+import { linkedin, github } from './imports';
 
-const Socials = () => {
+const Socials: React.FC = () => {
   return (
     <section className="socials">
       <div className="socialsContainer">
@@ -15,7 +15,7 @@ const Socials = () => {
         </a>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Socials
+export default Socials;

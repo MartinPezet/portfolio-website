@@ -1,10 +1,9 @@
 import React from 'react'
-
 import About from '../../components/about/About';
 import './aboutMe.css';
 
 
-const AboutMe = () => {
+const AboutMe: React.FC = () => {
   return (
     <section className="aboutMe" id="about-me">
       <div className="aboutMeHeader">
@@ -23,4 +22,4 @@ const AboutMe = () => {
   )
 }
 
-export default AboutMe
+export default AboutMe;

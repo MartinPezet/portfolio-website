@@ -4,7 +4,7 @@ import './header.css';
 import people from '../../assets/people.png';
 import mainIMG from '../../assets/placeholder.png';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <section className="header sectionPadding" id="home">
       <div className="headerContent">
@@ -28,4 +28,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;
