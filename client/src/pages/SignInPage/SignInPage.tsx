@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, SignIn } from '../../components';
 import './SignInPage.css';
 
-const SignInPage = () => {
+const SignInPage: React.FC = () => {
   return (
     <section className='gradientBG fillPage'>
         <Navbar />

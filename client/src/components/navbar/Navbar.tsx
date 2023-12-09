@@ -9,9 +9,9 @@ import './navbar.css';
 import { useState } from 'react';
 import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
 
-  const [toggleMobMenu, setToggleMobMenu] = useState(false);
+  const [toggleMobMenu, setToggleMobMenu] = useState<boolean>(false);
 
   const { user } = useUser();
 
@@ -25,7 +25,7 @@ const Navbar = () => {
     }
   }
 
-  const Menu = () => (
+  const Menu: React.FC = () => (
     <>
       <p className="scaleOnHover"><a href='/#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
       <p className="scaleOnHover"><a href='/#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
@@ -35,11 +35,7 @@ const Navbar = () => {
   )
 
   const isAuth = () => {
-    if (Object.keys(user)?.length === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return Object.keys(user)?.length === 0;
   }
 
   const SignInNav = () => (
@@ -99,4 +95,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

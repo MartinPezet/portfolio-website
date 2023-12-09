@@ -3,5 +3,5 @@ import github from '../../assets/GitHub.png';
 
 export {
     linkedin,
-    github,
+    github
 }

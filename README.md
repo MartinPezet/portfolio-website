@@ -1,6 +1,6 @@
 # portfolio-website
 
-This is the code for my personal portfolio website.
+This is the repo for Martin Pezet's personal portfolio website.
 
 ## Known Bugs
 
@@ -8,18 +8,20 @@ This is the code for my personal portfolio website.
 
 ## Notes for Next Session
 
-- Upgrade to typescript
-- Changes to styles needed
 - Number of users needed
-
-- Adaption for large screens
+- Email server
+- Download CV
+- Reskin website
+    - Bouncing around Skills that are interactive (like pong)
 
 ### Google API Configuration
 
 - Added App logo to Google API Consent Screen when completed
 - Change Google API Domains when deploying
+- Add google Logo back to Google OAuth
 
 ### Other OAuth providers to include
+
 - Facebook
 - Github
 - Microsoft Azure

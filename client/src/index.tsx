@@ -5,7 +5,7 @@ import UserProvider from './context/UserProvider'
 import App from './App';
 import './index.css';
 
-const root = createRoot(document.getElementById('root'))
+const root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     <UserProvider>
         <App />

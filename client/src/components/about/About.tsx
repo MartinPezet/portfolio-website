@@ -2,7 +2,12 @@ import React from 'react';
 
 import './about.css';
 
-const About = ({ title, text }) => {
+interface AboutProps {
+  title: string;
+  text: string;
+};
+
+const About: React.FC<AboutProps> = ({ title, text }: AboutProps) => {
   return (
     <div className="about">
       <div className="aboutTitle">
@@ -16,4 +21,4 @@ const About = ({ title, text }) => {
   )
 }
 
-export default About
+export default About;

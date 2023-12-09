@@ -3,8 +3,14 @@ import { RiCloseLine } from 'react-icons/ri';
 
 import './popup.css';
 
-const Popup = ({ isOpened, onClose, children }) => {
-    const overlayClick = ({target, currentTarget}) => {
+interface PopupProps {
+    isOpened: boolean;
+    onClose: () => void;
+    children: React.ReactNode;
+} ;
+
+const Popup: React.FC<PopupProps> = ({ isOpened, onClose, children }) => {
+    const overlayClick = ({target, currentTarget}: React.MouseEvent<HTMLDivElement>) => {
         if (target === currentTarget) onClose();
     }
 
@@ -24,4 +30,4 @@ const Popup = ({ isOpened, onClose, children }) => {
   )
 }
 
-export default Popup
+export default Popup;

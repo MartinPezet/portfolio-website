@@ -1,10 +1,8 @@
 import React from 'react';
-
 import './projects.css';
 import { Project } from '../../components'
 
-
-const Projects = () => {
+const Projects: React.FC = () => {
   return (
     <section className="projects" id="projects">
       <div className="projectsTitle">
@@ -40,4 +38,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default Projects;

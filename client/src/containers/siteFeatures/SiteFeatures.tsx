@@ -3,9 +3,13 @@ import React from 'react'
 import './siteFeatures.css'
 import About from '../../components/about/About';
 
-const SiteFeatures = () => {
+interface Feature {
+  title: string;
+  text: string;
+}
 
-  const featuresData = [
+const SiteFeatures: React.FC = () => {
+  const featuresData: Feature[] = [
     {
       title: "Single Sign On",
       text: "Sign In only once on martinpezet.net as all projects are linked with one account and you can access all of your information."

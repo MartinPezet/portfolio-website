@@ -1,9 +1,8 @@
 import React from 'react'
 import './footer.css';
-
 import { RiArrowUpLine } from 'react-icons/ri';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <section className="footer">
       <div className="footerContent">
@@ -37,4 +36,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;
