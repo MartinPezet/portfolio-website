@@ -1,8 +1,7 @@
 import React from 'react';
-
 import './signIn.css';
 
-const SignIn = () => {
+const SignIn: React.FC = () => {
 
   const google = () => {
     try {
@@ -11,7 +10,7 @@ const SignIn = () => {
     } catch (err) {
       console.error(err);
     }
-  };
+  }
 
   return (
     <section className="signInContainer">
