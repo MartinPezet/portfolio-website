@@ -18,7 +18,7 @@ This is the repo for Martin Pezet's personal portfolio website.
 
 - Added App logo to Google API Consent Screen when completed
 - Change Google API Domains when deploying
-- Add google 
+- Add google Logo back to Google OAuth
 
 ### Other OAuth providers to include
 
