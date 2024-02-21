@@ -65,9 +65,23 @@ const App: React.FC = () => {
     }
   })
 
+  // Test switch
+
+  const devCall = () => {
+    if(process.env.REACT_APP_DEBUG) return <button type="button" onClick={() => devAxiosCall()}>Test session</button>
+  };
+
+  const devAxiosCall = async () => {
+    return axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/test'), config)
+    .then((res) => {
+      console.log(res);
+    }).catch(err => console.error(err));
+  }
+
   return (
     <Router>
       <section className='App'>
+        {devCall()}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/sign-in' element={<SignInPage />} />   
