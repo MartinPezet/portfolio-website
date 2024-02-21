@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home, SignInPage } from './pages';
 import './App.css';
 import useUser from './hooks/useUser';
+import axios, { AxiosRequestConfig } from 'axios';
 
 // interface ApiResponse {
 //   success: boolean;
@@ -21,9 +22,9 @@ const App: React.FC = () => {
 
   const { user, setUser } = useUser();
 
-  const config : RequestInit = {
+  const config : AxiosRequestConfig = {
     method: "GET",
-    credentials: "include",
+    withCredentials: true,
     headers: {
       Accept: 'application/json',
       "Content-Type": "application/json",
@@ -35,9 +36,9 @@ const App: React.FC = () => {
     try {
       if (!process.env?.REACT_APP_SSO_API_BASE_URI) throw new Error("Env not loaded");
 
-      fetch((process.env.REACT_APP_SSO_API_BASE_URI + '/auth/login/success'), config).then(res => { // ++++++++++++++++++++++++ CHANGE TO AXIOS ++++++++++++++++++++++++
-        if (res.status === 200) return res.json()
-        else if (res.status === 401) return res.json();
+      axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/auth/login/success'), config).then(res => {
+        if (res.status === 200) return res.data;
+        else if (res.status === 401) return res.data;
       }).then(resObj => {
         if (resObj?.success) {
           // Filters out other received data from SSO server
