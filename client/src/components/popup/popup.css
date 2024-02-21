@@ -1,40 +1,97 @@
-.popupOverlay {
+/* dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(8px);
+    opacity: 0.75;
+    height: 100vh;
+} */
+
+.dialog::backdrop {
+    background: darkorange;
+    background-image: linear-gradient(
+      130deg,#ff7a18,
+      #af002d 41.07%,
+      #319197 76.05%
+    );
+  }
+
+.dialog {
+    background-color: var(--colorPopUp);
+    min-width: 300px;
+    border: none;
+    /* Drop shadow */
+
     position: fixed;
+    top: 30%;
+    /* left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.modal {
+    max-width: 20rem;
+    padding: 2rem;
+    border: 0;
+    border-radius: 0.5rem;
+    position: relative;
+    box-shadow: hsl(0 0% 0% / 10%) 0 0 0.5rem 0.25rem;
+  }
+  
+  .modal::backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+  
+  .modal-close-btn {
+    font-size: 0.75em;
+    position: absolute;
+    top: 0.25em;
+    right: 0.25em;
+  }
+
+.dialog-overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+
+/* .popup-overlay {
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(8px);
 
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.popupContainer {
-    background-color: var(--colorPopUp);
-
+.popup-container {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
     flex-direction: column;
+    /* position: absolute; */
 }
 
-.popupContent {
-    padding: 1rem 5rem 5rem;
+.popup-content {
+    padding: 1rem 2rem 2rem;
 }
 
-.popupClose {
+.popup-close {
     cursor: pointer;
-    text-align: center;
+    position: relative;
+    top: 0;
+    right: 0;
 
-    margin: 0.75rem 0.75rem 0 0;
+    /* margin: 0.75rem 0.75rem 0 0; */
 }
 
 /* Pop Up Content */
 
-.popupTitle h1 {
+.popup-title h1 {
     font-family: var(--fontFamily);
     font-size: 36px;
     line-height: 44px;
@@ -43,7 +100,7 @@
     margin: 1rem 0 0.75rem 0.75rem;
 }
 
-.popupInput input {
+.popup-input input {
     padding: 0.75rem;
     margin: 1.5rem 0;
 
@@ -54,31 +111,31 @@
     min-width: 400px;
 }
 
-.popupInput input:autofill,
-.popupInput input:-webkit-autofill,
-.popupInput input:autofill:focus,
-.popupInput input:-webkit-autofill:focus,
-.popupInput input:autofill:active,
-.popupInput input:-webkit-autofill:active {
+.popup-input input:autofill,
+.popup-input input:-webkit-autofill,
+.popup-input input:autofill:focus,
+.popup-input input:-webkit-autofill:focus,
+.popup-input input:autofill:active,
+.popup-input input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0px 100px var(--colorAbout) inset;
     -webkit-text-fill-color: var(--colorText);
 }
 
-.popupInput input::placeholder {
+.popup-input input::placeholder {
     color: var(--colorText);
 }
 
-.popupInput * {
+.popup-input * {
     font-family: var(--fontFamily);
     font-size: 18px;
     font-weight: 600;
 }
 
-.popupInput *:focus {
+.popup-input *:focus {
     outline: none;
 }
 
-.popupSubmit button {
+.popup-submit button {
     margin: 1.5rem 1.5rem 0;
     padding: 0.75rem;
     border: none;
@@ -94,32 +151,26 @@
 }
 
 @media screen and (max-width:650px) {
-    .popupContent {
+    .popup-content {
         padding: 0rem 3rem 3rem;
     }
 }
 
 @media screen and (max-width:550px) {
-    .popupInput input {
+    .popup-input input {
         min-width: auto;
     }
 }
 
 @media screen and (max-width:400px) {
-    .popupOverlay {    
+    .popup-container {      
         display: flex;
-    }
-
-    .popupContainer {      
-    
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
     }
 
-    .popupClose {
-   
+    .popup-close {
         margin: 0.75rem 1.25rem 0 0;
     }
 }

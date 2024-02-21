@@ -1,33 +1,38 @@
-import React from 'react'
-import { RiCloseLine } from 'react-icons/ri';
+import React, { useRef } from 'react';
+import { IoCloseOutline  } from 'react-icons/io5';
 
 import './popup.css';
 
 interface PopupProps {
-    isOpened: boolean;
-    onClose: () => void;
-    children: React.ReactNode;
-} ;
+    popupState: boolean;
+    setPopupState: () => void;
+    children?: React.ReactNode;
+};
 
-const Popup: React.FC<PopupProps> = ({ isOpened, onClose, children }) => {
-    const overlayClick = ({target, currentTarget}: React.MouseEvent<HTMLDivElement>) => {
-        if (target === currentTarget) onClose();
+const Popup: React.FC<PopupProps> = ({ popupState, setPopupState, children }) => {
+
+    const dialogRef = useRef<HTMLDialogElement | null>(null);
+
+    const handleClose: React.MouseEventHandler<HTMLDivElement> = () => {
+        if(dialogRef.current) {
+            dialogRef.current.close();
+        }
+        setPopupState();
+        console.log(popupState);
     }
 
-    if (!isOpened) return null;
-
-  return (
-    <div className="popupOverlay" onClick={overlayClick}> 
-        <div className="popupContainer">
-            <div className="popupClose scaleOnHover" onClick={() => onClose()}>
-                <RiCloseLine color='#fff' size={27} />
+return (
+    <dialog className="dialog" ref={dialogRef} open={popupState} onClick={(e) => e.stopPropagation()}>
+        <div className="popup-container">
+            <div className="popup-close" onClick={handleClose} autoFocus>
+                <IoCloseOutline color='#fff' size={25}/>
             </div>
-            <div className="popupContent">
+            <div className="popup-content">
                 {children}
             </div>
         </div>
-    </div>
-  )
+    </dialog>
+)
 }
 
 export default Popup;
