@@ -8,7 +8,7 @@ router.post("", NewsletterController.newsletterSignUp);
 router.get("/pictures", NewsletterController.getEmailPictures);
 
 //DEV ONLY
-router.post("/clear", NewsletterController.clearNewsletterSignUps);
-router.get("/sign-ups", NewsletterController.getAllNewsletterSignUps);
+// router.post("/clear", NewsletterController.clearNewsletterSignUps);
+// router.get("/sign-ups", NewsletterController.getAllNewsletterSignUps);
 
 module.exports = router;
