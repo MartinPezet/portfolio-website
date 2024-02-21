@@ -13,7 +13,7 @@ module.exports = {
             const result = await user.save();
             res.send(result);
         } catch (error) {
-            console.log(error.message);
+            console.error(error);
         }
     },
 
@@ -22,7 +22,7 @@ module.exports = {
             // ADD THIS!!!!!! - Check if user already exists
             //const user = new User(body);
             //const _id = id.split('"')[1]
-            console.log(body);
+            // console.log(body);
             const result = await User.updateOne({_id: id.id}, {$set: {
                 displayName: body.body.displayName,
                 name: body.body.name,
@@ -32,18 +32,18 @@ module.exports = {
                 res.send("Updated successfully");
             });
         } catch (error) {
-            console.log(error.message);
+            console.error(error);
         }
     },
 
     deleteUser: async (req, res) => {
         res.json({message:"Test"});
         try {
-            console.log(req.params.id);
+            // console.log(req.params.id);
             const result = awaitUser.deleteOne({_id: req.params.id});
             res.send("Test");
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     },
 
@@ -55,7 +55,7 @@ module.exports = {
 
             res.send(results);
         } catch (error) {
-            console.log(error.message);
+            console.error(error);
         }
     },
 
@@ -68,7 +68,7 @@ module.exports = {
             }
             res.send(user);
         } catch (error) {
-            console.log(error.message);
+            console.error(error);
             if (error instanceof mongoose.CastError) {
                 next(createError(400, 'Invalid User id'));
                 return;
@@ -86,7 +86,7 @@ module.exports = {
             }
             res.send(user);
         } catch (error) {
-            console.log(error.message);
+            console.error(error);
             if (error instanceof mongoose.CastError) {
                 next(createError(400, 'Invalid User id'));
                 return;
