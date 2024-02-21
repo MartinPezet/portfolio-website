@@ -40,7 +40,7 @@ const Header: React.FC = () => {
   const [ newsletterPictures, setNewsletterPictures ] = useState<string[]>(undefined);
 
   const getNewsletterPictures = async () => {
-    return axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/newsletter-pictures'), config)
+    return axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/newsletter/pictures'), config)
     .then((res) => {
       console.log(res.data);
       setNewsletterPictures(res.data.pictures);
