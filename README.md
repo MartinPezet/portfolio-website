@@ -11,6 +11,7 @@ This is the repo for Martin Pezet's personal portfolio website.
 - Client side validation on sign up form
 - Success Page after sign up
 - Style all sections (Doesn't need to look amazing duie to restyle)
+- Fix Modal implementation
 
 ## Features for future
 
