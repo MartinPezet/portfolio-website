@@ -38,7 +38,6 @@ const App: React.FC = () => {
 
       axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/auth/login/success'), config).then(res => {
         if (res.status === 200) return res.data;
-        else if (res.status === 401) return res.data;
       }).then(resObj => {
         if (resObj?.success) {
           // Filters out other received data from SSO server
@@ -49,10 +48,8 @@ const App: React.FC = () => {
             pictureLink: resObj.user.pictureLink
           }
           setUser(newUser);
-        } else {
-          if (resObj?.message) console.log(resObj.message);
         }
-      }).catch(err => {throw err});
+      }).catch(err => {console.error(err)});
     } catch (e) {
       console.log(e);
     }
