@@ -6,6 +6,7 @@ on:
 jobs:
   Docker:
     runs-on: ubuntu-latest # Linux is the cheapest
+    environment: PROD
     outputs:
       tag: ${{ steps.version.outputs.tag }}
     steps:

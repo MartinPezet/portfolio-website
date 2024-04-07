@@ -1,4 +1,4 @@
-name: Build Landing Page
+name: Test Build Landing Page
 
 on:
   workflow_dispatch: # Manually be able to run it
@@ -9,7 +9,7 @@ env:
 jobs:
   Docker:
     runs-on: ubuntu-latest # Linux is the cheapest
-    environment: PROD
+    environment: TEST
     outputs:
       tag: ${{ steps.version.outputs.tag }}
     steps:
@@ -58,13 +58,13 @@ jobs:
         
       - name: Build Docker Image
         working-directory: ./client
-        run: docker build . --file Dockerfile --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:latest --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.outputs.tag}} # Version is a previously set within the file (id: version)
+        run: docker build . --file Dockerfile --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website-test:latest --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website-test:${{steps.version.outputs.tag}} # Version is a previously set within the file (id: version)
         
       - name: Push Tagged Version to DockerHub
         working-directory: ./client
-        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.outputs.tag}}
+        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website-test:${{steps.version.outputs.tag}}
         
       - name: Push Latest Version to DockerHub
         working-directory: ./client
-        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:latest
+        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website-test:latest
         
