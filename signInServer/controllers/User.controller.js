@@ -11,7 +11,7 @@ module.exports = {
             // ADD THIS!!!!!! - Check if user already exists
             const user = new User(body);
             const result = await user.save();
-            res.send(result);
+            res.status(200).send(result);
         } catch (error) {
             console.error(error);
         }
@@ -29,7 +29,7 @@ module.exports = {
                 pictureLink: body.body.pictureLink,
                 email: body.body.email
             }}).then(result => {
-                res.send("Updated successfully");
+                res.status(200).send("Updated successfully");
             });
         } catch (error) {
             console.error(error);
@@ -95,14 +95,14 @@ module.exports = {
         };
     },
 
-    findUserByEmail: async (req, res, next) => { // Finish this function
+    findUserByEmail: async (req, res, next) => { 
+        // Finish this function
 
         res.send("Working")
     },
 
     deleteUser: async (req, res, next) => {
+        //Finish this function
         res.send("Working")
     },
-
-    // Get Number of Users
 };

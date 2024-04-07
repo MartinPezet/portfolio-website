@@ -8,17 +8,16 @@ mongoose.set('strictQuery', false);
 module.exports = {
     newsletterSignUp: async (req, res) => {
         try {
-            console.log(req.body)
             // Validate email address
             if (req.body.email === "" || !req.body.email) {
-                res.status(400).send({ "message": "Invalid email address" });
+                res.status(200).send({ message: "Invalid email address", success: false });
                 return;
             }
 
             // Is a Users email but is not logged in
             const sameResult = User.findOne({ email: req.body.email}).select('email');
             if(!!sameResult && req.body.email !== req.user?.email && !req.user?.email) {
-                res.status(403).send({ "message": "Please login to sign up" });
+                res.status(200).send({ message: "Please login to sign up", success: false });
                 return;
             }
 
@@ -31,12 +30,12 @@ module.exports = {
                     upsert: true
                 }
             };
-            const result = await NewsletterUser.findOneAndUpdate(findOptions.query, findOptions.update, findOptions.options);
+            await NewsletterUser.findOneAndUpdate(findOptions.query, findOptions.update, findOptions.options);
 
-            res.status(200).send({ message: "Successfully updated" });
+            res.status(200).send({ message: "Successfully updated", success: true });
 
         } catch (error) {
-            res.status(500).send({ message: "failure", error: error });
+            res.status(500).send({ message: error.message });
         }
     },
     
