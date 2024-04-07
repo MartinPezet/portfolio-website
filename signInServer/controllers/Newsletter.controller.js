@@ -45,11 +45,11 @@ module.exports = {
             // Get total in email list
             NewsletterUser.count({}).then(count => {
                 if (count) {
-                    res.status(200).json({"count": count.toString()});
+                    res.status(200).json({count: count.toString()});
                     return
                 }
                 console.log("Failed ", count)
-                res.status(400).json({"message": "Could not find a count"})
+                res.status(400).json({message: "Could not find a count"})
             });
         } catch (error) {
             console.error(error);

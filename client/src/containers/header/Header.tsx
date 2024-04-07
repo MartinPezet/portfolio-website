@@ -42,7 +42,6 @@ const Header: React.FC = () => {
   const getNewsletterPictures = async () => {
     return axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/newsletter/pictures'), config)
     .then((res) => {
-      console.log(res.data);
       setNewsletterPictures(res.data.pictures);
     }).catch(err => console.error(err));
   };
@@ -59,14 +58,18 @@ const Header: React.FC = () => {
         <p>This is a portfolio website for Martin Pezet. You can get around all my different projects by going to the projects section. If you haven't got an account already, I suggest you start your sign up below.</p>
 
         <div className="headerContentInput">
-          <input type="email" placeholder="Your Email Address"></input>
-          <button type="button" className="scaleOnHover" onClick={() => setPopupState(true)}>Get Started</button>
+          <input type="email" className="headerInput" placeholder="Your Email Address"></input>
+          <button type="button" className="scaleOnHover headerButton" onClick={() => setPopupState(true)}>Get Started</button>
           <NewsletterConfirm popupState={popupState} setPopupState={setPopupState} />
         </div>
 
         <div className="headerContentPeople">
           {
-            newsletterPictures === undefined ? "" : <img src={newsletterPictures[0]} alt="people" />
+            newsletterPictures === undefined 
+            ? 
+            "" 
+            : 
+            newsletterPictures.map((picture, index) => (<img src={picture} key={index} alt="people"/>))
           }
           {
             count === undefined
@@ -78,7 +81,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className="headerImage">
-        <img src={mainIMG} alt="Abstract Martins Headshot" />
+        <img src={mainIMG} alt="Abstract Headshot of Martin" />
       </div>
     </section>
   )
