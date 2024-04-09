@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
-import { Home, SignInPage } from './pages';
+import { Home, SignInPage, PageNotFound } from './pages';
 import './App.css';
 import useUser from './hooks/useUser';
 
@@ -70,6 +70,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/sign-in' element={<SignInPage />} />   
+          <Route path="*" element={<PageNotFound/>}/>
         </Routes>
       </section>
     </Router>
