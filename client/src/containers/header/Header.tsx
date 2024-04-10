@@ -9,41 +9,38 @@ import mainIMG from '../../assets/placeholder.png';
 
 const Header: React.FC = () => {
 
-  // Config declaration
-
-  const config : AxiosRequestConfig = {
-    method: "GET",
-    withCredentials: true,
-    headers: {
-      Accept: 'application/json',
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": true.toString()
-    }
-  };
-
-  // Number of Newsletter sign ups and pictures Functionality
-
   const [ count, setCount ] = useState<Number>(undefined);
-
-  //TODO Type this
-  const getNewsletterUsers = async () => {
-    return axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/newsletter'), config)
-    .then((res) => {
-      setCount(res.data.count);
-    }).catch(err => console.error(err));
-  };
 
   const [ newsletterPictures, setNewsletterPictures ] = useState<string[]>(undefined);
 
-  const getNewsletterPictures = async () => {
-    return axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/newsletter/pictures'), config)
-    .then((res) => {
-      setNewsletterPictures(res.data.pictures);
-    }).catch(err => console.error(err));
-  };
-
   useEffect(() => {
+     // Config declaration
+    const config : AxiosRequestConfig = {
+      method: "GET",
+      withCredentials: true,
+      headers: {
+        Accept: 'application/json',
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": true.toString()
+      }
+    };
+
+    // Number of Newsletter sign ups Functionality
+    const getNewsletterUsers = async () => {
+      return axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/newsletter'), config)
+      .then((res) => {
+        setCount(res.data.count);
+      }).catch(err => console.error(err));
+    };
     getNewsletterUsers();
+
+    //Newsletter Pictures Functionality
+    const getNewsletterPictures = async () => {
+      return axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/newsletter/pictures'), config)
+      .then((res) => {
+        setNewsletterPictures(res.data.pictures);
+      }).catch(err => console.error(err));
+    };
     getNewsletterPictures();
   }, []);
 
