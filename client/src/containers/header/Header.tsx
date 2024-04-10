@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './header.css';
 
-import { NewsletterConfirm } from '../../components';
+import { NewsletterConfirm, Popup } from '../../components';
 
 import axios, { AxiosRequestConfig } from 'axios';
 
 import mainIMG from '../../assets/placeholder.png';
 
 const Header: React.FC = () => {
-
-  // Pop up functionality
-
-  const [ popupState, setPopupState ] = useState<boolean>(false);
 
   // Config declaration
 
@@ -51,6 +47,10 @@ const Header: React.FC = () => {
     getNewsletterPictures();
   }, []);
 
+  // Popup functionality
+
+  const [ popupState, updatePopupState ] = useState<boolean>(false);
+
   return (
     <section className="header sectionPadding" id="home">
       <div className="headerContent">
@@ -59,8 +59,11 @@ const Header: React.FC = () => {
 
         <div className="headerContentInput">
           <input type="email" className="headerInput" placeholder="Your Email Address"></input>
-          <button type="button" className="scaleOnHover headerButton" onClick={() => setPopupState(true)}>Get Started</button>
-          <NewsletterConfirm popupState={popupState} setPopupState={setPopupState} />
+          <button type="button" className="scaleOnHover headerButton" onClick={() => updatePopupState(true)}>Get Started</button>
+          <Popup popupState={popupState} updatePopupState={updatePopupState}>
+            <NewsletterConfirm popupState={popupState}/>
+          </Popup>
+          
         </div>
 
         <div className="headerContentPeople">

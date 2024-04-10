@@ -2,35 +2,17 @@ import React, { useState, useEffect } from 'react';
 
 import "./newsletterConfirm.css";
 
-import { Popup } from '../';
 import useUser from '../../hooks/useUser';
 
 import axios, { AxiosRequestConfig } from 'axios';
 
 interface NewsletterConfirmProps {
     popupState: boolean;
-    setPopupState: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const NewsletterConfirm: React.FC<NewsletterConfirmProps> = ({ popupState, setPopupState }) => {
-
-    // Popup Functionality
-
-    const closePopup = () => {
-        setPopupState(false);
-
-        // Remove popup state
-        setEmailValidationError(false);
-        setApiResponse(null);
-        setErrorMessage("");
-        setUsePicture(false);
-        if(!user){
-            setEmail("");
-        }
-    }
+const NewsletterConfirm: React.FC<NewsletterConfirmProps> = ({ popupState }) => {
 
     // Config declaration
-
     const config : AxiosRequestConfig = {
         method: "POST",
         withCredentials: true,
@@ -42,7 +24,6 @@ const NewsletterConfirm: React.FC<NewsletterConfirmProps> = ({ popupState, setPo
     };
 
     // Form functionality
-
     const [email, setEmail] = useState<string>("");
     const [usePicture, setUsePicture] = useState<boolean>(false);
     const [waiting, setWaiting] = useState<boolean>(false);
@@ -72,7 +53,6 @@ const NewsletterConfirm: React.FC<NewsletterConfirmProps> = ({ popupState, setPo
             setEmailValidationError(false);
         }
 
-        console.log(params);
         axios.post((process.env.REACT_APP_SSO_API_BASE_URI + '/newsletter'), params, config)
         .then((res) => {
             console.log(res.data);
@@ -99,44 +79,53 @@ const NewsletterConfirm: React.FC<NewsletterConfirmProps> = ({ popupState, setPo
         }
     }, [user, setEmail])
 
-    // TODO: Fix dialog issues !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    useEffect(() => {
+        if (!popupState) {
+            // Remove popup state
+            setEmailValidationError(false);
+            setApiResponse(null);
+            setErrorMessage("");
+            setUsePicture(false);
+            if(!user){
+                setEmail("");
+            }
+        }
+    }, [popupState, user]);
+
     return (
-        <Popup popupState={popupState} setPopupState={closePopup} >
-            <div className="newsletter-container">
-                <h2 className="newsletter-title gradientText">Sign up to the Newsletter</h2>
-                <form className="newsletter-form">
-                    <div className="newsletter-question">
-                        <label htmlFor="newsletter_email">Email: </label>
-                        <input id="email" className="email" type="email" placeholder="martin@gmail.com" value={email} onChange={handleEmailChange} disabled={apiResponse === 200 || waiting}/>
-                    </div>
-                    {emailValidationError ? <p className="error">This field is required</p> : null}
-                    <div className="newsletter-question">
-                        <label htmlFor="newsletter_use_image">Can we use your Google image: </label>
-                        <input id="newsletter_use_image" className="googleImage" type="checkbox" checked={usePicture} onChange={(e) => setUsePicture(e.target.checked)} disabled={apiResponse === 200 || waiting}/>
-                    </div>
-                    <input className="newsletter-submit" type="submit" onClick={(e) => submitNewsletterSignUp(e)} disabled={apiResponse === 200 || waiting}/>
-                </form>
-                <div className="newsletter-response-container">
-                    {
-                        errorMessage !== "" ?
-                        <div className="newsletter-error">
-                            <p className="error">{errorMessage}</p>
-                        </div>
-                        :
-                        null
-                    }
-                    {
-                        (errorMessage === "" && apiResponse === 200) ?
-                        <p className="newsletter-success">
-                            Thanks for signing up to my Newsletter!
-                        </p>
-                        :
-                        null
-                    }
+        <div className="newsletter-container">
+            <h2 className="newsletter-title gradientText">Sign up to the Newsletter</h2>
+            <form className="newsletter-form">
+                <div className="newsletter-question">
+                    <label htmlFor="newsletter_email">Email: </label>
+                    <input id="email" className="email" type="email" placeholder="martin@gmail.com" value={email} onChange={handleEmailChange} disabled={apiResponse === 200 || waiting}/>
                 </div>
+                {emailValidationError ? <p className="error">This field is required</p> : null}
+                <div className="newsletter-question">
+                    <label htmlFor="newsletter_use_image">Can we use your Google image: </label>
+                    <input id="newsletter_use_image" className="googleImage" type="checkbox" checked={usePicture} onChange={(e) => setUsePicture(e.target.checked)} disabled={apiResponse === 200 || waiting}/>
+                </div>
+                <input className="newsletter-submit" type="submit" onClick={(e) => submitNewsletterSignUp(e)} disabled={apiResponse === 200 || waiting}/>
+            </form>
+            <div className="newsletter-response-container">
+                {
+                    errorMessage !== "" ?
+                    <div className="newsletter-error">
+                        <p className="error">{errorMessage}</p>
+                    </div>
+                    :
+                    null
+                }
+                {
+                    (errorMessage === "" && apiResponse === 200) ?
+                    <p className="newsletter-success">
+                        Thanks for signing up to my Newsletter!
+                    </p>
+                    :
+                    null
+                }
             </div>
-            
-        </Popup>
+        </div>
     );
 };
 
