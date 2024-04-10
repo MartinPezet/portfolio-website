@@ -1,4 +1,4 @@
-name: Build Landing Page
+name: Test Build Landing Page
 
 on:
   workflow_dispatch: # Manually be able to run it
@@ -9,7 +9,7 @@ env:
 jobs:
   Docker:
     runs-on: ubuntu-latest # Linux is the cheapest
-    environment: PROD
+    environment: TEST
     outputs:
       tag: ${{ steps.version.outputs.tag }}
     steps:
@@ -34,18 +34,6 @@ jobs:
         working-directory: ./client
         id: version
         run: echo "tag=$(node -p -e "require('./package.json').version")" >> $GITHUB_OUTPUT
-        
-      - name: Increase version
-        working-directory: ./client
-        run: npm version patch
-        
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          branch: "versionUpgrade"
-          base: main
-          delete-branch: true
-          title: Version Upgrade (REMINDER TO DELETE BRANCH)
           
         
         # The previous section was to build the react app, apply versions and push back to github
@@ -58,13 +46,13 @@ jobs:
         
       - name: Build Docker Image
         working-directory: ./client
-        run: docker build . --file Dockerfile --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:latest --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.outputs.tag}} # Version is a previously set within the file (id: version)
+        run: docker build . --file Dockerfile --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website-test:latest --tag ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website-test:${{steps.version.outputs.tag}} # Version is a previously set within the file (id: version)
         
       - name: Push Tagged Version to DockerHub
         working-directory: ./client
-        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:${{steps.version.outputs.tag}}
+        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website-test:${{steps.version.outputs.tag}}
         
       - name: Push Latest Version to DockerHub
         working-directory: ./client
-        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website:latest
+        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/portfolio-website-test:latest
         

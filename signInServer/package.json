@@ -19,5 +19,5 @@
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0"
   },
-  "version": "1.0.3"
+  "version": "1.0.5"
 }
