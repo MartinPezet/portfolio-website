@@ -69,6 +69,10 @@ app.get("/error/", (req, res, next) => {
 const OAuthRoute = require('./routes/OAuth.route');
 app.use("/auth", OAuthRoute);
 
+// Newsletter Route
+const NewsletterRoute = require('./routes/Newsletter.route');
+app.use("/newsletter", NewsletterRoute);
+
 
 // ------------------------------- START SERVER ------------------------------- //
 

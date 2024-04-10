@@ -4,6 +4,7 @@ interface User {
   displayName?: string;
   name?: string;
   picture?: string;
+  email?: string;
   // Add more properties as needed
 }
 

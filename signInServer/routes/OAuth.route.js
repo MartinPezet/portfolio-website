@@ -22,15 +22,14 @@ router.get('/login/failed', (req, res) => {
 
 router.get('/login/success', (req, res) => {
     if (req.user) {
-        console.log(req.user.displayName, " accessed their data");
+        // Add/Update user to db
         res.status(200).json({
             success: true,
             message: "Logged In",
             user: req.user
         });
     } else {
-        console.log("No req.user");
-        res.status(401).json({
+        res.status(200).json({
             message: "Not logged in"
         });
     }

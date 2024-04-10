@@ -39,7 +39,7 @@
     display: flex;
 }
 
-.headerContentInput input {
+.headerContentInput .headerInput {
     flex: 2;
     width: 100%;
     min-height: 50px;
@@ -56,7 +56,7 @@
     color: #fff;
 }
 
-.headerContentInput button {
+.headerContentInput .headerButton {
     flex: 0.6;
     width: 100%;
     min-height: 50px;
@@ -81,8 +81,15 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    gap: 5px;
 
     margin-top: 2rem;
+}
+
+.headerContentPeople img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
 }
 
 .headerContentPeople img {

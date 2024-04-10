@@ -1,0 +1,100 @@
+.newsletter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.newsletter-title {
+    font-size: 2rem;
+    font-family: var(--fontFamily);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.newsletter-question {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.newsletter-question label {
+    flex: 1;
+    color: var(--colorText);
+    font-family: var(--fontFamily);
+    font-weight: 600;
+}
+
+.newsletter-question input {
+    flex: 2;
+
+    outline: none;
+    border: none;
+}
+.newsletter-question .email {
+    font-size: 20px;
+    line-height: 27px;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: var(--colorFooter);
+    
+}
+
+.newsletter-question .email:focus, 
+.newsletter-question .email:active,
+.newsletter-question .email:hover,
+.newsletter-question .email:-webkit-autofill,
+.newsletter-question .email:autofill {
+    background: #052241;
+}
+
+.newsletter-question .googleImage {
+    width: 20px;
+    height: 20px;
+
+    background-color: var(--colorFooter);
+}
+
+.newsletter-submit {
+    outline: none;
+    border: none;
+    font-family: var(--fontFamily);
+    font-size: 20px;
+    color: #fff;
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    background: var(--colorFooter);
+}
+
+.newsletter-submit:hover {
+    background: #052241;
+}
+
+.newsletter-submit:active {
+    transform: scale(0.9);
+}
+
+.error {
+    color: white !important;
+    background: linear-gradient(100.41deg, #cc0000 0.52%, #ff5b37 130.52%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px !important;
+    margin-top: 0 !important;
+    width: fit-content;
+}
+
+.newsletter-success {
+    color: white !important;
+    background: linear-gradient(100.41deg, #3b8701 0.52%, #22b901 130.52%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px !important;
+    margin-top: 0 !important;
+    width: fit-content;
+}
