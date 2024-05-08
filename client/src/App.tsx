@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { Home, SignInPage, PageNotFound } from './pages';
+import { MouseGradient, BackgroundGradient } from './components';
 import './App.css';
 import useUser from './hooks/useUser';
 import axios, { AxiosRequestConfig } from 'axios';
@@ -74,16 +75,22 @@ const App: React.FC = () => {
     }).catch(err => console.error(err));
   }
 
+
   return (
     <Router>
-      <section className='App'>
+      <div className='App'>
+        
+        {/* <MouseGradient className=""> */}
+        <BackgroundGradient>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/sign-in' element={<SignInPage />} />   
+            <Route path="*" element={<PageNotFound/>}/>
+          </Routes>
+        </BackgroundGradient>
+        {/* </MouseGradient> */}
         {devCall()}
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/sign-in' element={<SignInPage />} />   
-          <Route path="*" element={<PageNotFound/>}/>
-        </Routes>
-      </section>
+      </div>
     </Router>
   )
 }

@@ -1,4 +1,6 @@
 export { default as About } from "./about/About";
+export { default as BackgroundGradient } from "./backgroundGradient/BackgroundGradient";
+export { default as MouseGradient } from "./mouseGradient/MouseGradient";
 export { default as Navbar } from "./navbar/Navbar";
 export { default as NewsletterConfirm } from "./newletterConfirm/NewsletterConfirm";
 export { default as Popup } from "./popup/Popup";
