@@ -1,87 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './header.css';
 
-import { NewsletterConfirm, Popup } from '../../components';
-
-import axios, { AxiosRequestConfig } from 'axios';
-
-import mainIMG from '../../assets/placeholder.png';
-
 const Header: React.FC = () => {
-
-  const [ count, setCount ] = useState<Number>(undefined);
-
-  const [ newsletterPictures, setNewsletterPictures ] = useState<string[]>(undefined);
-
-  useEffect(() => {
-     // Config declaration
-    const config : AxiosRequestConfig = {
-      method: "GET",
-      withCredentials: true,
-      headers: {
-        Accept: 'application/json',
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": true.toString()
-      }
-    };
-
-    // Number of Newsletter sign ups Functionality
-    const getNewsletterUsers = async () => {
-      return axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/newsletter'), config)
-      .then((res) => {
-        setCount(res.data.count);
-      }).catch(err => console.error(err));
-    };
-    getNewsletterUsers();
-
-    //Newsletter Pictures Functionality
-    const getNewsletterPictures = async () => {
-      return axios.get((process.env.REACT_APP_SSO_API_BASE_URI + '/newsletter/pictures'), config)
-      .then((res) => {
-        setNewsletterPictures(res.data.pictures);
-      }).catch(err => console.error(err));
-    };
-    getNewsletterPictures();
-  }, []);
-
-  // Popup functionality
-
-  const [ popupState, updatePopupState ] = useState<boolean>(false);
-
   return (
-    <section className="header sectionPadding" id="home">
-      <div className="headerContent">
-        <h1 className="gradientText">Martin Pezet - Software Engineer</h1>
-        <p>This is a portfolio website for Martin Pezet. You can get around all my different projects by going to the projects section. If you haven't got an account already, I suggest you start your sign up below.</p>
-
-        <div className="headerContentInput">
-          <input type="email" className="headerInput" placeholder="Your Email Address"></input>
-          <button type="button" className="scaleOnHover headerButton" onClick={() => updatePopupState(true)}>Get Started</button>
-          <Popup popupState={popupState} updatePopupState={updatePopupState}>
-            <NewsletterConfirm popupState={popupState}/>
-          </Popup>
-          
-        </div>
-
-        <div className="headerContentPeople">
-          {
-            newsletterPictures === undefined 
-            ? 
-            "" 
-            : 
-            newsletterPictures.map((picture, index) => (<img src={picture} key={index} alt="people"/>))
-          }
-          {
-            count === undefined
-            ?
-            ""
-            :
-            <p>Number of newsletter sign ups {count.toString()}</p>
-          }
-        </div>
-      </div>
-      <div className="headerImage">
-        <img src={mainIMG} alt="Abstract Headshot of Martin" />
+    <section className="" id="home">
+      <div className="hero">
+        <h1 className="uppercase text-9xl font-semibold mb-6">Martin Pezet</h1>
+        <p className="text-2xl mb-8">Full-stack Software Engineer</p>
+        <a className="button scaleOnHover" href="#projects">Projects</a>
       </div>
     </section>
   )

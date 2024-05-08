@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import useUser from '../../hooks/useUser';
 
 import './navbar.css';
+import { ReactComponent as Logo } from '../../assets/logo-full-white.svg'
 
 // Mobile Nav Dependencies
 import { useState } from 'react';
@@ -61,11 +62,7 @@ const Navbar: React.FC = () => {
 
       <div className="navBarLinks">
         <div className="navBarLogo">
-          <svg viewBox="0 0 225 45" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
-              <text dx="0" dy="0" fill="#fff" fontSize="36px" transform="translate(0 37.422621)">
-                  <tspan y="0" fontWeight="700" strokeWidth="0">Martin Pezet</tspan>
-              </text>
-          </svg>
+          <Logo></Logo>
         </div>
         <div className="navBarLinksContainer">
         {/* Add scaleUpCenter where needed */}

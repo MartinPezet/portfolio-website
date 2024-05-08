@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-
 import { Home, SignInPage, PageNotFound } from './pages';
 import './App.css';
 import useUser from './hooks/useUser';

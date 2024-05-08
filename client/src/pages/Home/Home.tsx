@@ -2,14 +2,13 @@ import React from 'react';
 
 import { Footer, Header, SiteFeatures, Socials, Projects, AboutMe } from '../../containers';
 import { Navbar } from '../../components';
+import BackgroundGradient from '../../components/backgroundGradient/BackgroundGradient';
 
 const Home: React.FC = () => {
   return (
     <section>
-      <div className="gradientBG">
-          <Navbar />
-          <Header />
-      </div>
+      <Navbar />
+      <Header />
       <Socials />
       <AboutMe />
       <SiteFeatures />
