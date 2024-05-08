@@ -29,16 +29,15 @@ const BackgroundGradient: React.FC<Props> = ({children}: Props) => {
     const currentPercentageDistance = pixelPositions.map((_, index) => calculateDistance(index));
 
     return {
-      background: `
-        radial-gradient(circle at ${positions[0].x}vw ${positions[0].y}vh, rgba(18,131,255,0.4) 0vw, transparent ${positions[0].size * (1 - (currentPercentageDistance[0] / 3.5))}vw),
-        radial-gradient(circle at ${positions[1].x}vw ${positions[1].y}vh, rgba(18,131,255,0.2) 0vw, transparent ${positions[1].size * (1 - (currentPercentageDistance[1] / 3.5))}vw)
-        `,
-        height: "200vh"
+        background: `
+          radial-gradient(circle at ${positions[0].x}vw ${positions[0].y}vh, rgba(18,131,255,0.4) 0vw, transparent ${positions[0].size * (1 - (currentPercentageDistance[0] / 3.5))}vw),
+          radial-gradient(circle at ${positions[1].x}vw ${positions[1].y}vh, rgba(18,131,255,0.2) 0vw, transparent ${positions[1].size * (1 - (currentPercentageDistance[1] / 3.5))}vw)
+          `
       };
   }, [mouseX, mouseY, width, height]);
 
   return (
-    <div style={styles}>
+    <div className="h-full" style={styles}>
       {children}
     </div>
   );

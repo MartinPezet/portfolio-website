@@ -65,7 +65,7 @@ const App: React.FC = () => {
   // Test switch
 
   const devCall = () => {
-    if(process.env.REACT_APP_DEBUG) return <button type="button" onClick={() => devAxiosCall()}>Test session</button>
+    if(process.env.REACT_APP_DEBUG) return <button className="button" type="button" onClick={() => devAxiosCall()}>Test session</button>
   };
 
   const devAxiosCall = async () => {
@@ -79,7 +79,6 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className='App'>
-        
         {/* <MouseGradient className=""> */}
         <BackgroundGradient>
           <Routes>
