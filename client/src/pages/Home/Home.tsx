@@ -11,7 +11,6 @@ const Home: React.FC = () => {
       <Header />
       <Socials />
       <AboutMe />
-      <SiteFeatures />
       <Projects />
       <Footer />
     </section>
