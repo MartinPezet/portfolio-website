@@ -4,8 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 @tailwind base;
-@tailwind component;
+@tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-primary-950 p-8;
+  }
+}
 
 :root {
   --fontFamily: 'Poppins', sans-serif;

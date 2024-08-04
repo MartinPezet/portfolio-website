@@ -1,22 +1,33 @@
 import React from 'react'
-import {Card} from '../../components';
+import headshot from '../../assets/TEMP_HEADSHOT.jpg';
 import './aboutMe.css';
 
 
 const AboutMe: React.FC = () => {
   return (
-    <section className="aboutMe" id="about-me">
-      <div className="aboutMeHeader">
-          <About title="About Me" text="I have been fascinated with Software Engineering from the age of 13 and have thoroughly enjoyed the journey through academia using a large array of languages and techniques for development. I am now embarking on my own Software Development journey and believe that, due to my ambition to learn, I would be of value to any team. I am a strong teamplayer who is focused on completing the task at hand and is able to take any role needed to make the team succeed. To see more about the person I am, feel free to download a CV below" />
+    <section className="about-me gap-8" id="about-me">
+      <div className="grid grid-cols-3 gap-8">
+        <img src={headshot} className="about-me-img rounded-2xl" alt="Headshot of Martin Pezet"/>
+        <div className="card col-span-2">
+          <h2 className="text-4xl mb-4 hover:underline decoration-primary-600 decoration-wavy decoration-4">About Me</h2>
+          <p>You'll learn how I'm really not good at posing for photos.</p>
+          <p>Bento Grid with Education and Hobbies</p>
+        </div>
       </div>
-      <div className="aboutMeTitle">
-        <h1 className="gradientText">Martin's Background</h1>
-        <a className="gradientText scaleOnHover" href="#downloadCV">Request CV</a>
-      </div>
-      <div className="aboutMeContent">
-        <Card title="Education" text="Having now studied Computer Science at GCSE, A-Level and degree level and have built many different applications in many different languages throughout my journey. I also studied Business and Mathematics at A-Level and just graduated with a First Class degree in Computer Science. To find out more then please request a download for my CV above." />
-        <Card title="Work Experience" text="I have constructed a plethora of core skills during my time in the working world, having worked as aIT Help Desk Assistant, Watersports Instructor and Senior Watersports Instructor, which have given me the people and communication skills to be able to thrive in the software development world. All experience available on CV." />
-        <Card title="Extracurricular" text="Having played football from a young age, I know how to work best within the team and that has become a big part of my personality. I also have developed my organisational skills with completing my Bronze and Silver DofE with Scouts and currently undergoing my Gold DofE. I also enjoy gaming, programming and sailing within my free time with the latter being a big part of my personal life in recent years." />
+      {/* TODO: Fix this Rocky like experience shower. */}
+      <div className=" max-w-3xl grid grid-cols-2 grid-rows-5 gap-8">
+        <div className="card row-span-3">
+          <h2>Education</h2>
+          <p>Test</p>
+        </div>
+        <div className="card row-start-2 row-span-3">
+          <h2>Work Experience</h2>
+          <p>Test</p>
+        </div>
+        <div className="card row-start-4 row-span-3">
+          <h2>Hobbies</h2>
+          <p>Test</p>
+        </div>
       </div>
     </section>
   )
