@@ -1,0 +1,19 @@
+.tooltip .tooltip-text, .tooltip .tooltip-text {
+    top: 115%;
+}
+
+.tooltip:hover .tooltip-text, .tooltip:focus .tooltip-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip:hover .tooltip-text::after, .tooltip:focus .tooltip-text::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent theme('colors.gray.950') transparent;
+}

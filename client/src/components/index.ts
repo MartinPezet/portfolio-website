@@ -5,3 +5,4 @@ export { default as NewsletterConfirm } from "./newletterConfirm/NewsletterConfi
 export { default as Popup } from "./popup/Popup";
 export { default as Project } from "./project/Project";
 export { default as SignIn } from "./signIn/SignIn";
+export { default as Tooltip } from "./tooltip/Tooltip";
