@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="footerCopyright">
-        <p>Copyright &copy; {(new Date().getFullYear())} Martin Pezet</p>
+        <p>&copy; {(new Date().getFullYear())} - Martin Pezet</p>
       </div>
     </section>
   )
