@@ -5,14 +5,14 @@ import { Navbar } from '../../components';
 
 const Home: React.FC = () => {
   return (
-    <section>
+    <div>
       <Navbar />
       <Header />
       <Socials />
       <AboutMe />
       <Projects />
       <Footer />
-    </section>
+    </div>
   )
 }
 
