@@ -1,69 +1,63 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiagramProject } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import './project.css';
 
 import placeholder from '../../assets/projectsComingSoon.png';
 
-interface ProjectProps {
-  title: string;
-  date?: Date;
-  img?: string;
-  imgAlt?: string;
-  text?: string;
-}
-
-const Project: React.FC<ProjectProps> = ({ title, date, img, imgAlt, text }) => {
-
-  if (img === undefined) {
-    img = placeholder;
+type ProjectProps = 
+  | {
+    title: string;
+    text: string;
+    img?: undefined;
+    imgAlt?: undefined;
+    link?: string;
+  }
+  | {
+    title: string;
+    text: string;
+    img: string;
+    imgAlt: string;
+    link?: string;
   }
 
-  if (imgAlt === undefined) {
-    if (img === undefined) {
-      imgAlt = "This project is coming soon";
-    } else {
-      imgAlt = "No Image provided";
+const Project: React.FC<ProjectProps> = ({ title, text, img, imgAlt, link }) => {
+
+  // Testing Only
+  // if (!img) {
+  //   img = placeholder;
+  // }
+
+  const image = () => {
+    if (!img) {
+      return (<div className="border-t"></div>);
     }
-  }
-
-  if (text === undefined) {
-    text = "More about this project coming soon...";
-  }
-
-  function printDate(d: Date) {
-    const yyyy = d.getFullYear();
-    let mm = d.getMonth() + 1; // Months start at 0!
-    let dd = d.getDate();
-
-    if (dd < 10) dd = 0 + dd;
-    if (mm < 10) mm = 0 + mm;
-
-    return dd + '/' + mm + '/' + yyyy;
-  }
+    if(link){
+      return (
+        <a href={link} target="_blank" rel="noreferrer">
+          <img className="rounded-xl" src={img} alt={imgAlt} />
+        </a>
+      );
+    }
+    return (<img className="rounded-xl" src={img} alt={imgAlt} />);
+  };
 
   return (
-    <article className="project">
-      <div className="projectContainer">
-        <button className="projectImage">
-          <Link to="blog/name">
-            <img src={img} alt={imgAlt} />
-          </Link>
-        </button>
-        <div className="projectContent">
-          <div className="projectTitle">
-            <div></div>
-            <p className="title">{title}</p>
-          </div>
-          <p className="date">{date === undefined ? "Update imminent" : "Last Update: " + printDate(date)}</p>
-          <p className="projectText">{text}</p>
+    <article className="relative w-full bg-primary-950 rounded-2xl p-10">
+      <div className="flex flex-col gap-4 justify-between">
+        <div className="flex flex-row justify-between">
+          <FontAwesomeIcon className="h-6" icon={faDiagramProject} />
+          <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition project-code" icon={faGithub} /> {/* TODO Link to github (prop) */}
         </div>
+        <h3 className="text-xl font-bold">{title}</h3>
+        {image()}
+        <p className="">{text}</p>
+        {/* TODO: Slot for what tech was used (could replace the faDiagramProject) */}
+        {/* TODO: Add some styling for hover and some colour variantion (maybe more gradients, or a border with a glow, or a glowing divider) */}
       </div>
-      <button className="projectButton scaleOnHover">
-        <Link to="/blog/name">
-          Click me to read more
-        </Link>
-      </button>
     </article>
   );
 };
