@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiagramProject } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+import { Tooltip } from '../../components/';
+
 import './project.css';
 
 import placeholder from '../../assets/projectsComingSoon.png';
@@ -52,9 +54,11 @@ const Project: React.FC<ProjectProps> = ({ title, text, img, imgAlt, codeLink, l
       <div className="flex flex-col gap-4 justify-between">
         <div className="flex flex-row justify-between">
           <FontAwesomeIcon className="h-6 project-icon transition" icon={faDiagramProject} />
-          <a href={codeLink} target="_blank" rel="noreferrer">
-            <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition project-code" icon={faGithub} />
-          </a>
+          <Tooltip text="View code">
+            <a href={codeLink} target="_blank" rel="noreferrer"> {/* TODO: Increase accessibility */}
+              <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition project-code" icon={faGithub} />
+            </a>
+          </Tooltip>
         </div>
         <h3 className="text-xl font-bold">{title}</h3>
         {image()}
