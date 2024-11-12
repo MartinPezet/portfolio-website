@@ -17,10 +17,6 @@ const Projects: React.FC = () => {
           title="Headache Decision Map"
           text="An app that can be first line of diagnostics towards primary headaches as it guides you through a series of questions to give you an estimate of your headache."
         />
-        <Project 
-          title="Decision"
-          text="App"
-        />
       </div>
       
     </section>

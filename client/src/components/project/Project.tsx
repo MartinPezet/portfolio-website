@@ -46,17 +46,16 @@ const Project: React.FC<ProjectProps> = ({ title, text, img, imgAlt, link }) => 
   };
 
   return (
-    <article className="relative w-full bg-primary-950 rounded-2xl p-10">
+    <article className="project relative w-full bg-primary-950 rounded-2xl p-10 transition hover:outline hover:outline-2 hover:outline-slate-500">
       <div className="flex flex-col gap-4 justify-between">
         <div className="flex flex-row justify-between">
-          <FontAwesomeIcon className="h-6" icon={faDiagramProject} />
+          <FontAwesomeIcon className="h-6 project-icon transition" icon={faDiagramProject} />
           <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition project-code" icon={faGithub} /> {/* TODO Link to github (prop) */}
         </div>
         <h3 className="text-xl font-bold">{title}</h3>
         {image()}
-        <p className="">{text}</p>
+        <p>{text}</p>
         {/* TODO: Slot for what tech was used (could replace the faDiagramProject) */}
-        {/* TODO: Add some styling for hover and some colour variantion (maybe more gradients, or a border with a glow, or a glowing divider) */}
       </div>
     </article>
   );

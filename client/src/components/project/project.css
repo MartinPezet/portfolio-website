@@ -1,3 +1,21 @@
 .project-code:hover {
     filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
 }
+
+.project {
+    transition-property: outline;
+
+    background: radial-gradient(circle at 100% 90%, rgba(119, 146, 252, 0.1) 0%, rgba(57, 133, 255, 0) 80%);
+}
+
+.project:hover {
+    box-shadow: rgba(100, 116, 139, 0.1) 0px 0px 44px, inset rgba(100, 116, 139, 0.1) 0px 0px 30px, inset rgba(100, 116, 139, 0.1) 0px 0px 55px, rgba(100, 116, 139, 0.2) 0px 0px 10px; /* Slate 500 rgb(100 116 139) */
+}
+
+.project-icon {
+    transform-origin: top left;
+}
+
+.project:hover .project-icon {
+    @apply scale-110;
+}
