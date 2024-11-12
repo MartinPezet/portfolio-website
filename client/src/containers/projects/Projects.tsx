@@ -16,6 +16,7 @@ const Projects: React.FC = () => {
         <Project 
           title="Headache Decision Map"
           text="An app that can be first line of diagnostics towards primary headaches as it guides you through a series of questions to give you an estimate of your headache."
+          codeLink="https://github.com/MartinPezet/headacheDecisionMap"
         />
       </div>
       

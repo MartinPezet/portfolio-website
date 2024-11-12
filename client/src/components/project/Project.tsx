@@ -14,6 +14,7 @@ type ProjectProps =
     text: string;
     img?: undefined;
     imgAlt?: undefined;
+    codeLink: string;
     link?: string;
   }
   | {
@@ -21,10 +22,11 @@ type ProjectProps =
     text: string;
     img: string;
     imgAlt: string;
+    codeLink: string;
     link?: string;
   }
 
-const Project: React.FC<ProjectProps> = ({ title, text, img, imgAlt, link }) => {
+const Project: React.FC<ProjectProps> = ({ title, text, img, imgAlt, codeLink, link }) => {
 
   // Testing Only
   // if (!img) {
@@ -50,7 +52,9 @@ const Project: React.FC<ProjectProps> = ({ title, text, img, imgAlt, link }) => 
       <div className="flex flex-col gap-4 justify-between">
         <div className="flex flex-row justify-between">
           <FontAwesomeIcon className="h-6 project-icon transition" icon={faDiagramProject} />
-          <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition project-code" icon={faGithub} /> {/* TODO Link to github (prop) */}
+          <a href={codeLink} target="_blank" rel="noreferrer">
+            <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition project-code" icon={faGithub} />
+          </a>
         </div>
         <h3 className="text-xl font-bold">{title}</h3>
         {image()}
