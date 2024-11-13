@@ -1,13 +1,6 @@
 import React from 'react';
 
 import headshot from '../../assets/TEMP_HEADSHOT.jpg';
-import procodeLogo from '../../assets/procode_small_logo.png';
-import utilitaLogo from '../../assets/utilita_logo.png';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaravel, faVuejs, faDocker, faAtlassian } from '@fortawesome/free-brands-svg-icons';
-
-import { Tooltip } from '../../components/';
 
 import './aboutMe.css';
 
