@@ -1,5 +1,5 @@
 .about-me-img {
     object-fit: cover;
-    max-height: 400px;
     width: 100%;
+    aspect-ratio: 1/1;
 }
