@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Footer, Header, Socials, Projects, AboutMe } from '../../containers';
+import { AboutMe, Experience, Footer, Header, Socials, Projects } from '../../containers';
 import { Navbar } from '../../components';
 
 const Home: React.FC = () => {
@@ -8,9 +8,10 @@ const Home: React.FC = () => {
     <div>
       <Navbar />
       <Header />
-      <Socials />
       <AboutMe />
+      <Experience />
       <Projects />
+      <Socials />
       <Footer />
     </div>
   )

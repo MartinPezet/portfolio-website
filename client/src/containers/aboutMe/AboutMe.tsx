@@ -23,36 +23,6 @@ const AboutMe: React.FC = () => {
           <p>Bento Grid with Education and Hobbies</p>
         </div>
       </div>
-      <ul className="experience-container max-w-7xl flex flex-row flex-wrap gap-x-10">
-        <li className="procode card experience flex flex-col">
-          <div className="company-pane">
-            <img src={procodeLogo} alt="Procode Technology logo"/>
-          </div>
-          <h2>Procode</h2>
-          <p className="uppercase text-sm max-w-48 text-slate-400">Associate Software Engineer</p>
-          <div className="icon-container">
-            <Tooltip text="Laravel"><FontAwesomeIcon className="tech-icon hover:text-[#ff2d20]" icon={faLaravel} /></Tooltip>
-            <Tooltip text="Vue.js"><FontAwesomeIcon className="tech-icon hover:text-[#42b883]" icon={faVuejs} /></Tooltip>
-            <Tooltip text="Docker"><FontAwesomeIcon className="tech-icon hover:text-[#1D63ED]" icon={faDocker} /></Tooltip>
-            <Tooltip text="Atlassian Suite"><FontAwesomeIcon className="tech-icon hover:text-[#0052CC]" icon={faAtlassian} /></Tooltip>
-          </div>
-          <p className="text-end mt-auto">Current</p>
-        </li>
-        <li className="utilita card experience flex flex-col">
-          <div className="company-pane">
-            <img src={utilitaLogo} alt="Utilita Energy logo"/>
-          </div>
-          <h2>Utilita Energy</h2>
-          <p className="uppercase text-sm max-w-48 text-slate-400">Associate Software Engineer</p>
-          <div className="icon-container">
-            <Tooltip text="Laravel"><FontAwesomeIcon className="tech-icon hover:text-[#ff2d20]" icon={faLaravel} /></Tooltip>
-            <Tooltip text="Vue.js"><FontAwesomeIcon className="tech-icon hover:text-[#42b883]" icon={faVuejs} /></Tooltip>
-            <Tooltip text="Docker"><FontAwesomeIcon className="tech-icon hover:text-[#1D63ED]" icon={faDocker} /></Tooltip>
-            <Tooltip text="Atlassian Suite"><FontAwesomeIcon className="tech-icon hover:text-[#0052CC]" icon={faAtlassian} /></Tooltip>
-          </div>
-          <p className="text-end mt-auto"><span className="text-slate-500">(TUPE to Procode)</span> April 2024</p>
-        </li>
-      </ul>
     </section>
   )
 }
