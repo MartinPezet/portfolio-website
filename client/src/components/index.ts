@@ -1,4 +1,5 @@
 export { default as BackgroundGradient } from "./backgroundGradient/BackgroundGradient";
+export { default as ExperienceCard } from "./experienceCard/ExperienceCard";
 export { default as MouseGradient } from "./mouseGradient/MouseGradient";
 export { default as Navbar } from "./navbar/Navbar";
 export { default as NewsletterConfirm } from "./newletterConfirm/NewsletterConfirm";
