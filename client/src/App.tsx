@@ -78,7 +78,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className='App'>
+      <div className='App' id="home">
         {/* <MouseGradient className=""> */}
         <BackgroundGradient>
           <Routes>

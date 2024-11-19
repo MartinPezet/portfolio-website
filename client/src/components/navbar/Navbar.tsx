@@ -9,6 +9,7 @@ import { ReactComponent as Logo } from '../../assets/logo-full-white.svg'
 // Mobile Nav Dependencies
 import { useState } from 'react';
 import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
+import {scrollToId} from '../../utils/pageHelpers';
 
 const Navbar: React.FC = () => {
 
@@ -26,11 +27,16 @@ const Navbar: React.FC = () => {
     }
   }
 
+  const onInternalNavigationClick = (id: string): void => {
+    setToggleMobMenu(false);
+    scrollToId(id); // TODO: Fix id's not navigating on /sign-in page
+  };
+
   const Menu: React.FC = () => (
     <>
-      <p className="scaleOnHover"><a href='/#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
-      <p className="scaleOnHover"><a href='/#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
-      <p className="scaleOnHover"><a href='/#projects' onClick={() => setToggleMobMenu(false)}>Projects</a></p>
+      <p className="scaleOnHover"><button onClick={() => onInternalNavigationClick('about-me')}>About Me</button></p> 
+      <p className="scaleOnHover"><button onClick={() => onInternalNavigationClick('experience')}>Experience</button></p> 
+      <p className="scaleOnHover"><button onClick={() => onInternalNavigationClick('projects')}>Projects</button></p>
     </>
   )
 
@@ -60,7 +66,7 @@ const Navbar: React.FC = () => {
     <section className="navBar" id="navbar">
 
       <div className="navBarLinks">
-        <div className="navBarLogo">
+        <div className="navBarLogo cursor-pointer" onClick={() => onInternalNavigationClick('home')}>
           <Logo></Logo>
         </div>
         <div className="navBarLinksContainer">

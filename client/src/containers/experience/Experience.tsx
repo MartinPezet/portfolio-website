@@ -11,7 +11,7 @@ import {ExperienceCard} from '../../components';
 
 const Experience: React.FC = () => {
     return (
-        <section>
+        <section id="experience">
             <div className="flex justify-center mb-8">
                 <h2 className="text-center card text-4xl uppercase font-semibold tracking-wide">Experience</h2>
             </div>
