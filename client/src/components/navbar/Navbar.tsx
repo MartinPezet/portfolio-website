@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
   const SignInNav = () => (
     <>
       {isAuth() ? 
-      <button className="scaleOnHover">
+      <button className="button small scaleOnHover">
         <Link to='/sign-in'>
           Sign In
         </Link>
@@ -62,12 +62,14 @@ const Navbar: React.FC = () => {
     </>
   )
 
+  // TODO: When scrolled past the navbar the navbar will drop down like an apple notch bar
+
   return (
     <section className="navBar" id="navbar">
 
       <div className="navBarLinks">
-        <div className="navBarLogo cursor-pointer" onClick={() => onInternalNavigationClick('home')}>
-          <Logo></Logo>
+        <div className="mr-8 cursor-pointer flex justify-center items-center" onClick={() => onInternalNavigationClick('home')}>
+          <p className="title-font logo fugaz">M</p>
         </div>
         <div className="navBarLinksContainer">
         {/* Add scaleUpCenter where needed */}

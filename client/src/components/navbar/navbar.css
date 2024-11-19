@@ -1,3 +1,15 @@
+.logo {
+    font-size: 2.5rem;
+    padding: 0.4rem 0.5rem;
+    line-height: 1;
+    border-radius: 5px;
+    @apply bg-primary-500;
+}
+
+.fugaz {
+    padding: 0.4rem 0.5rem 0.2rem;
+}
+
 .scaleUpCenter {
 	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -16,10 +28,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.navBarLogo {
-    margin-right: 2rem;
 }
 
 .navBarLogo svg {
@@ -63,23 +71,6 @@
 
 .navbarSignedIn > p {
     cursor: default;
-}
-
-.navBarSignIn button,
-.navBarMobMenuContainer button {
-    margin: 0 1rem;
-    padding: 0.75rem 1.5rem;
-    color: #fff;
-    font-family: var(--fontFamily);
-    font-size: 18px;
-    line-height: 25px;
-    border: none;
-    cursor: pointer;
-    outline: none;
-
-    background: var(--colorButton);
-    border-radius: 5px;
-    font-weight: 500;
 }
 
 .navBarMobMenu {
