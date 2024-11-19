@@ -1,5 +1,5 @@
 // Snippet based on Josh Comeau https://www.joshwcomeau.com/snippets/react-hooks/use-mouse-position/
-import React, {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 interface MousePosition {
     mouseX: number | null;
@@ -7,7 +7,7 @@ interface MousePosition {
   }
 
 const useMousePosition = (): MousePosition => {
-  const [mousePosition, setMousePosition] = React.useState<MousePosition>({ mouseX: null, mouseY: null });
+  const [mousePosition, setMousePosition] = useState<MousePosition>({ mouseX: null, mouseY: null });
 
   useEffect(() => {
     const updateMousePosition = (ev: MouseEvent) => {

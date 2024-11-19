@@ -5,14 +5,14 @@ import { Project } from '../../components'
 const Projects: React.FC = () => {
   return (
     <section id="projects" className="flex flex-col items-center gap-12">
-      <div className="max-w-7xl bg-primary-950 rounded-2xl py-6 px-8 text-center">
+      <div className="max-w-6xl bg-primary-950 rounded-2xl py-6 px-8 text-center">
         <h2 className="text-4xl uppercase font-semibold tracking-wide">
           Personal Projects
         </h2>
       </div>
       {/* Order my projects and provide feedback */}
 
-      <div className="max-w-7xl grid grid-cols-3 gap-8">
+      <div className="max-w-6xl grid grid-cols-3 gap-8">
         <Project 
           title="Local First To Do"
           text="Investigation of using a Local First architecture using Automerge library for conflict management."
