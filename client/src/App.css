@@ -5,6 +5,15 @@
     scroll-behavior: smooth;
 }
 
+.banner {
+    background-color: #0075ff;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--fontFamily);
+    color: white;
+}
+
 body {
     background-color: var(--colorBG);
 }
