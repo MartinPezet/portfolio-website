@@ -79,6 +79,7 @@ const App: React.FC = () => {
     <Router>
       <section className='App'>
         {devCall()}
+        <div className="banner"><b>This site is undergoing some reconstruction. Come back soon to see the changes.</b></div>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/sign-in' element={<SignInPage />} />   
