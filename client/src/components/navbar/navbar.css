@@ -15,64 +15,6 @@
 	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }/* CREATE WORKING ANIMATION!!!!!!!!!!!!!!!! */
 
-.navBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 2rem 6rem;
-}
-
-.navBarLinks {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.navBarLogo svg {
-    width: 225px;
-    height: 45px;
-
-    font-family: var(--fontFamily);
-    font-size: 36px;
-}
-
-.navBarLinksContainer {
-    display: flex;
-    flex-direction: row;
-}
-
-.navBarSignIn {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.navBarLinksContainer p,
-.navBarSignIn p,
-.navBarMobMenuContainer p {
-    color: #fff;
-    font-family: var(--fontFamily);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 25px; 
-    text-transform: capitalize;
-
-    margin: 0 1rem;
-    cursor: pointer;
-}
-
-.navbarSignedIn {
-    flex-direction: row;
-    display: flex;
-    align-items:  center;
-}
-
-.navbarSignedIn > p {
-    cursor: default;
-}
-
 .navBarMobMenu {
     margin-left: 1rem;
 

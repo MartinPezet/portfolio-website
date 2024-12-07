@@ -8,14 +8,15 @@ This is the repo for Martin Pezet's personal portfolio website.
 
 ## Notes for Next Session
 
-- Client side validation on sign up form
-- Success Page after sign up
+- Make website responsive
+- Create content for About me section
+- Redo footer
+- Fix favicon font
 - Style all sections (Doesn't need to look amazing duie to restyle)
 - Fix Modal implementation
 
 ## Features for future
 
-- Add google Logo back to Google OAuth
 - Email server
 - Download CV
 - Reskin website
