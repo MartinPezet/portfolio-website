@@ -1,6 +1,5 @@
 import React from 'react'
 import './footer.css';
-import { RiArrowUpLine } from 'react-icons/ri';
 
 const Footer: React.FC = () => {
   return (
@@ -25,7 +24,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="footerContentBackToTop">
             <h2>Back to top</h2>
-            <a className="scaleOnHover" href='#navbar'>{<RiArrowUpLine />}</a>
+            <a className="scaleOnHover" href='#navbar'>Up</a>
           </div>
         </div>
       </div>
