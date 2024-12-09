@@ -4,7 +4,6 @@
 
 .project {
     transition-property: outline;
-
     background: radial-gradient(circle at 100% 90%, rgba(119, 146, 252, 0.1) 0%, rgba(57, 133, 255, 0) 80%);
 }
 
