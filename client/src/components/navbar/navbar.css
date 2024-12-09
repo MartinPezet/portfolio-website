@@ -1,3 +1,7 @@
+.header {
+    transition: all 0.75s var(--slow-bezier);
+}
+
 .logo {
     font-size: 2.5rem;
     padding: 0.4rem 0.5rem;
@@ -7,10 +11,56 @@
 }
 
 .fugaz {
-    padding: 0.4rem 0.5rem 0.2rem;
+    padding: 0.35rem 0.45rem 0.2rem;
+    transition: all 0.75s var(--slow-bezier);
 }
 
-.scaleUpCenter {
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}/* CREATE WORKING ANIMATION!!!!!!!!!!!!!!!! */
+.fugaz-scrolled {
+    font-size: 1.75rem;
+    padding: 0.3rem 0.3rem 0.1rem;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.875rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.5s var(--slow-bezier);
+}
+
+.hamburger span:nth-of-type(1) {
+    transform-origin: right center;
+}
+
+.hamburger span:nth-of-type(2) {
+    transform-origin: right center;
+}
+
+.hamburger span:nth-of-type(3) {
+    transform-origin: right center;
+}
+
+.selected span:nth-of-type(1) {
+    transform: rotate(-45deg);
+}
+
+.selected span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.selected span:nth-of-type(3) {
+    transform: rotate(45deg);
+}

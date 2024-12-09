@@ -35,4 +35,7 @@
   --colorSubtext: #FF8A71;
   --colorButton: var(--primary);
   --colorPopUp: #043a70;
+
+  /* Animations */
+  --slow-bezier: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
