@@ -9,7 +9,6 @@ import config from "../../utils/global-constants.json";
 
 // Mobile Nav Dependenciestrue,
 import { useState } from 'react';
-import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 import {scrollToId} from '../../utils/pageHelpers';
 
 const Navbar: React.FC = () => {
