@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import './navbar.css';
 
@@ -41,11 +41,12 @@ const Navbar: React.FC = () => {
 
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 0);
-    }
+  const handleScroll = useCallback(
+    () => setHasScrolled(window.scrollY > 0),
+    [setHasScrolled]
+  );
 
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -71,16 +72,14 @@ const Navbar: React.FC = () => {
             <span></span>
             <span></span>
           </button>
-          {toggleMobMenu && (
-            <div className="mobile-menu absolute flex flex-col justify-center w-11/12 bg-header p-8 top-full left-2/4 -z-10 translate-x-[-50%] rounded-b-xl gap-4"> {/* Change scaleUpCenter to scroll from top animation */}
-              <div className="flex flex-col text-right gap-4">
-                <Menu />
-                <div className="flex flex-col xs:hidden">
-                  <SocialsNav/>
-                </div>
+          <div className={`mobile-menu absolute flex flex-col justify-center w-11/12 bg-header p-8 top-full left-2/4 -z-10 translate-x-[-50%] rounded-b-xl gap-4 transition-all duration-400 delay-200 origin-top ${toggleMobMenu ? "scale-y-100" : "scale-y-0"}`}>
+            <div className="flex flex-col text-right gap-4">
+              <Menu />
+              <div className="flex flex-row justify-center gap-8 xs:hidden">
+                <SocialsNav/>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </nav>
     </header>

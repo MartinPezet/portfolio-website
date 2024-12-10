@@ -70,6 +70,7 @@
 }
 
 .mobile-menu {
+    transition: all 0.75s var(--slow-bezier);
     background: linear-gradient(#009fff20, var(--header));
     box-shadow: #009fff10 -5px 0 30px 10px, #009fff10 5px 0 30px 10px;
 }
