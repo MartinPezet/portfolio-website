@@ -2,6 +2,10 @@
     transition: all 0.75s var(--slow-bezier);
 }
 
+.navbar {
+    background: linear-gradient(0deg, #009fff10, var(--header));
+}
+
 .logo {
     font-size: 2.5rem;
     padding: 0.4rem 0.5rem;
@@ -63,4 +67,9 @@
 
 .selected span:nth-of-type(3) {
     transform: rotate(45deg);
+}
+
+.mobile-menu {
+    background: linear-gradient(#009fff20, var(--header));
+    box-shadow: #009fff10 -5px 0 30px 10px, #009fff10 5px 0 30px 10px;
 }

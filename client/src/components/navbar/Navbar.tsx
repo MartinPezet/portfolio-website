@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
 import './navbar.css';
 
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className={`header sticky z-10 flex justify-center${hasScrolled ? " top-2" : " top-4"}`}>
-      <nav className="relative flex flex-row items-center justify-between w-full gap-4 sm:gap-12 mx-4 mb-4 max-w-7xl py-4 px-4 sm:px-8 rounded-xl bg-[#010e25]" id="navbar">
+      <nav className="navbar relative flex flex-row items-center justify-between w-full gap-4 sm:gap-12 mx-4 mb-4 max-w-7xl py-4 px-4 sm:px-8 rounded-xl bg-header" id="navbar">
         <div className="cursor-pointer flex items-center w-14 md:w-24" onClick={() => onInternalNavigationClick('home')}>
           <p className={`title-font logo fugaz${hasScrolled ? " fugaz-scrolled" : ""}`}>M</p>
         </div>
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
             <span></span>
           </button>
           {toggleMobMenu && (
-            <div className="absolute flex flex-col justify-center w-11/12 bg-primary-950 p-8 top-full left-2/4 translate-x-[-50%] rounded-b-xl gap-4"> {/* Change scaleUpCenter to scroll from top animation */}
+            <div className="mobile-menu absolute flex flex-col justify-center w-11/12 bg-header p-8 top-full left-2/4 -z-10 translate-x-[-50%] rounded-b-xl gap-4"> {/* Change scaleUpCenter to scroll from top animation */}
               <div className="flex flex-col text-right gap-4">
                 <Menu />
                 <div className="flex flex-col xs:hidden">
