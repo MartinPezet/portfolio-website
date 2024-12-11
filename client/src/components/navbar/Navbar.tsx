@@ -22,9 +22,9 @@ const Navbar: React.FC = () => {
 
   const Menu: React.FC = () => (
     <>
-      <button onClick={() => onInternalNavigationClick('about-me')} className="hover:font-bold">About Me</button>
-      <button onClick={() => onInternalNavigationClick('experience')} className="hover:font-bold">Experience</button>
-      <button onClick={() => onInternalNavigationClick('projects')} className="hover:font-bold">Projects</button>
+      <button onClick={() => onInternalNavigationClick('about-me')} className="nav-link">About Me</button>
+      <button onClick={() => onInternalNavigationClick('experience')} className="nav-link">Experience</button>
+      <button onClick={() => onInternalNavigationClick('projects')} className="nav-link">Projects</button>
     </>
   )
 
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <header className={`header sticky z-10 flex justify-center${hasScrolled ? " top-2" : " top-4"}`}>
@@ -72,12 +72,10 @@ const Navbar: React.FC = () => {
             <span></span>
             <span></span>
           </button>
-          <div className={`mobile-menu absolute flex flex-col justify-center w-11/12 bg-header p-8 top-full left-2/4 -z-10 translate-x-[-50%] rounded-b-xl gap-4 transition-all duration-400 delay-200 origin-top ${toggleMobMenu ? "scale-y-100" : "scale-y-0"}`}>
-            <div className="flex flex-col text-right gap-4">
-              <Menu />
-              <div className="flex flex-row justify-center gap-8 xs:hidden">
-                <SocialsNav/>
-              </div>
+          <div className={`mobile-menu absolute flex flex-col items-center justify-center gap-4 w-11/12 bg-header p-8 top-full left-2/4 -z-10 translate-x-[-50%] rounded-b-xl transition-all duration-400 delay-200 origin-top ${toggleMobMenu ? "scale-y-100" : "scale-y-0"}`}>
+            <Menu />
+            <div className="flex flex-row align-center gap-8 xs:hidden">
+              <SocialsNav/>
             </div>
           </div>
         </div>

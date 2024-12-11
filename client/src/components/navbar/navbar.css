@@ -6,6 +6,28 @@
     background: linear-gradient(0deg, #009fff10, var(--header));
 }
 
+.nav-link {
+    transition: all 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
+    @apply relative origin-bottom hover:scale-110 max-md:w-max;
+}
+
+.nav-link::after {
+    transform: none;
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -0.35rem;
+    left: 0;
+    width: 0;
+    background-color: var(--text);
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.7, 1);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
 .logo {
     font-size: 2.5rem;
     padding: 0.4rem 0.5rem;
