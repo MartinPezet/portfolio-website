@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { AboutMe, Experience, Footer, Header, Socials, Projects } from '../../containers';
+import { AboutMe, Experience, Footer, Hero, Socials, Projects } from '../../containers';
 import { Navbar } from '../../components';
 
 const Home: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <Header />
+      <Hero />
       <AboutMe />
       <Experience />
       <Projects />
