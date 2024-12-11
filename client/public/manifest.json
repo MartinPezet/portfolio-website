@@ -1,16 +1,16 @@
 {
-    "short_name": "MP Portfolio",
-    "name": "Martin Pezet Portfolio",
+    "short_name": "Martin Pezet's Portfolio",
+    "name": "Martin Pezet's Portfolio Website",
     "icons": [
       {
-        "src": "asset/logo.svg",
-        "sizes": "118x30",
+        "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA1FJREFUWEfNl2lIFVEUx39ji9hiK5kLWGSWpYGGWZmVYdqKFYQVlGULFUIf2j5VJmULERi0QdnyQbK+tIOWhokmVliaZBkVmFlSiUtZLm/q9ppmxvfm6cCL14HHG+ae/7n/Oed/z71XQrHzciwySUhEIuP3972zHiRkoAaZQiQyWC3liNDS7/jn5D2//lKcNVc346SwRtorYf3y7G6CnOsmESdxTr4EJDg3crejZYkMVP+TmneHg8Q7kQEhDteYhNwlgfPTYIm/nl9ZPUy7bcx5ri8ciwAvD9Wn1QJHKyCtTI/rksDjhRA2RA+q+w7rCuFGtS2J/r3g6iyY5a0fa2iFzcWQ+doEgfChcHkmjOinB7VbIP05bHtoSyAtDLYGQ283/di7r7DiPhR8NEFg6Qg4NQUGu9tOlFsLMZ0Wr0j9mUjw6WPrX14PE67ZvndYgh3BkBIKHj1sgTXfYFUB5NVax4xSryCvV0N8rkkCp6fC+kClXerB3zsg9Skc+CMqo9QLlEWGky8gudgkgexYiPUxVrvyVY5SL9AtHZBSCoefmSRQFg8hg4wJvG2G5fmwP8xW9VrUlx+w8QFceWuCQJQXZE4Hv74qSKjfTbL+hH1th5vVsNhfVX1nH+H3qhHm34WXjSYIrBwFxydbxaXYm2Zwd7OvcuEjWmrpZxg/ENw1wi2qg0iDxmW4ClJDYWeIfj3f+2AlMHWY/bJUNUJhHSQG6IWb9QaW5dvHGBIQ63ntaD3obBUI9W8ao5ZB8RBCS30C0d564TpqWgJrSCBvDkQPVwmIXn6oHF43QXoEeGpKI1J/5z3E5UDFIhg3UMU1t8GWEsioMpEBUfeSBTB2gApSevmjT3ArBgI81THRZjcUwQ8LXIwCX00nrG2BxAIrQXtmNwOzfeBCFHhrdjNtLxf7wxxfa7g2C5yohF2lkDQa0idBP012Khtg0k1oajNBIDkIDk6Evj1VkFEv14bdFwbbO21E9vYMLcZuBo6Ew5Yg6KnZ0Yx6uTaYODuIFaA1IVyxdRuZXQKXZkDCSBXiqJdrAxsJd3epSQKF8/Rr3VEvV0IHetqK0+gQ0mUJjPk6f6TLI5nzp9RE/H0o/Q+O5S6/mLj4aiZK4tLLqaIJF13PfwK14E8IzEqQXAAAAABJRU5ErkJggg==",
+        "sizes": "512x512",
         "type": "image/svg"
       }
     ],
     "start_url": ".",
     "display": "standalone",
-    "theme_color": "#040C18",
-    "background_color": "#040C18"
+    "theme_color": "#020617",
+    "background_color": "#020617"
   }
   
