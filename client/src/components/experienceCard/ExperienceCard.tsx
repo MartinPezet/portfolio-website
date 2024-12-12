@@ -16,7 +16,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({cardClass, companyLogo, 
 
     return (
         <li className={cardClass + " card experience flex flex-col"}>
-            <div className="company-pane">
+            <div className="company-pane h-40 lg:h-48">
                 <img src={companyLogo} alt={companyLogoAlt}/>
             </div>
             <h3>{companyName}</h3>

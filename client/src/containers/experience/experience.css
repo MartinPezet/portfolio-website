@@ -1,32 +1,14 @@
 .experience-container {
-    list-style: none;
-    width: 45rem;
+    grid-auto-rows: auto;
 }
-
-.experience-container > * {
-    width: 45%;
-    height: 24rem;
-}
-
-.experience-container > *:first-child {
-    margin-top: 0 !important;
-}
-
-.experience-container > *:nth-child(2) {
-    margin-top: 16rem;
-}
-
-.experience-container > *:nth-child(2n + 4) {
-    margin-top: 8rem;
-}
-
-.experience-container > *:nth-child(odd) {
-    margin-top: -8rem;
-}
-
-.experience-container > * > .company-pane {
-    height: 60%;
-    border-radius: 15px;
+@media (min-width:640px) {
+    .experience-container > *:nth-child(1) {
+        grid-area: 1 / 1 / 4 / 2;
+    }
+    
+    .experience-container > *:nth-child(2) {
+        grid-area: 3 / 2 / 6 / 3;
+    }
 }
 
 .experience-container > * > h3 {
@@ -37,6 +19,7 @@
 
 .experience {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 50px 30px, rgba(0, 0, 0, 0.06) 0px 12px 24px 4px;
+    @apply md:w-72 lg:w-80;
 }
 
 .procode {
@@ -60,7 +43,6 @@
 
 .company-pane {
     border-radius: 15px;
-    padding: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +53,7 @@
 }
 
 .icon-container {
-    @apply flex flex-row gap-2 mt-2 mb-1 text-slate-300;
+    @apply flex flex-row flex-wrap gap-2 mt-2 mb-1 text-slate-300;
 }
 
 .tech-icon {
