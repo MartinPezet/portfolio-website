@@ -1,37 +1,24 @@
 import React from 'react'
-import './footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Footer: React.FC = () => {
   return (
-    <section className="footer">
-      <div className="footerContent">
-        <div className="footerContentContainer1">
-          <div className="footerContentTitle">
-            <h1>Martin Pezet</h1>
-            <h2>Portfolio Website</h2>
-          </div>
-          <div className="footerContentMore">
-            <h2>More to do</h2>
-            <a className="scaleOnHover" href='#projects'>Visit my projects</a>
-            <a className="scaleOnHover" href='#downloadCV'>Request a CV (CS)</a>
-          </div>
-        </div>
-        <div className="footerContentContainer2">
-          <div className="footerContentContact">
-            <h2>Contact Me</h2>
-            <a className="scaleOnHover" href='#email-me'>Email (CS)</a>
-            <a className="scaleOnHover" href='https://www.linkedin.com/in/martin-pezet-36306a181/'>LinkedIn message</a>
-          </div>
-          <div className="footerContentBackToTop">
-            <h2>Back to top</h2>
-            <a className="scaleOnHover" href='#navbar'>Up</a>
-          </div>
+    <footer className="flex flex-col gap-4 items-center mb-16">
+      <div className="flex flex-col gap-2 md:gap-4 items-center">
+        <h2 className="uppercase text-center text-lg">Message Me</h2>
+        <div className="flex gap-6 items-center">
+          <a href="mailto:martinpezet@ntlworld.com"><FontAwesomeIcon icon={faEnvelope} className="h-8 hover:text-[#1A73E8]" aria-label="Envelope to make email"/></a>
+          <a href="https://wa.me/07806519657"><FontAwesomeIcon icon={faWhatsapp} className="h-8 hover:text-[#25D366]" aria-label="Whatsapp logo"/></a>
+          <a href="https://www.linkedin.com/messaging/thread/new/?recipients=martin-pezet-36306a181"><FontAwesomeIcon icon={faLinkedin} className="h-8 hover:text-[#0077B5]"/></a>
         </div>
       </div>
+      
       <div className="footerCopyright">
         <p>&copy; {(new Date().getFullYear())} - Martin Pezet</p>
       </div>
-    </section>
+    </footer>
   )
 }
 
