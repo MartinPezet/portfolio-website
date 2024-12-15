@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AboutMe, Experience, Footer, Hero, Socials, Projects } from '../../containers';
+import { AboutMe, Experience, Footer, Hero, Projects } from '../../containers';
 import { Navbar } from '../../components';
 
 const Home: React.FC = () => {
@@ -11,7 +11,6 @@ const Home: React.FC = () => {
       <AboutMe />
       <Experience />
       <Projects />
-      <Socials />
       <Footer />
     </div>
   )
