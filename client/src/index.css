@@ -9,6 +9,16 @@
 @tailwind utilities;
 
 @layer components {
+  .title-card {
+    background: radial-gradient(circle at top left, #009fff50 0%, rgba(42,111,219,0) 43%),
+                radial-gradient(circle at bottom right, #009fff50 0%, rgba(42,111,219,0) 43%);
+    /* transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1); */
+  }
+
+  /* .title-card:hover {
+    transform: scale(1.05);
+  } */
+
   .card {
     @apply rounded-2xl bg-primary-950 p-8;
   }
@@ -22,7 +32,7 @@
   
 /* Colors */
 
-  --primary: #1283FF;
+  --primary: #009fff;
   --secondary: #696969;
   --accent: #2D6BFB;
   --text: #E3E3E3;

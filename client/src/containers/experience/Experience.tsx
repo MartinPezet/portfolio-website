@@ -13,7 +13,7 @@ const Experience: React.FC = () => {
     return (
         <section id="experience" className="mb-36 px-8 xs:px-12 md:px-16">
             <div className="flex justify-center mb-8">
-                <h2 className="text-center card text-4xl uppercase font-semibold tracking-wide">Experience</h2>
+                <h2 className="text-center card title-card text-4xl uppercase font-semibold tracking-wide">Experience</h2>
             </div>
 
             <ol className="experience-container grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-5 gap-8 max-w-7xl w-fit m-auto">
