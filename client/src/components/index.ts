@@ -1,3 +1,4 @@
+export { default as AnimatedScroll } from "./animatedScroll/AnimatedScroll";
 export { default as BackgroundGradient } from "./backgroundGradient/BackgroundGradient";
 export { default as ExperienceCard } from "./experienceCard/ExperienceCard";
 export { default as MouseGradient } from "./mouseGradient/MouseGradient";

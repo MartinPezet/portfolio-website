@@ -66,3 +66,7 @@ a {
 .scale-up-center:hover {
     transform: scale(1.1);
 }
+
+.default-scroll-transition {
+    @apply motion-safe:translate-y-6 motion-safe:opacity-0;
+}
