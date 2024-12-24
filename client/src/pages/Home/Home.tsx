@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { AboutMe, Experience, Footer, Hero, Projects } from '../../containers';
+import { Experience, Footer, Hero, Projects } from '../../containers';
 import { Navbar } from '../../components';
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Hero />
-      <AboutMe />
+      Technologies
       <Experience />
       <Projects />
       <Footer />
-    </div>
+    </>
   )
 }
 
