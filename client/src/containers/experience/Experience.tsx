@@ -8,6 +8,7 @@ import { Tooltip } from '../../components/';
 
 import './experience.css';
 import { ExperienceCard, AnimatedScroll } from '../../components';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Experience: React.FC = () => {
     return (
@@ -25,7 +26,15 @@ const Experience: React.FC = () => {
                                     companyName="Procode"
                                     companyLogoAlt="Procode Technology Logo"
                                     roleName="Software Engineer"
-                                    leftRoleIn="Current"
+                                    timeInRole={
+                                        <div className="flex flex-col">
+                                            <span className="text-slate-500 text-sm">(TUPE from Utilita)</span>
+                                            <div>
+                                                <span className="text-slate-400">April 2024 <FontAwesomeIcon className="text-sm" icon={faArrowRight}/></span>
+                                                <span className="font-semibold"> Current</span>
+                                            </div>
+                                        </div>
+                                    }
                     >
                         <Tooltip text="Laravel"><FontAwesomeIcon className="tech-icon hover:text-[#ff2d20]" icon={faLaravel} /></Tooltip>
                         <Tooltip text="Vue.js"><FontAwesomeIcon className="tech-icon hover:text-[#42b883]" icon={faVuejs} /></Tooltip>
@@ -40,7 +49,12 @@ const Experience: React.FC = () => {
                                     companyName="Utilita Energy"
                                     companyLogoAlt="Utilita Energy Logo"
                                     roleName="Associate Software Engineer"
-                                    leftRoleIn={<><span className="text-slate-500">(TUPE to Procode)</span> April 2024</>}
+                                    timeInRole={
+                                        <>
+                                            <span className="text-slate-400">Feb 2023 <FontAwesomeIcon className="text-sm" icon={faArrowRight}/></span>
+                                            <span className="font-semibold"> April 2024</span>
+                                        </>
+                                    }
                     >
                         <Tooltip text="Laravel"><FontAwesomeIcon className="tech-icon hover:text-[#ff2d20]" icon={faLaravel} /></Tooltip>
                         <Tooltip text="Vue.js"><FontAwesomeIcon className="tech-icon hover:text-[#42b883]" icon={faVuejs} /></Tooltip>
