@@ -13,9 +13,10 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const Experience: React.FC = () => {
     return (
         <section id="experience" className="mb-36 px-8 xs:px-12 md:px-16">
-            <div className="flex justify-center mb-8">
+            <div className="title mb-8">
                 <AnimatedScroll>
-                    <h2 className="text-center card title-card text-4xl uppercase font-semibold tracking-wide">Experience</h2>
+                    <h2 className="">Experience</h2>
+                    <p>I'm excited to get more experience, but this is what I bring to the table for now.</p>
                 </AnimatedScroll>
             </div>
 

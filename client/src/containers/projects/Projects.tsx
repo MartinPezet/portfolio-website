@@ -4,15 +4,16 @@ import { Project, AnimatedScroll } from '../../components'
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="flex flex-col items-center gap-12 px-8 xs:px-12 md:px-16 mb-36">
-      <AnimatedScroll>
-        <h2 className="card title-card text-4xl uppercase font-semibold tracking-wide">
-          Personal Projects
-        </h2>
-      </AnimatedScroll>
+    <section id="projects" className="px-8 xs:px-12 md:px-16 mb-36">
+      <div className="title mb-8">
+        <AnimatedScroll>
+            <h2 className="">Personal Projects</h2>
+            <p>These are my passion projects, which I am working hard on, with plans to expand and add more in the future.</p>
+        </AnimatedScroll>
+      </div>
       {/* TODO: Order my projects and provide feedback */}
 
-      <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
         <AnimatedScroll className="md:delay-400">
           <Project 
             title="Local First To Do"
