@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Experience, Footer, Hero, Projects } from '../../containers';
+import { Experience, Footer, Hero, Projects, Technology } from '../../containers';
 import { Navbar } from '../../components';
 
 const Home: React.FC = () => {
@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     <>
       <Navbar />
       <Hero />
-      Technologies
+      <Technology />
       <Experience />
       <Projects />
       <Footer />

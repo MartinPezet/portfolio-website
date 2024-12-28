@@ -5,11 +5,11 @@ import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-import config from "../../utils/global-constants.json";
-
 // Mobile Nav Dependenciestrue,
 import { useState } from 'react';
 import { scrollToId } from '../../utils/pageHelpers';
+
+const config = require("../../utils/global-constants.json");
 
 const Navbar: React.FC = () => {
 

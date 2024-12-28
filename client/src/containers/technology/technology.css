@@ -1,0 +1,127 @@
+@property --transparentPercent {
+    syntax: "<percentage>";
+    initial-value: 30%;
+    inherits: false;
+}
+
+@property --glowColor {
+    syntax: "<color>";
+    initial-value: rgba(202, 202, 202, 0.02);
+    inherits: false;
+}
+
+.technology-card {
+    box-shadow: inset 5px 5px 20px rgba(255, 255, 255, 0.02), inset -5px -5px 20px rgba(255, 255, 255, 0.02);
+    background: radial-gradient(circle at 75% 40%, var(--glowColor), transparent var(--transparentPercent));
+    transition: all 0.6s ease-in-out, --glowColor 1s ease-in-out, --transparentPercent 1s ease-in-out;
+    @apply relative card flex flex-row items-center gap-4 text-lg p-6 font-semibold;
+}
+
+.technology-card:hover {
+    --transparentPercent: 50%;
+    /* box-shadow: inset 1px 1px 30px rgba(255, 255, 255, 0.02), inset -1px -1px 30px rgba(255, 255, 255, 0.02); */
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.technology-card::after {
+    position: absolute;
+    content: "";
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    transition: all 0.6s ease-in-out;
+    animation: spinningBorder 3s linear infinite;
+    animation-direction: normal;
+    border-radius: 18px;
+    opacity: 0;
+}
+
+.technology-card:hover::after {
+    animation-direction: normal;
+    animation-play-state: running;
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion) {
+    .technology-card:hover::after {
+        opacity: 0;
+    }
+}
+
+@keyframes spinningBorder {
+    0% {
+        --angle: 0deg;
+    }
+    100% {
+        --angle: 360deg;
+    }
+}
+
+.nuxt:hover, .nuxt:focus {
+    --glowColor: #00DC8225;
+}
+.nuxt::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #00DC82);
+}
+
+.vue:hover, .vue:focus {
+    --glowColor: #42B88325;
+}
+.vue::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #42B883);
+    animation-delay: 0.1s;
+}
+
+.react:hover, .react:focus {
+    --glowColor: #61DBFB25;
+}
+.react::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #61DBFB);
+    animation-delay: 0.3s;
+}
+
+.laravel:hover {
+    --glowColor: #FF2D2025;
+}
+.laravel::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #FF2D20);
+    animation-delay: 0.7s;
+}
+
+.docker:hover {
+    --glowColor: #1D63ED30;
+}
+.docker::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #1D63ED);
+    animation-delay: 0.5s;
+}
+
+.typescript:hover {
+    --glowColor: #3178C630;
+}
+.typescript::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #3178C6);
+    animation-delay: 0.4s;
+}
+
+.mysql:hover {
+    --glowColor: #00758F35;
+}
+.mysql::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #00758F);
+}
+
+.node:hover {
+    --glowColor: #5CC24A25;
+}
+.node::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #5CC24A);
+    animation-delay: 0.2s;
+}
