@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
       <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
         <AnimatedScroll className="md:delay-400">
           <Project 
-            title="Local First To Do"
+            title="Local First To Do List"
             text="Investigation of using a Local First architecture using Automerge library for conflict management."
             codeLink="https://github.com/MartinPezet/local-first-to-do"
           />
