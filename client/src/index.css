@@ -19,7 +19,37 @@
   .title h4,
   .title h5,
   .title h6 {
-    @apply text-3xl md:text-5xl uppercase mb-2;
+    @apply relative w-fit text-3xl md:text-5xl mb-3 uppercase;
+  }
+
+  .title h1::after,
+  .title h2::after,
+  .title h3::after,
+  .title h4::after,
+  .title h5::after,
+  .title h6::after {
+    position: absolute;
+    content: "";
+    bottom: -2px;
+    left: -1%;
+    height: 5px;
+    width: 102%;
+    background-color: var(--primary);
+    transform: rotate(-0.8deg);
+    border-radius: 2px;
+  }
+
+  .title .double-word {
+    @apply max-sm:block max-sm:mb-4;
+  }
+
+  .title .double-word h1,
+  .title .double-word h2,
+  .title .double-word h3,
+  .title .double-word h4,
+  .title .double-word h5,
+  .title .double-word h6 {
+    @apply max-sm:inline;
   }
 
   .title p {

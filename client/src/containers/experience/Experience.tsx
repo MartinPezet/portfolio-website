@@ -16,6 +16,8 @@ const Experience: React.FC = () => {
             <div className="title mb-8">
                 <AnimatedScroll>
                     <h2 className="">Experience</h2>
+                </AnimatedScroll>
+                <AnimatedScroll className="delay-200">
                     <p>I'm excited to get more experience, but this is what I bring to the table for now.</p>
                 </AnimatedScroll>
             </div>

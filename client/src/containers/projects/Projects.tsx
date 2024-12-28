@@ -7,8 +7,12 @@ const Projects: React.FC = () => {
     <section id="projects" className="px-8 xs:px-12 md:px-16 mb-36">
       <div className="title mb-8">
         <AnimatedScroll>
-            <h2 className="">Personal Projects</h2>
-            <p>These are my passion projects, which I am working hard on, with plans to expand and add more in the future.</p>
+          <span className="double-word">
+            <h2>Personal Projects</h2>
+          </span>
+        </AnimatedScroll>
+        <AnimatedScroll className="delay-200">
+          <p>These are my passion projects, which I am working hard on, with plans to expand and add more in the future.</p>
         </AnimatedScroll>
       </div>
       {/* TODO: Order my projects and provide feedback */}

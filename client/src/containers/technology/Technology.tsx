@@ -11,8 +11,8 @@ const Technology = () => {
   return (
     <section id="technology" className="mb-36 px-4 xs:px-8 sm:px-12 md:px-16">
       <div className="title">
-        <h2>Technologies</h2>
-        <p>I'm an adaptive person and willing to pick up and learn any technologies but these are my favourites at present.</p>
+        <AnimatedScroll><h2>Technologies</h2></AnimatedScroll>
+        <AnimatedScroll className="delay-200"><p>I'm an adaptive person and willing to pick up and learn any technologies but these are my favourites at present.</p></AnimatedScroll>
       </div>
       <div className="mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="!px-5 !py-4 technology-card nuxt">
