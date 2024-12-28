@@ -57,5 +57,5 @@
 }
 
 .tech-icon {
-    @apply h-8 hover:cursor-pointer transition;
+    @apply h-8 hover:cursor-pointer transition-colors duration-300;
 }
