@@ -1,6 +1,8 @@
 import React from 'react';
 import './projects.css';
-import { Project, AnimatedScroll } from '../../components'
+import { Project, AnimatedScroll, Tooltip } from '../../components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faJava, faNodeJs, faReact, faVuejs } from '@fortawesome/free-brands-svg-icons';
 
 const Projects: React.FC = () => {
   return (
@@ -23,14 +25,20 @@ const Projects: React.FC = () => {
             title="Local First To Do List"
             text="Investigation of using a Local First architecture using Automerge library for conflict management."
             codeLink="https://github.com/MartinPezet/local-first-to-do"
-          />
+          >
+            <Tooltip text="Vue.js"><FontAwesomeIcon className="tech-icon hover:text-[#42b883]" icon={faVuejs} /></Tooltip>
+            <Tooltip text="NodeJS"><FontAwesomeIcon className="tech-icon hover:text-[#5CC24A]" icon={faNodeJs} /></Tooltip>
+          </Project>
         </AnimatedScroll>
         <AnimatedScroll className="md:delay-200">
           <Project 
             title="Headache Decision Map"
             text="An app that can be first line of diagnostics towards primary headaches as it guides you through a series of questions to give you an estimate of your headache."
             codeLink="https://github.com/MartinPezet/headacheDecisionMap"
-          />
+          >
+            <Tooltip text="React"><FontAwesomeIcon className="tech-icon hover:text-[#61DBFB]" icon={faReact} /></Tooltip>
+            <Tooltip text="Java"><FontAwesomeIcon className="tech-icon hover:text-[#E76F00]" icon={faJava} /></Tooltip>
+          </Project>
         </AnimatedScroll>
       </div>
     </section>

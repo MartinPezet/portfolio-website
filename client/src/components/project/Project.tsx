@@ -14,6 +14,7 @@ type ProjectProps =
   | {
     title: string;
     text: string;
+    children?: React.ReactNode;
     img?: undefined;
     imgAlt?: undefined;
     codeLink: string;
@@ -22,13 +23,14 @@ type ProjectProps =
   | {
     title: string;
     text: string;
+    children?: React.ReactNode;
     img: string;
     imgAlt: string;
     codeLink: string;
     link?: string;
   }
 
-const Project: React.FC<ProjectProps> = ({ title, text, img, imgAlt, codeLink, link }) => {
+const Project: React.FC<ProjectProps> = ({ title, text, children, img, imgAlt, codeLink, link }) => {
 
   // Testing Only
   // if (!img) {
@@ -53,7 +55,9 @@ const Project: React.FC<ProjectProps> = ({ title, text, img, imgAlt, codeLink, l
     <article className="project relative w-full bg-primary-950 rounded-2xl p-10 transition hover:outline hover:outline-2 hover:outline-slate-500">
       <div className="flex flex-col gap-4 justify-between">
         <div className="flex flex-row justify-between">
-          <FontAwesomeIcon className="h-6 project-icon transition" icon={faDiagramProject} />
+          <div className="flex flex-row flex-wrap gap-2">
+            {children ?? <FontAwesomeIcon className="h-6 project-icon transition" icon={faDiagramProject} />}
+          </div>
           <Tooltip text="View code">
             <a href={codeLink} target="_blank" rel="noreferrer"> {/* TODO: Increase accessibility */}
               <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition project-code" icon={faGithub} />
