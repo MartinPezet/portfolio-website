@@ -1,8 +1,7 @@
 import React from 'react'
 import "./technology.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaravel, faReact, faDocker, faVuejs } from '@fortawesome/free-brands-svg-icons';
-import nodeJS from '../../assets/logos/node-js-seeklogo.svg';
+import { faLaravel, faReact, faDocker, faVuejs, faNodeJs } from '@fortawesome/free-brands-svg-icons';
 import nuxtJS from '../../assets/logos/nuxtjs.svg';
 import typescript from '../../assets/logos/typescript.svg';
 import mysql from '../../assets/logos/mysql.svg';
@@ -21,7 +20,7 @@ const Technology = () => {
           Nuxt
         </AnimatedScroll>
         <AnimatedScroll className="vue technology-card md:delay-100">
-          <FontAwesomeIcon className="h-8 text-[#42b883]" icon={faVuejs}/>
+          <FontAwesomeIcon className="h-8 text-[#42B883]" icon={faVuejs}/>
           Vue
         </AnimatedScroll>
         <AnimatedScroll className="react technology-card md:delay-300">
@@ -45,7 +44,7 @@ const Technology = () => {
           MySQL
         </AnimatedScroll>
         <AnimatedScroll className="node technology-card md:delay-500">
-          <img className="h-8 text-[#5CC24A]" src={nodeJS} alt="NodeJS logo"/>
+          <FontAwesomeIcon className="h-8 text-[#5CC24A]" icon={faNodeJs} />
           NodeJS
         </AnimatedScroll>
       </div>
