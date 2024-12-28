@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
   const SocialsNav: React.FC = () => (
     <>
       <a href={config.personalLinks.github} target="_blank" rel="noreferrer">
-        <FontAwesomeIcon className="tech-icon hover:text-[#4078c0]" icon={faGithub}/>
+        <FontAwesomeIcon className="tech-icon hover:text-[#4078C0]" icon={faGithub}/>
       </a>
       <a href={config.personalLinks.linkedIn} target="_blank" rel="noreferrer">
         <FontAwesomeIcon className="tech-icon hover:text-[#0077B5]" icon={faLinkedin}/>

@@ -1,14 +1,10 @@
 .project-code:hover {
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0 0 20px #4078C050);
 }
 
 .project {
-    transition-property: outline;
     background: radial-gradient(circle at 100% 90%, rgba(119, 146, 252, 0.1) 0%, rgba(57, 133, 255, 0) 80%);
-}
-
-.project:hover {
-    box-shadow: rgba(100, 116, 139, 0.1) 0px 0px 44px, inset rgba(100, 116, 139, 0.1) 0px 0px 30px, inset rgba(100, 116, 139, 0.1) 0px 0px 55px, rgba(100, 116, 139, 0.2) 0px 0px 10px; /* Slate 500 rgb(100 116 139) */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 50px 30px, rgba(0, 0, 0, 0.06) 0px 12px 24px 4px;
 }
 
 .project-icon {
@@ -17,4 +13,13 @@
 
 .project:hover .project-icon {
     @apply scale-110;
+}
+
+.window:hover .window-icon {
+    opacity: 1;
+}
+
+.window-icon {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
 }
