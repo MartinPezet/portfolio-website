@@ -16,13 +16,9 @@ const AnimatedScroll: React.FC<ScrollProps> = ({children, threshold = 0.2, trans
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (
-                    entry.isIntersecting &&
-                    entry.boundingClientRect.top > 0
-                  ) {
+                if (entry.isIntersecting) {
                     setIsVisible(true);
-                    console.log(isVisible ? "" : "motion-safe:" + transitionClass)
-                  }
+                }
             },
             { threshold }
         );
