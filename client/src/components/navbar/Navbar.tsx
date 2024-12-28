@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
 
   const Menu: React.FC = () => (
     <>
-      <button onClick={() => onInternalNavigationClick('about-me')} className="nav-link">About Me</button>
+      <button onClick={() => onInternalNavigationClick('technology')} className="nav-link">Tech</button>
       <button onClick={() => onInternalNavigationClick('experience')} className="nav-link">Experience</button>
       <button onClick={() => onInternalNavigationClick('projects')} className="nav-link">Projects</button>
     </>

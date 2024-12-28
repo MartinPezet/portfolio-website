@@ -9,7 +9,7 @@ import mysql from '../../assets/logos/mysql.svg';
 
 const Technology = () => {
   return (
-    <section className="mb-36 px-4 xs:px-8 sm:px-12 md:px-16">
+    <section id="technology" className="mb-36 px-4 xs:px-8 sm:px-12 md:px-16">
       <div className="title">
         <h2>Technologies</h2>
         <p>I'm an adaptive person and willing to pick up and learn any technologies but these are my favourites at present.</p>
