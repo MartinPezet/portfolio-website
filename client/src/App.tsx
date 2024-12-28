@@ -172,7 +172,6 @@ const App: React.FC = () => {
         {/* <BackgroundGradient> */}
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/sign-in' element={<SignInPage />} />   
             <Route path="*" element={<PageNotFound/>}/>
           </Routes>
         {/* </BackgroundGradient> */}
