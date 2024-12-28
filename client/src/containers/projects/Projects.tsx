@@ -4,7 +4,7 @@ import { Project, AnimatedScroll } from '../../components'
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="px-8 xs:px-12 md:px-16 mb-36">
+    <section id="projects" className="section-sapcing">
       <div className="title mb-8">
         <AnimatedScroll>
           <span className="double-word">
@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
       </div>
       {/* TODO: Order my projects and provide feedback */}
 
-      <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="mx-auto max-section-size grid grid-cols-1 md:grid-cols-2 gap-8">
         <AnimatedScroll className="md:delay-400">
           <Project 
             title="Local First To Do List"

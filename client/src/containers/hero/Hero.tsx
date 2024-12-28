@@ -8,7 +8,7 @@ import headshot from '../../assets/headshot-2.jpg';
 
 const Hero: React.FC = () => {
   return (
-    <section className="hero text-center py-24 sm:h-[80vh] px-8 md:px-16">
+    <section className="hero text-center py-24 md:h-[60vh] lg:h-[80vh] px-8 md:px-16">
       <h1 className="uppercase text-5xl xs:text-7xl md:text-9xl font-semibold mb-2">Martin Pezet</h1>
       <div className="flex flex-col sm:flex-row max-sm:flex-col-reverse items-center gap-4 md:gap-8 mb-4 md:mb-6">
         <img src={headshot} alt="A headshot of Martin Pezet" className="rounded-full h-20 lg:h-24"/>

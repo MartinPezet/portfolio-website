@@ -12,7 +12,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Experience: React.FC = () => {
     return (
-        <section id="experience" className="mb-36 px-8 xs:px-12 md:px-16">
+        <section id="experience" className="section-sapcing">
             <div className="title mb-8">
                 <AnimatedScroll>
                     <h2 className="">Experience</h2>

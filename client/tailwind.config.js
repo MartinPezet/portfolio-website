@@ -24,7 +24,11 @@ module.exports = {
                 'header': '#010e25'
             },
             screens: {
-                'xs': '320px'
+                'xs': '320px',
+                '3xl': '1760px'
+            },
+            maxWidth: {
+                '8xl': '96rem'
             }
         }
     },

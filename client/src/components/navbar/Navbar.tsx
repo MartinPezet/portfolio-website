@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className={`header sticky z-10 flex justify-center${hasScrolled ? " top-2" : " top-4"}`}>
-      <nav className="navbar relative flex flex-row items-center justify-between w-full gap-4 sm:gap-12 mx-4 mb-4 max-w-7xl py-4 px-4 sm:px-8 rounded-xl bg-header" id="navbar">
+      <nav className="navbar relative flex flex-row items-center justify-between w-full gap-4 sm:gap-12 mx-4 mb-4 max-w-7xl 3xl:max-w-8xl py-4 px-4 sm:px-8 rounded-xl bg-header" id="navbar">
         <div className="cursor-pointer flex items-center w-14 md:w-24" onClick={() => onInternalNavigationClick('home')}>
           <p className={`title-font logo fugaz${hasScrolled ? " fugaz-scrolled" : ""}`}>M</p>
         </div>

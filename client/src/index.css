@@ -9,8 +9,16 @@
 @tailwind utilities;
 
 @layer components {
+  .max-section-size {
+    @apply max-w-5xl 3xl:max-w-6xl;
+  }
+
+  .section-sapcing {
+    @apply mb-36 px-4 xs:px-8 sm:px-12 md:px-16;
+  }
+
   .title {
-    @apply mx-auto w-full max-w-5xl;
+    @apply mx-auto w-full max-section-size;
   }
 
   .title h1,
