@@ -11,7 +11,7 @@
 }
 
 .technology-card {
-    box-shadow: inset 5px 5px 20px rgba(255, 255, 255, 0.02), inset -5px -5px 20px rgba(255, 255, 255, 0.02);
+    box-shadow: inset 5px 5px 20px rgba(255, 255, 255, 0.02), inset -5px -5px 20px rgba(255, 255, 255, 0.02), -5px -5px 20px rgba(0, 0, 0, 0.06), 5px 5px 20px rgba(0, 0, 0, 0.1);
     background: radial-gradient(circle at 75% 40%, var(--glowColor), transparent var(--transparentPercent));
     transition: all 0.4s ease-in-out, --glowColor 0.6s ease-in-out, --transparentPercent 0.6s ease-in-out;
     @apply relative card flex flex-row items-center gap-4 text-lg p-6 font-semibold;
@@ -20,7 +20,7 @@
 .technology-card:hover {
     --transparentPercent: 50%;
     transition: all 0.3s ease-in-out, --glowColor 0.3s ease-in-out, --transparentPercent 0.3s ease-in-out;
-    box-shadow: inset 1px 1px 30px rgba(255, 255, 255, 0.02), inset -1px -1px 30px rgba(255, 255, 255, 0.02);
+    box-shadow: inset 1px 1px 30px rgba(255, 255, 255, 0.02), inset -1px -1px 30px rgba(255, 255, 255, 0.02), -5px -5px 20px rgba(0, 0, 0, 0.06), 5px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 @property --angle {
