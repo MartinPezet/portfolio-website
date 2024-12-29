@@ -2,35 +2,22 @@
 
 This is the repo for Martin Pezet's personal portfolio website.
 
-## Known Bugs
-
-- #4 Can't access any session information outside of the success end point
-
 ## Notes for Next Session
 
-- Client side validation on sign up form
-- Success Page after sign up
-- Style all sections (Doesn't need to look amazing duie to restyle)
-- Fix Modal implementation
+- Deploy
 
 ## Features for future
 
-- Add google Logo back to Google OAuth
-- Email server
-- Download CV
-- Reskin website
-    - Bouncing around Skills that are interactive (like pong)
+- On Scroll the titles have a more intensifying background gradient
+- Bouncing around Skills that are interactive (like pong)
+- Project window buttons do things
+- Experience cards can be flipped to reveal key projects I undertook
+- Changing emphasis font easter egg
 
 ### Google API Configuration
 
 - Add App logo to Google API Consent Screen when completed
 - Change Google API Domains when deploying
-
-### Other OAuth providers to include
-
-- Facebook
-- Github
-- Microsoft Azure
 
 ## Deployment
 

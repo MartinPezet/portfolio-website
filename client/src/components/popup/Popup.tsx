@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, Dispatch, SetStateAction } from 'react';
-import { IoCloseOutline  } from 'react-icons/io5';
 
 import './popup.css';
 
@@ -32,7 +31,7 @@ return (
     <dialog className="dialog" ref={dialogRef} onClick={(e) => e.stopPropagation()}>
         <div className="popup-container">
             <div className="popup-close" onClick={handleClose}>
-                <IoCloseOutline color='#fff' size={25}/>
+                x
             </div>
             <div className="popup-content" autoFocus>
                 {children}

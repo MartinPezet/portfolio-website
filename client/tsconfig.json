@@ -6,7 +6,8 @@
       "jsx": "react",
       "moduleResolution": "node",
       "sourceMap": true,
-      "outDir": "dist"
+      "outDir": "dist",
+      "resolveJsonModule": true
     },
     "lib": ["es2015", "es5", "es6", "dom", "dom.iterable"]
   }

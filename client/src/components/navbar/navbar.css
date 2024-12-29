@@ -1,161 +1,98 @@
-.scaleUpCenter {
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}/* CREATE WORKING ANIMATION!!!!!!!!!!!!!!!! */
-
-.navBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 2rem 6rem;
+.header {
+    transition: all 0.75s var(--slow-bezier);
 }
 
-.navBarLinks {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.navbar {
+    background: linear-gradient(0deg, #009fff10, var(--header));
 }
 
-.navBarLogo {
-    margin-right: 2rem;
+.nav-link {
+    transition: all 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
+    @apply relative origin-bottom hover:scale-110 max-md:w-max;
 }
 
-.navBarLogo svg {
-    width: 225px;
-    height: 45px;
-
-    font-family: var(--fontFamily);
-    font-size: 36px;
-}
-
-.navBarLinksContainer {
-    display: flex;
-    flex-direction: row;
-}
-
-.navBarSignIn {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.navBarLinksContainer p,
-.navBarSignIn p,
-.navBarMobMenuContainer p {
-    color: #fff;
-    font-family: var(--fontFamily);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 25px; 
-    text-transform: capitalize;
-
-    margin: 0 1rem;
-    cursor: pointer;
-}
-
-.navbarSignedIn {
-    flex-direction: row;
-    display: flex;
-    align-items:  center;
-}
-
-.navbarSignedIn > p {
-    cursor: default;
-}
-
-.navBarSignIn button,
-.navBarMobMenuContainer button {
-    margin: 0 1rem;
-    padding: 0.75rem 1.5rem;
-    color: #fff;
-    font-family: var(--fontFamily);
-    font-size: 18px;
-    line-height: 25px;
-    border: none;
-    cursor: pointer;
-    outline: none;
-
-    background: var(--colorButton);
-    border-radius: 5px;
-    font-weight: 500;
-}
-
-.navBarMobMenu {
-    margin-left: 1rem;
-
-    display: none;
-    position: relative;
-}
-
-.navBarMobMenu svg {
-    cursor: pointer;
-}
-
-.navBarMobMenuContainer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-
-    text-align: end;
-    background: var(--colorFooter);
-    padding: 2rem;
+.nav-link::after {
+    transform: none;
+    content: "";
+    width: 100%;
+    height: 2px;
     position: absolute;
-    top: 40px;
-    right: 0;
-    margin-top: 1rem;
-    min-width: 210px;
+    bottom: -0.35rem;
+    left: 0;
+    width: 0;
+    background-color: var(--text);
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.7, 1);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.logo {
+    font-size: 2.5rem;
+    padding: 0.4rem 0.5rem;
+    line-height: 1;
     border-radius: 5px;
-    box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
+    @apply bg-primary-500;
 }
 
-.navBarMobMenuContainerLinks p {
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-    padding-top: 0.15rem;
-    padding-bottom: 0.15rem;
+.fugaz {
+    padding: 0.35rem 0.45rem 0.2rem;
+    transition: all 0.75s var(--slow-bezier);
 }
 
-.navBarMobMenuContainerLinksSignIn {
-    display: none;
+.fugaz-scrolled {
+    font-size: 1.75rem;
+    padding: 0.3rem 0.3rem 0.1rem;
 }
 
-@media screen and (max-width: 1050px) {
-    .navBarLinksContainer {
-        display: none;
-    }
-
-    .navBarMobMenu {
-        display: flex;
-    }
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.875rem;
+    height: 1.5rem;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 700px) {
-    .navBar {
-        padding: 2rem 4rem;
-    }
+.hamburger span {
+    height: 3px;
+    width: 100%;
+    background: var(--text);
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.5s var(--slow-bezier);
 }
 
-@media screen and (max-width: 620px) {
-    .navBar {
-        padding: 2rem;
-    }
+.hamburger span:nth-of-type(1) {
+    transform-origin: right center;
+}
 
-    .navBarSignIn {
-        display: none;
-    }
+.hamburger span:nth-of-type(2) {
+    transform-origin: right center;
+}
 
-    .navbarSignedIn {
-        flex-direction: column;
-    }
+.hamburger span:nth-of-type(3) {
+    transform-origin: right center;
+}
 
-    .navBarMenuContainer {
-        top: 20px;
-    }
+.selected span:nth-of-type(1) {
+    transform: rotate(-45deg);
+}
 
-    .navBarMobMenuContainerLinksSignIn {
-        display: block;
-    }
+.selected span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.selected span:nth-of-type(3) {
+    transform: rotate(45deg);
+}
+
+.mobile-menu {
+    transition: all 0.75s var(--slow-bezier);
+    background: linear-gradient(#009fff20, var(--header));
+    box-shadow: #009fff10 -5px 0 30px 10px, #009fff10 5px 0 30px 10px;
 }

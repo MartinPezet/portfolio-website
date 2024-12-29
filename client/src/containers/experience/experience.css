@@ -1,0 +1,61 @@
+.experience-container {
+    grid-auto-rows: auto;
+}
+@media (min-width:640px) {
+    .experience-container > *:nth-child(1) {
+        grid-area: 1 / 1 / 4 / 2;
+    }
+    
+    .experience-container > *:nth-child(2) {
+        grid-area: 3 / 2 / 6 / 3;
+    }
+}
+
+.experience-container > * > h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.experience {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 50px 30px, rgba(0, 0, 0, 0.06) 0px 12px 24px 4px;
+    @apply md:w-72 lg:w-80;
+}
+
+.procode {
+    background: radial-gradient(circle at 50% 40%, rgba(19,44,145,0.5) 0%, rgba(42,111,219,0) 70%);
+}
+
+.procode > .company-pane {
+    background: radial-gradient(circle at top right, rgba(19,44,145,1) 0%, rgb(0 255 0 / 0%) 67.71%),
+      linear-gradient(127deg, rgba(42,111,219,1), rgb(0 255 0 / 0%) 70.71%),
+      linear-gradient(336deg, rgb(0,176,255), rgb(0 255 0 / 0%) 70.71%);
+}
+
+.utilita {
+    background: radial-gradient(circle at 45% 35%, rgba(0,176,255,0.3) 0%, rgba(240,0,80,0) 60%),
+    radial-gradient(circle at 55% 33%, rgba(240,0,80,0.3) 0%, rgba(240,0,80,0) 60%);
+}
+
+.utilita > .company-pane {
+    background: linear-gradient(127deg, rgb(0,176,255), rgb(240,0,80));
+}
+
+.company-pane {
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.company-pane > img {
+    height: 3rem;
+}
+
+.icon-container {
+    @apply flex flex-row flex-wrap gap-2 mt-2 mb-1 text-slate-300;
+}
+
+.tech-icon {
+    @apply h-8 hover:cursor-pointer transition-colors duration-300;
+}

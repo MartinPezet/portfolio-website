@@ -1,22 +1,19 @@
 import React from 'react';
 
-import { Footer, Header, SiteFeatures, Socials, Projects, AboutMe } from '../../containers';
+import { Experience, Footer, Hero, Projects, Technology } from '../../containers';
 import { Navbar } from '../../components';
 
 const Home: React.FC = () => {
   return (
-    <section>
-      <div className="gradientBG">
-          <Navbar />
-          <Header />
-      </div>
-      <Socials />
-      <AboutMe />
-      <SiteFeatures />
+    <>
+      <Navbar />
+      <Hero />
+      <Technology />
+      <Experience />
       <Projects />
       <Footer />
-    </section>
+    </>
   )
 }
 
-export default Home
+export default Home;

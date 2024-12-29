@@ -1,97 +1,86 @@
-import React from 'react';
-// import { Popup, SignUp, SignIn } from '../';
-import { Link } from 'react-router-dom';
-import useUser from '../../hooks/useUser';
+import React, { useCallback, useEffect } from 'react';
 
 import './navbar.css';
 
-// Mobile Nav Dependencies
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
+// Mobile Nav Dependenciestrue,
 import { useState } from 'react';
-import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
+import { scrollToId } from '../../utils/pageHelpers';
+
+const config = require("../../utils/global-constants.json");
 
 const Navbar: React.FC = () => {
 
   const [toggleMobMenu, setToggleMobMenu] = useState<boolean>(false);
 
-  const { user } = useUser();
-
-  const Logout = () => {
-    // setUser({});
-    try {
-      if (!process.env?.REACT_APP_SSO_API_BASE_URI) throw new Error("Env not loaded")
-      window.open((process.env.REACT_APP_SSO_API_BASE_URI + '/auth/logout'), '_self');
-    } catch (err) {
-      console.error(err);
-    }
-  }
+  const onInternalNavigationClick = (id: string): void => {
+    setToggleMobMenu(false);
+    scrollToId(id); // TODO: Fix id's not navigating on /sign-in page
+  };
 
   const Menu: React.FC = () => (
     <>
-      <p className="scaleOnHover"><a href='/#home' onClick={() => setToggleMobMenu(false)}>Home</a></p>
-      <p className="scaleOnHover"><a href='/#about-me' onClick={() => setToggleMobMenu(false)}>About Me</a></p> 
-      <p className="scaleOnHover"><a href='/#website-features' onClick={() => setToggleMobMenu(false)}>Website Features</a></p> {/* Features of my website */}
-      <p className="scaleOnHover"><a href='/#projects' onClick={() => setToggleMobMenu(false)}>Projects</a></p>
+      <button onClick={() => onInternalNavigationClick('technology')} className="nav-link">Tech</button>
+      <button onClick={() => onInternalNavigationClick('experience')} className="nav-link">Experience</button>
+      <button onClick={() => onInternalNavigationClick('projects')} className="nav-link">Projects</button>
     </>
   )
 
-  const isAuth = () => {
-    return Object.keys(user)?.length === 0;
-  }
-
-  const SignInNav = () => (
+  const SocialsNav: React.FC = () => (
     <>
-      {isAuth() ? 
-      <button className="scaleOnHover">
-        <Link to='/sign-in'>
-          Sign In
-        </Link>
-      </button> 
-      :
-      <div className="navbarSignedIn">
-        <p>Hi {user.displayName}</p>
-        <button className="scaleOnHover" onClick={Logout}>
-          Logout
-        </button>
-      </div>}
+      <a href={config.personalLinks.github} target="_blank" rel="noreferrer">
+        <FontAwesomeIcon className="tech-icon hover:text-[#4078C0]" icon={faGithub}/>
+      </a>
+      <a href={config.personalLinks.linkedIn} target="_blank" rel="noreferrer">
+        <FontAwesomeIcon className="tech-icon hover:text-[#0077B5]" icon={faLinkedin}/>
+      </a>
     </>
   )
+
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  const handleScroll = useCallback(
+    () => setHasScrolled(window.scrollY > 0),
+    [setHasScrolled]
+  );
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [handleScroll]);
 
   return (
-    <section className="navBar" id="navbar">
-
-      <div className="navBarLinks">
-        <div className="navBarLogo">
-          <svg viewBox="0 0 225 45" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
-              <text dx="0" dy="0" fill="#fff" fontSize="36px" transform="translate(0 37.422621)">
-                  <tspan y="0" fontWeight="700" strokeWidth="0">Martin Pezet</tspan>
-              </text>
-          </svg>
+    <header className={`header sticky z-10 flex justify-center${hasScrolled ? " top-2" : " top-4"}`}>
+      <nav className="navbar relative flex flex-row items-center justify-between w-full gap-4 sm:gap-12 mx-4 mb-4 max-w-7xl 3xl:max-w-8xl py-4 px-4 sm:px-8 rounded-xl bg-header" id="navbar">
+        <div className="cursor-pointer flex items-center w-14 md:w-24" onClick={() => onInternalNavigationClick('home')}>
+          <p className={`title-font logo fugaz${hasScrolled ? " fugaz-scrolled" : ""}`}>M</p>
         </div>
-        <div className="navBarLinksContainer">
-        {/* Add scaleUpCenter where needed */}
+        <div className="flex flex-row text-xl font-semibold gap-8 sm:gap-12 max-md:hidden">
           <Menu />
         </div>
-      </div>
-      <div className="navBarSignIn">
-        <SignInNav />
-      </div>
-      <div className="navBarMobMenu">
-        {toggleMobMenu
-          ? <RiCloseLine color='#fff' size={27} onClick={() => setToggleMobMenu(false)} />
-          : <RiMenu3Line color='#fff' size={27} onClick={() => setToggleMobMenu(true)} />
-        }
-        {toggleMobMenu && (
-           <div className='navBarMobMenuContainer scaleUpCenter'> {/* Change scaleUpCenter to scroll from top animation */}
-            <div className='navBarMobMenuContainerLinks'>
-              <Menu />
-              <div className='navBarMobMenuContainerLinksSignIn'>
-                <SignInNav />
-              </div>
+        <div className="flex flex-row items-center md:justify-end gap-8 max-xs:hidden md:w-24">
+          <SocialsNav/>
+        </div>
+        <div className="md:hidden flex justify-end w-14">
+          <button className={`hamburger ${toggleMobMenu ? "selected" : ""}`} onClick={() => setToggleMobMenu(!toggleMobMenu)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div className={`mobile-menu absolute flex flex-col items-center justify-center gap-4 w-11/12 bg-header p-8 top-full left-2/4 -z-10 translate-x-[-50%] rounded-b-xl transition-all duration-400 delay-200 origin-top ${toggleMobMenu ? "scale-y-100" : "scale-y-0"}`}>
+            <Menu />
+            <div className="flex flex-row align-center gap-8 xs:hidden">
+              <SocialsNav/>
             </div>
           </div>
-        )}
-      </div>
-    </section>
+        </div>
+      </nav>
+    </header>
   )
 }
 

@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    scroll-margin: 10vh;
 }
 
 .banner {
@@ -16,30 +17,43 @@
 
 body {
     background-color: var(--colorBG);
+    color: var(--colorText);
+}
+
+h1, h2, .title-font {
+    font-family: var(--emphasisedFontFamily);
+    /* font-family: "Mogra"; */
+    /* font-family: "Rubik Spray Paint"; */
+    /* font-family: "Slackey"; */
+    /* font-family: "Zen Dots"; */
+    /* font-family: "Black Ops One"; */
+}
+
+.emphasised-text {
+    font-family: var(--emphasisedFontFamily);
 }
 
 a {
-    color: unset;
+    @apply text-primary-500 font-semibold;
     text-decoration: none;
 }
 
-.gradientBG {
+.button {
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    font-family: var(--fontFamily);
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    font-weight: 500;
+    @apply bg-primary-500;
+}
 
-    /* ff 3.6+ */
-    background:-moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
-    
-    /* safari 5.1+,chrome 10+ */
-    background:-webkit-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
-    
-    /* opera 11.10+ */
-    background:-o-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
-    
-    /* ie 10+ */
-    background:-ms-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
-    
-    /* global 92%+ browsers support */
-    background:radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
-    
+.button.small {
+    font-size: 1.1rem;
 }
 
 .gradientText {
@@ -49,67 +63,22 @@ a {
     -webkit-text-fill-color: transparent;
 }
 
-.sectionPadding {
-    padding: 4rem 6rem;
-}
-
-.sectionMargin {
-    margin: 4rem 6rem;
-}
-
 .scaleOnHover {
     transition: transform .2s;
 }
 
 .scaleOnHover:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
-
-/* Created using amazing tool Animista */
 .scale-up-center {
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	-webkit-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+.scale-up-center:hover {
+    transform: scale(1.1);
 }
 
-
- @-webkit-keyframes scale-up-center {
-    0% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-    }
-}
-  @keyframes scale-up-center {
-    0% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-    }
-}
-
-@media screen and (max-width:700px) {
-    .sectionPadding {
-        padding: 4rem;
-    }
-
-    .sectionMargin {
-        margin: 4rem;
-    }
-}
-
-@media screen and (max-width:550px) {
-    .sectionPadding {
-        padding: 4rem 2rem;
-    }
-
-    .sectionMargin {
-        margin: 4rem 2rem;
-    }
+.default-scroll-transition {
+    @apply motion-safe:translate-y-6 motion-safe:opacity-0;
 }
