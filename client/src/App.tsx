@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import { Home, SignInPage, PageNotFound } from './pages';
-import { MouseGradient, BackgroundGradient } from './components';
+import { Home, PageNotFound } from './pages';
+// import { MouseGradient, BackgroundGradient } from './components';
 import './App.css';
-import useUser from './hooks/useUser';
-import axios, { AxiosRequestConfig } from 'axios';
+// import useUser from './hooks/useUser';
+// import axios, { AxiosRequestConfig } from 'axios';
 
 // interface ApiResponse {
 //   success: boolean;
