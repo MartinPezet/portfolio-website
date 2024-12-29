@@ -2,12 +2,6 @@ name: Test Build Landing Page
 
 on:
   workflow_dispatch: # Manually be able to run it
-    inputs:
-        manual_branch:
-          description: Set branch
-          required: true
-          type: string
-          default: main
   
 env:
   REACT_APP_SSO_API_BASE_URI: ${{ secrets.REACT_APP_SSO_API_BASE_URI }}
