@@ -25,12 +25,12 @@ const Footer: React.FC = () => {
         <div className="flex gap-6 items-center">
           <a href="mailto:martinpezet@ntlworld.com">
             <FontAwesomeIcon icon={faEnvelope} className="tech-icon h-8 hover:text-[#1A73E8]" aria-label="Envelope to make email"/>
-            </a>
+          </a>
           <a href="https://wa.me/07806519657" target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={faWhatsapp} className="tech-icon h-8 hover:text-[#25D366]" aria-label="Whatsapp logo"/>
+            <FontAwesomeIcon icon={faWhatsapp} className="tech-icon h-8 hover:text-[#25D366]" aria-label="Whatsapp logo"/>
           </a>
           <a href="https://www.linkedin.com/messaging/thread/new/?recipients=martin-pezet-36306a181" target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={faLinkedin} className="tech-icon h-8 hover:text-[#0077B5]"/>
+            <FontAwesomeIcon icon={faLinkedin} className="tech-icon h-8 hover:text-[#0077B5]"/>
           </a>
         </div>
       </div>
