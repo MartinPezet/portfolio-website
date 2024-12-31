@@ -1,9 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { Home, PageNotFound } from './pages';
 // import { MouseGradient, BackgroundGradient } from './components';
 import './App.css';
+import useFont from './hooks/useFont';
 // import useUser from './hooks/useUser';
 // import axios, { AxiosRequestConfig } from 'axios';
 
@@ -56,12 +57,7 @@ const App: React.FC = () => {
     
   // };
 
-  const fonts = [
-    // 'Slackey',
-    'Fugaz One'
-  ];
-
-  const [currentFont] = useState(fonts[0]);
+  const {currentFont} = useFont();
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -74,6 +70,7 @@ const App: React.FC = () => {
     if (!ctx) return;
 
     // Clear canvas
+    ctx.restore();
     ctx.clearRect(0, 0, 32, 32);
 
     // Set background with rounded rect
@@ -91,11 +88,15 @@ const App: React.FC = () => {
     ctx.quadraticCurveTo(0, 0, cornerRadius, 0);
     ctx.closePath();
     ctx.fill();
+    ctx.save();
 
     // Explicitly load font before drawing
     await document.fonts.load(`26px "${currentFont}"`);
 
     // Draw text
+    if(currentFont === "Slackey") {
+      ctx.translate(0, -5);
+    }
     ctx.fillStyle = 'white';
     ctx.font = `26px "${currentFont}"`;
     ctx.textAlign = 'center';

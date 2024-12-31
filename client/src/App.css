@@ -22,11 +22,6 @@ body {
 
 h1, h2, .title-font {
     font-family: var(--emphasisedFontFamily);
-    /* font-family: "Mogra"; */
-    /* font-family: "Rubik Spray Paint"; */
-    /* font-family: "Slackey"; */
-    /* font-family: "Zen Dots"; */
-    /* font-family: "Black Ops One"; */
 }
 
 .emphasised-text {

@@ -30,13 +30,13 @@ const Experience: React.FC = () => {
                                     companyLogoAlt="Procode Technology Logo"
                                     roleName="Software Engineer"
                                     timeInRole={
-                                        <div className="flex flex-col">
+                                        <span className="flex flex-col">
                                             <span className="text-slate-500 text-sm">(TUPE from Utilita)</span>
-                                            <div>
+                                            <span>
                                                 <span className="text-slate-400">April 2024 <FontAwesomeIcon className="text-sm" icon={faArrowRight}/></span>
                                                 <span className="font-semibold"> Current</span>
-                                            </div>
-                                        </div>
+                                            </span>
+                                        </span>
                                     }
                     >
                         <Tooltip text="Laravel"><FontAwesomeIcon className="tech-icon hover:text-[#ff2d20]" icon={faLaravel} /></Tooltip>
