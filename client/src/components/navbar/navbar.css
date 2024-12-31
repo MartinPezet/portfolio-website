@@ -36,14 +36,46 @@
     @apply bg-primary-500;
 }
 
-.fugaz {
+.default-font {
     padding: 0.35rem 0.45rem 0.2rem;
     transition: all 0.75s var(--slow-bezier);
 }
 
-.fugaz-scrolled {
+.default-font-scrolled {
     font-size: 1.75rem;
     padding: 0.3rem 0.3rem 0.1rem;
+}
+
+.mogra {
+    padding: 0.4rem 0.45rem 0;
+}
+
+.mogra-scrolled {
+    padding: 0.4rem 0.4rem 0.1rem;
+}
+
+.black-ops-one {
+    padding: 0.35rem 0.45rem 0.3rem 0.55rem;
+}
+
+.black-ops-one-scrolled {
+    padding: 0.3rem 0.35rem 0.2rem 0.4rem;
+}
+
+.zen-dots {
+    padding: 0.35rem 0.45rem 0.25rem;
+}
+
+.zen-dots-scrolled {
+    padding: 0.3rem 0.3rem 0.15rem;
+}
+
+.slackey {
+    padding: 0.3rem 0.4rem 0.3rem 0.5rem;
+}
+
+.slackey-scrolled {
+    padding: 0.4rem 0.4rem 0.3rem 0.5rem;
 }
 
 .hamburger {

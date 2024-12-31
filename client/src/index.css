@@ -70,7 +70,7 @@
 }
 
 :root {
-  --emphasisedFontFamily: Fugaz One, Poppins, sans-serif;
+  --emphasisedFontFamily: Fugaz One, Poppins, sans-serif; /* Changed by App.tsx */
   --fontFamily: Poppins, sans-serif;
 
   --gradientText: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
