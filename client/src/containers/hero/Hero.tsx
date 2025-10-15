@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
       </div>
       <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
         <button className="button scaleOnHover" onClick={() => scrollToId('projects')}>Projects</button>
-        <a href="https://1drv.ms/b/s!AuEj0j16cbmolIooGOUOOO0a4yilCA?embed=1&em=2"
+        <a href="https://1drv.ms/b/c/a8b9717a3dd223e1/IQQXbJQJAK1pTbI58AhWpqWkAdVY49rCQrzLZKSA6wfog-8"
            target="_blank"
            rel="noreferrer"
            className="transition basic-link tracking-wider font-semibold text-xl"
