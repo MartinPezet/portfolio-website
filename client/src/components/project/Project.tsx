@@ -15,7 +15,7 @@ type ProjectProps =
     children?: React.ReactNode;
     img?: undefined;
     imgAlt?: undefined;
-    codeLink: string;
+    codeLink?: string;
     link?: string;
   }
   | {
@@ -24,7 +24,7 @@ type ProjectProps =
     children?: React.ReactNode;
     img: string;
     imgAlt: string;
-    codeLink: string;
+    codeLink?: string;
     link?: string;
   }
 
@@ -76,11 +76,13 @@ const Project: React.FC<ProjectProps> = ({ title, text, children, img, imgAlt, c
           <div className="flex flex-row flex-wrap gap-2">
             {children ?? <FontAwesomeIcon className="h-6 project-icon transition" icon={faDiagramProject} />}
           </div>
-          <Tooltip text="View code">
-            <a href={codeLink} target="_blank" rel="noreferrer"> {/* TODO: Increase accessibility */}
-              <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition duration-300 project-code hover:text-[#4078C0]" icon={faGithub} />
-            </a>
-          </Tooltip>
+          {codeLink && (
+            <Tooltip text="View code">
+              <a href={codeLink} target="_blank" rel="noreferrer"> {/* TODO: Increase accessibility */}
+                <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition duration-300 project-code hover:text-[#4078C0]" icon={faGithub} />
+              </a>
+            </Tooltip>
+          )}
         </div>
         <h3 className="text-xl font-bold">{title}</h3>
         {image()}

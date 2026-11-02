@@ -65,11 +65,11 @@
     }
 }
 
-.nuxt:hover, .nuxt:focus {
-    --glowColor: #00DC8225;
+.claude:hover, .claude:focus {
+    --glowColor: #D9775725;
 }
-.nuxt::after {
-    background: conic-gradient(from var(--angle), transparent 70%, #00DC82);
+.claude::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #D97757);
 }
 
 .vue:hover, .vue:focus {
@@ -112,17 +112,17 @@
     animation-delay: 0.4s;
 }
 
-.mysql:hover {
-    --glowColor: #00758F35;
+.aws:hover {
+    --glowColor: #FF990030;
 }
-.mysql::after {
-    background: conic-gradient(from var(--angle), transparent 70%, #00758F);
+.aws::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #FF9900);
 }
 
-.node:hover {
-    --glowColor: #5CC24A25;
+.grafana:hover {
+    --glowColor: #F4680025;
 }
-.node::after {
-    background: conic-gradient(from var(--angle), transparent 70%, #5CC24A);
+.grafana::after {
+    background: conic-gradient(from var(--angle), transparent 70%, #F46800);
     animation-delay: 0.2s;
 }
