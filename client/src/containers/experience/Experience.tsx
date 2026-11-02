@@ -3,7 +3,7 @@ import procodeLogo from '../../assets/procode_small_logo.png';
 import utilitaLogo from '../../assets/utilita_logo.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaravel, faVuejs, faDocker, faAtlassian } from '@fortawesome/free-brands-svg-icons';
+import { faLaravel, faVuejs, faReact, faDocker, faAtlassian } from '@fortawesome/free-brands-svg-icons';
 import { Tooltip } from '../../components/';
 
 import './experience.css';
@@ -41,6 +41,7 @@ const Experience: React.FC = () => {
                     >
                         <Tooltip text="Laravel"><FontAwesomeIcon className="tech-icon hover:text-[#ff2d20]" icon={faLaravel} /></Tooltip>
                         <Tooltip text="Vue.js"><FontAwesomeIcon className="tech-icon hover:text-[#42b883]" icon={faVuejs} /></Tooltip>
+                        <Tooltip text="React"><FontAwesomeIcon className="tech-icon hover:text-[#61DBFB]" icon={faReact} /></Tooltip>
                         <Tooltip text="Docker"><FontAwesomeIcon className="tech-icon hover:text-[#1D63ED]" icon={faDocker} /></Tooltip>
                         <Tooltip text="Atlassian Suite"><FontAwesomeIcon className="tech-icon hover:text-[#0052CC]" icon={faAtlassian} /></Tooltip>
                     </ExperienceCard>

@@ -15,7 +15,7 @@ type ProjectProps =
     children?: React.ReactNode;
     img?: undefined;
     imgAlt?: undefined;
-    codeLink: string;
+    codeLink?: string;
     link?: string;
   }
   | {
@@ -24,7 +24,7 @@ type ProjectProps =
     children?: React.ReactNode;
     img: string;
     imgAlt: string;
-    codeLink: string;
+    codeLink?: string;
     link?: string;
   }
 
@@ -37,22 +37,11 @@ const Project: React.FC<ProjectProps> = ({ title, text, children, img, imgAlt, c
 
   const image = () => {
     if (!img) {
-      return (<div className="border-t border-2"></div>);
+      return (<div className="border-t border-2 rounded-xl"></div>);
     }
-    if(link){
-      return (
-        <a href={link} target="_blank" rel="noreferrer">
-          <div className="bg-slate-400 relative h-8 w-full">
-            <span className="h-4 w-4 rounded-full bg-red-500"></span>
-            <span className="bg-yellow-500"></span>
-            <span className="bg-green-500"></span>
-          </div>
-          <img src={img} alt={imgAlt} />
-        </a>
-      );
-    }
-    return (
-      <div className="window rounded-xl overflow-hidden">
+
+    const content = (
+      <>
         <div className="bg-gray-500 relative h-6 w-full">
           <span className="h-3 w-3 absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-red-500 flex justify-center items-center">
             <FontAwesomeIcon className="window-icon text-red-700 flex h-2.5" icon={faXmark} />
@@ -65,6 +54,19 @@ const Project: React.FC<ProjectProps> = ({ title, text, children, img, imgAlt, c
           </span>
         </div>
         <img src={img} alt={imgAlt} />
+      </>
+    )
+
+    if(link){
+      return (
+        <a className="window rounded-xl overflow-hidden" href={link} target="_blank" rel="noreferrer">
+          {content}
+        </a>
+      );
+    }
+    return (
+      <div className="window rounded-xl overflow-hidden">
+        {content}
       </div>
     );
   };
@@ -76,11 +78,13 @@ const Project: React.FC<ProjectProps> = ({ title, text, children, img, imgAlt, c
           <div className="flex flex-row flex-wrap gap-2">
             {children ?? <FontAwesomeIcon className="h-6 project-icon transition" icon={faDiagramProject} />}
           </div>
-          <Tooltip text="View code">
-            <a href={codeLink} target="_blank" rel="noreferrer"> {/* TODO: Increase accessibility */}
-              <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition duration-300 project-code hover:text-[#4078C0]" icon={faGithub} />
-            </a>
-          </Tooltip>
+          {codeLink && (
+            <Tooltip text="View code">
+              <a href={codeLink} target="_blank" rel="noreferrer"> {/* TODO: Increase accessibility */}
+                <FontAwesomeIcon className="h-6 tech-icon hover:scale-110 transition duration-300 project-code hover:text-[#4078C0]" icon={faGithub} />
+              </a>
+            </Tooltip>
+          )}
         </div>
         <h3 className="text-xl font-bold">{title}</h3>
         {image()}
